@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+
+// page & layout imports
+import Homepage from './pages/Homepage'
+import About from './pages/About'
+import AboutOverview from './pages/AboutOverview'
+import Locations from './pages/Locations'
+import Careers from './pages/Careers'
+import Rates from './pages/Rates'
+import LocationDetails from './pages/LocationDetails'
+import SiteHeader from './components/SiteHeader'
+import SiteFooter from './components/SiteFooter'
+
+// apollo client
+const client = new ApolloClient({
+  uri: 'http://localhost:1337/graphql',
+  cache: new InMemoryCache()
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <ApolloProvider client={client}>
+          <div className="App">
+            <SiteHeader />
+            <Routes>
+              <Route exact path="/" element={<Homepage />}/>
+              <Route path="/about" element={<About slug="about"/>}/>
+              <Route path="/about-overview" element={<AboutOverview />}/>
+              <Route path="/locations" element={<Locations />}/>
+              <Route path="/locations/:slug" element={<LocationDetails />}/>
+              <Route path="/careers" element={<Careers />}/>
+              <Route path="/rates" element={<Rates />}/>
+            </Routes>
+            <SiteFooter />
+          </div>
+        </ApolloProvider>
+      </Router>
   );
 }
 
