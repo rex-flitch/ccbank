@@ -37,8 +37,8 @@ export default function SiteHeader() {
       <div className="top-header">
         <ul className="container">
           <li><Link to="/about">Solar Loan Payment</Link></li>
-          <li><Link to="/about">Careers</Link></li>
-          <li><Link to="/support">Branch Locations</Link></li>
+          <li><Link to="/careers">Careers</Link></li>
+          <li><Link to="/locations">Branch Locations</Link></li>
         </ul>
       </div>
       <div className='main-header container'>
