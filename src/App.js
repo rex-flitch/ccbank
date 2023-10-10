@@ -15,6 +15,7 @@ import SiteFooter from './components/SiteFooter'
 // apollo client
 const client = new ApolloClient({
   uri: 'https://whispering-hamlet-41063-0292a439d9c6.herokuapp.com/graphql',
+  //uri: 'http://localhost:1337/graphql',
   cache: new InMemoryCache()
 })
 

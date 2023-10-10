@@ -99,6 +99,7 @@ const HOMEPAGEINFO = gql`
                     HomepageVideo {
                         Description,
                         Title,
+                        YouTubeSRC,
                         Video {
                           data {
                             attributes {
@@ -318,9 +319,15 @@ export default function Homepage() {
                         <p>{data.homepage.data.attributes.HomepageVideo.Description}</p>
                     </div>
                     <div className='video-player'>
-                        <video controls>
-                            <source src={data.homepage.data.attributes.HomepageVideo.Video.data.attributes.url} type="video/mp4"/>
-                        </video>
+                        {data.homepage.data.attributes.HomepageVideo.Video.data !== null &&
+                            <video controls>
+                                <source src={data.homepage.data.attributes.HomepageVideo.Video.data.attributes.url} type="video/mp4"/>
+                            </video>
+                        }
+                        {data.homepage.data.attributes.HomepageVideo.YouTubeSRC !== null &&
+                            <iframe class="youtube" src={data.homepage.data.attributes.HomepageVideo.YouTubeSRC} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        }
+                        
                     </div>
                 </div>
             </div>

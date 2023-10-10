@@ -27,6 +27,7 @@ const ABOUTPAGEINFO = gql`
               AboutVideo {
                 Description,
                 Title,
+                YouTubeSRC,
                 Video {
                   data {
                     attributes {
@@ -88,9 +89,15 @@ export default function About() {
                   <p>{data.about.data.attributes.AboutVideo.Description}</p>
               </div>
               <div className='video-player'>
-                  <video controls>
-                      <source src={data.about.data.attributes.AboutVideo.Video.data.attributes.url} type="video/mp4"/>
-                  </video>
+                  {data.about.data.attributes.AboutVideo.Video.data !== null &&
+                      <video controls>
+                          <source src={data.about.data.attributes.AboutVideo.Video.data.attributes.url} type="video/mp4"/>
+                      </video>
+                  }
+                  {data.about.data.attributes.AboutVideo.YouTubeSRC !== null &&
+                      <iframe class="youtube" src={data.about.data.attributes.AboutVideo.YouTubeSRC} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  }
+                  
               </div>
           </div>
       </div>

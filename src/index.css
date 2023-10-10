@@ -510,6 +510,10 @@ option {
 .video-player video {
   width:100%;
 }
+.video-player .youtube {
+  width:100%;
+  aspect-ratio: 16 / 9;
+}
 /* Image CTA Grey Background */
 .image-cta-grey {
   background-color:#F4F4F4;
