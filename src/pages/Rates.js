@@ -104,7 +104,7 @@ export default function Rates() {
   return (
     <div className='wrapper rates'>
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.ratepage.data.attributes.RatesHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' style={{backgroundImage: `url(${data.ratepage.data.attributes.RatesHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-hero'>
                   <h1>{data.ratepage.data.attributes.RatesHero.Title}</h1>
@@ -122,7 +122,7 @@ export default function Rates() {
         <h2 className='center'>{data.ratepage.data.attributes.FeaturedRatesTitle}</h2>
         <hr className="green center"></hr>
       </div>
-      <div className='rates-cta' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.ratepage.data.attributes.RatesCTA.BackgroundImage.data.attributes.url})`}}>
+      <div className='rates-cta' style={{backgroundImage: `url(${data.ratepage.data.attributes.RatesCTA.BackgroundImage.data.attributes.url})`}}>
         <div className='overlay'></div>
         <div className='container rates-cta-flex max-800 mg-auto'>
             <div className='rates-cta-item'>

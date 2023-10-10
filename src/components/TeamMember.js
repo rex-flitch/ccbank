@@ -9,7 +9,7 @@ const TeamMember = ({ Name, Headshot, Position, Bio }) => {
             <div className='item-content'>
                 <button className='hover-button' onClick={() => setShowBio(!showBio)}>View Bio</button>
             </div>
-            <div className='team-img'><img src={process.env.REACT_APP_BACKEND + Headshot.data.attributes.url} alt={Name}/></div>
+            <div className='team-img'><img src={Headshot.data.attributes.url} alt={Name}/></div>
             <h4>{Name}</h4>
             <p>{Position}</p>
 
@@ -20,7 +20,7 @@ const TeamMember = ({ Name, Headshot, Position, Bio }) => {
                     X
                     </div>
                     <div className="bio">
-                        <div className="bio-image"><img src={process.env.REACT_APP_BACKEND + Headshot.data.attributes.url} alt={Name}/></div>
+                        <div className="bio-image"><img src={Headshot.data.attributes.url} alt={Name}/></div>
                         <div className="bio-info">
                             <h4>{Name}</h4>
                             <p>{Position}</p>

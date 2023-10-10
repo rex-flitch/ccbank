@@ -41,11 +41,11 @@ export default function SiteFooter() {
     <div className="footer">
       <div className='footer-main container'>
         <div className='footer-top-line'>
-            <div className='footer-logo-area'><Link to="/"><img src={process.env.REACT_APP_BACKEND + data.ccBankSettings.data[0].attributes.FooterLogo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
+            <div className='footer-logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.FooterLogo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
             <div className='footer-social'>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.FacebookURL}><img src={process.env.REACT_APP_BACKEND + "/uploads/facebook_icon_889eb6bc9d.svg"} alt="CCBank Facebook"></img></Link></div>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.TwitterURL}><img src={process.env.REACT_APP_BACKEND + "/uploads/twitter_icon_e6abf60938.svg"} alt="CCBank Twitter"></img></Link></div>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.LinkedInURL}><img src={process.env.REACT_APP_BACKEND + "/uploads/linkedin_icon_0d42f0467a.svg"} alt="CCBank LinkedIn"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.FacebookURL}><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618023/facebook_icon_a5c278f767.svg"} alt="CCBank Facebook"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.TwitterURL}><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618115/twitter_icon_90bc68229d.svg"} alt="CCBank Twitter"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.LinkedInURL}><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618102/linkedin_icon_9157cad4a8.svg"} alt="CCBank LinkedIn"></img></Link></div>
             </div>
             <nav className="footer-nav">
             <ul>
@@ -65,8 +65,8 @@ export default function SiteFooter() {
         <div className='footer-bottom-line'>
             <ul>
                 <li>Download Our Banking Apps</li>
-                <li><img src={process.env.REACT_APP_BACKEND + "/uploads/apple_fe528cd245.webp"} alt="Apply App"></img></li>
-                <li><img src={process.env.REACT_APP_BACKEND + "/uploads/android_dfc846f560.webp"} alt="Android App"></img></li>
+                <li><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618158/apple_ba04a3b94a.webp"} alt="Apply App"></img></li>
+                <li><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618137/android_6c0eb5e92a.webp"} alt="Android App"></img></li>
             </ul>
         </div>
       </div>

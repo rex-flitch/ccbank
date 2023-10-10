@@ -65,7 +65,7 @@ export default function About() {
   return (
     <div className='wrapper about'>
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.about.data.attributes.AboutHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' style={{backgroundImage: `url(${data.about.data.attributes.AboutHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-hero'>
                   <h1>{data.about.data.attributes.AboutHero.Title}</h1>
@@ -89,7 +89,7 @@ export default function About() {
               </div>
               <div className='video-player'>
                   <video controls>
-                      <source src={process.env.REACT_APP_BACKEND + data.about.data.attributes.AboutVideo.Video.data.attributes.url} type="video/mp4"/>
+                      <source src={data.about.data.attributes.AboutVideo.Video.data.attributes.url} type="video/mp4"/>
                   </video>
               </div>
           </div>
@@ -105,7 +105,7 @@ export default function About() {
           <div className='container cta-icon-box'>
               {data.about.data.attributes.IconCTA.map((iconcta) => (
                   <div key={iconcta.id} className='iconcta'>
-                      <div className='iconcta-image'><img src={process.env.REACT_APP_BACKEND + iconcta.Icon.data.attributes.url} alt={iconcta.Title}/></div>
+                      <div className='iconcta-image'><img src={iconcta.Icon.data.attributes.url} alt={iconcta.Title}/></div>
                       <div className='iconcta-info'>
                           <div className='title'><h3 className='orange'>{iconcta.Title}</h3></div>
                           <hr className='green'></hr>

@@ -55,7 +55,7 @@ export default function Careers() {
   return (
     <div className='wrapper careers'>
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.career.data.attributes.CareersHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' style={{backgroundImage: `url(${data.career.data.attributes.CareersHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-hero'>
                   <h1>{data.career.data.attributes.CareersHero.Title}</h1>
@@ -82,7 +82,7 @@ export default function Careers() {
                 <p>{data.career.data.attributes.CommittedToOur.Description}</p>
             </div>
             <div className='image-cta-grey-player'>
-                <img src={process.env.REACT_APP_BACKEND + data.career.data.attributes.CommittedToOur.Image.data.attributes.url} alt={data.career.data.attributes.CommittedToOur.Image.data.attributes.alternativeText}/>
+                <img src={data.career.data.attributes.CommittedToOur.Image.data.attributes.url} alt={data.career.data.attributes.CommittedToOur.Image.data.attributes.alternativeText}/>
             </div>
         </div>
       </div>

@@ -54,7 +54,7 @@ export default function LocationDetails() {
     
     return (
         <div className='wrapper location'>
-            <div className='location-details-image' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.ccBankLocations.data[0].attributes.Image.data.attributes.url})`}}></div>
+            <div className='location-details-image' style={{backgroundImage: `url(${data.ccBankLocations.data[0].attributes.Image.data.attributes.url})`}}></div>
             <div className='container'>
                 <h1 className='center orange mg-top-50'>{data.ccBankLocations.data[0].attributes.City}</h1>
                 <hr className='center green' />
@@ -68,7 +68,7 @@ export default function LocationDetails() {
                 <div className='team-container container'>
                     {data.ccBankLocations.data[0].attributes.Team.map((team) => (
                         <div key='team.id' className='location-team-item'>
-                            <div className='location-team-image'><img src={process.env.REACT_APP_BACKEND + team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
+                            <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
                             <h3 className='green uppercase'>{team.TeamMemberName}</h3>
                             <p>{team.TeamMemberPosition}</p>
                             <p>Direct: {team.TeamMemberPhone}</p>

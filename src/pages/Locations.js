@@ -73,7 +73,7 @@ export default function Locations() {
   return (
     <div className='wrapper locations'>
       <div className='hero-banner'>
-          <div className='hero bg-center' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.location.data.attributes.LocationsHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero bg-center' style={{backgroundImage: `url(${data.location.data.attributes.LocationsHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-hero'>
                   <h1>{data.location.data.attributes.LocationsHero.Title}</h1>
@@ -95,7 +95,7 @@ contact us in person, on the phone, or online.</p>
         <div className='location-flex'>
             {data.ccBankLocations.data.map((locate, index) => (
             <div key={locate.id} className='location-item'>
-                <div className='location-image'><img src={process.env.REACT_APP_BACKEND + locate.attributes.Image.data.attributes.url} alt={locate.attributes.City}/></div>
+                <div className='location-image'><img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.City}/></div>
                 <div className='location-info'>
                     <h4 className='green'>{locate.attributes.City}</h4>
                     <div className='address'><p>{locate.attributes.Address} {locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>

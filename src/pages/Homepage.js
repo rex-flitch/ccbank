@@ -204,7 +204,7 @@ export default function Homepage() {
     return (
         <div className='wrapper'>
             <div className='hero-banner'>
-                <div className='hero' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.homepage.data.attributes.HomepageHero.BackgroundImage.data[0].attributes.url})`}}>
+                <div className='hero' style={{backgroundImage: `url(${data.homepage.data.attributes.HomepageHero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-hero'>
                         <h1>{data.homepage.data.attributes.HomepageHero.Title}</h1>
@@ -230,7 +230,7 @@ export default function Homepage() {
                 <div className='cta-box container'>
                     {data.homepage.data.attributes.HomepageCTA.map((cta) => (
                         <div key={cta.id} className='cta'>
-                            <div className='cta-image' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${cta.Image.data.attributes.url})`}}></div>
+                            <div className='cta-image' style={{backgroundImage: `url(${cta.Image.data.attributes.url})`}}></div>
                             <div className='cta-info'>
                                 <div className='title'><h2>{cta.Title}</h2></div>
                                 <hr className='green'></hr>
@@ -245,7 +245,7 @@ export default function Homepage() {
                 <h2 className='center'>Featured Rates</h2>
                 <hr className="green center"></hr>
             </div>
-            <div className='rates-cta' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.homepage.data.attributes.HomepageRates.BackgroundImage.data.attributes.url})`}}>
+            <div className='rates-cta' style={{backgroundImage: `url(${data.homepage.data.attributes.HomepageRates.BackgroundImage.data.attributes.url})`}}>
                 <div className='overlay'></div>
                 <div className='container rates-cta-flex max-800 mg-auto'>
                     <div className='rates-cta-item'>
@@ -274,7 +274,7 @@ export default function Homepage() {
                         <div key={altcta.id} className='alt-cta'>
 
                             {altcta.ImagePlacement === 'Left' &&
-                                <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={process.env.REACT_APP_BACKEND + altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                                <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
                             }
 
                             <div className='alt-cta-info'>
@@ -284,7 +284,7 @@ export default function Homepage() {
                                 <div className='btn-ghost-green'><Link to={altcta.ButtonURL}>{altcta.ButtonTitle}</Link></div>
                             </div>
                             {altcta.ImagePlacement === 'Right' &&
-                                <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={process.env.REACT_APP_BACKEND + altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                                <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
                             }
                         </div>
                     ))}
@@ -299,7 +299,7 @@ export default function Homepage() {
                 <div className='container cta-icon-box'>
                     {data.homepage.data.attributes.HomepageIconCTA.map((iconcta) => (
                         <div key={iconcta.id} className='iconcta'>
-                            <div className='iconcta-image'><img src={process.env.REACT_APP_BACKEND + iconcta.Icon.data.attributes.url} alt={iconcta.Title}/></div>
+                            <div className='iconcta-image'><img src={iconcta.Icon.data.attributes.url} alt={iconcta.Title}/></div>
                             <div className='iconcta-info'>
                                 <div className='title'><h3 className='orange'>{iconcta.Title}</h3></div>
                                 <hr className='green'></hr>
@@ -319,7 +319,7 @@ export default function Homepage() {
                     </div>
                     <div className='video-player'>
                         <video controls>
-                            <source src={process.env.REACT_APP_BACKEND + data.homepage.data.attributes.HomepageVideo.Video.data.attributes.url} type="video/mp4"/>
+                            <source src={data.homepage.data.attributes.HomepageVideo.Video.data.attributes.url} type="video/mp4"/>
                         </video>
                     </div>
                 </div>
@@ -328,7 +328,7 @@ export default function Homepage() {
                 <div className='cc-locations-box container'>
                     <h2 className='center white'>{data.homepage.data.attributes.Locations.Title}</h2>
                     <hr className='green center mg-bottom-50'></hr>
-                    <div className='cc-locations-inner' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.homepage.data.attributes.Locations.LocationMap.data.attributes.url})`}}>
+                    <div className='cc-locations-inner' style={{backgroundImage: `url(${data.homepage.data.attributes.Locations.LocationMap.data.attributes.url})`}}>
                         {data.ccBankLocations.data.map((locate, index) => (
                             // <div key={locate.id} className={`locate item-${index+1}`}>
                             <div key={locate.id} className={`locate item-${index+1 > 3 ? 'right' : 'left'}`}>
@@ -351,7 +351,7 @@ export default function Homepage() {
                 <div className='cc-news-preview-box container'>
                     {data.ccBanksNews.data.slice(0, 3).map((news) => (
                         <div key={news.id} className='cc-news-preview-inner'>
-                            <div className='cc-news-image' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${news.attributes.Media.data[0].attributes.url})`}}></div>
+                            <div className='cc-news-image' style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
                             <div className='cc-news-info'>
                                 <h4 className="orange fjalla">{news.attributes.Title}</h4>
                                 <p>{news.attributes.Story.substring(0, 250)}...</p>

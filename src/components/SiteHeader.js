@@ -42,7 +42,7 @@ export default function SiteHeader() {
         </ul>
       </div>
       <div className='main-header container'>
-        <div className='logo-area'><Link to="/"><img src={process.env.REACT_APP_BACKEND + data.ccBankSettings.data[0].attributes.Logo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
+        <div className='logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.Logo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
         <nav className="main-nav">
           <ul>
             <li><Link to="/about">ABOUT</Link></li>

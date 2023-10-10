@@ -82,7 +82,7 @@ export default function AboutOverview() {
   return (
     <div className='wrapper aboutoverview'>
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${data.aboutOverview.data.attributes.OveriewHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' style={{backgroundImage: `url(${data.aboutOverview.data.attributes.OveriewHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-hero'>
                   <h1>{data.aboutOverview.data.attributes.OveriewHero.Title}</h1>
@@ -107,7 +107,7 @@ export default function AboutOverview() {
                 <div key={altcta.id} className='alt-cta'>
 
                     {altcta.ImagePlacement === 'Left' &&
-                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={process.env.REACT_APP_BACKEND + altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
                     }
 
                     <div className='alt-cta-info'>
@@ -117,7 +117,7 @@ export default function AboutOverview() {
                         <div className='btn-ghost-green'><Link to={altcta.ButtonURL}>{altcta.ButtonTitle}</Link></div>
                     </div>
                     {altcta.ImagePlacement === 'Right' &&
-                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={process.env.REACT_APP_BACKEND + altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
                     }
                 </div>
             ))}
