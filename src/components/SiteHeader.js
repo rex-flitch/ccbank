@@ -47,7 +47,7 @@ export default function SiteHeader() {
           <ul>
             <li><Link to="/about">ABOUT</Link></li>
             <li><Link to="/personal">PERSONAL</Link></li>
-            <li><Link to="/business">BUSINESS</Link></li>
+            <li><Link to="/business-banking">BUSINESS</Link></li>
             <li><Link to="/resources">RESOURCES</Link></li>
             <li><Link to="/news">NEWS</Link></li>
             <li><Link to="/contact">CONTACT</Link></li>
