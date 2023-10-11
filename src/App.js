@@ -9,6 +9,7 @@ import Locations from './pages/Locations'
 import Careers from './pages/Careers'
 import Rates from './pages/Rates'
 import LocationDetails from './pages/LocationDetails'
+import BusinessBanking from './pages/BusinessBanking'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 
@@ -33,6 +34,7 @@ function App() {
               <Route path="/locations/:slug" element={<LocationDetails />}/>
               <Route path="/careers" element={<Careers />}/>
               <Route path="/rates" element={<Rates />}/>
+              <Route path="/business-banking" element={<BusinessBanking />}/>
             </Routes>
             <SiteFooter />
           </div>
