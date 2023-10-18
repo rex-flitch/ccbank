@@ -142,6 +142,12 @@ hr.center {
 .pd-top-20 {
   padding-top:20px;
 }
+.pd-tb-30 {
+  padding:30px 0;
+}
+.mg-top-20 {
+  margin-top:20px!important;
+}
 .mg-top-40 {
   margin-top:40px;
 }
@@ -333,17 +339,19 @@ option {
 }
 .alt-cta-image {
   width:65%;
+  display:flex;
+  align-items: center;
 }
-.left.alt-cta-orange {
+.left.alt-cta-orange img {
   box-shadow: -10px -10px #de7205;
 }
-.left.alt-cta-green {
+.left.alt-cta-green img {
   box-shadow: -10px -10px #03873d;
 }
-.right.alt-cta-orange {
+.right.alt-cta-orange img {
   box-shadow: 10px -10px #de7205;
 }
-.right.alt-cta-green {
+.right.alt-cta-green img {
   box-shadow: 10px -10px #03873d;
 }
 .alt-cta-info {
@@ -949,6 +957,97 @@ details[open] summary:after {
   z-index: 2;
   position: relative;
   width:100%;
+}
+.agreement {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+/* Box CTAs */
+.box-cta {
+  display:flex;
+  position: relative;
+  gap:20px;
+  margin:30px auto;
+}
+.box-item {
+  box-shadow: 0 0 12px rgba(34, 34, 34, .5);
+  width:100%;
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-item h5 {
+  font-size:14px;
+  margin:0;
+}
+.box-item h4 {
+  margin:10px 0 0;
+  font-size:19px;
+}
+/* Right Image CTA */
+.right-image-cta {
+  display: flex;
+}
+.ric-image {
+  width:55%;
+  display: flex;
+  align-items: center;
+}
+.ric-image img {
+  width:100%;
+}
+.ric-info {
+  width:45%;
+}
+.ric-info p {
+  padding-right:40px;
+}
+.ric-info ul {
+  padding-left:12px;
+}
+/*Loan Officers */
+.loan-officers:nth-of-type(even) {
+  background-color:#F0F0F0;
+}
+.loan-officers-inner {
+  padding:30px;
+}
+.lo-item {
+  display:flex;
+  padding:30px 0 0;
+}
+.lo-info {
+  display:flex;
+  gap:20px;
+  width:45%;
+  padding-right:20px;
+  align-items: center;
+}
+.lo-bio {
+  width:55%;
+  padding-left:30px;
+  border-left:#de7205 2px solid;
+}
+.lo-image {
+  width:150px;
+}
+.lo-image img {
+  width:100%;
+  aspect-ratio: 1 /1;
+  object-fit: cover;
+  object-position:top;
+}
+.lo-contact h4 {
+  margin:0;
+}
+.lo-contact p {
+  margin-bottom:0;
+}
+.lo-bio {
+  display:flex;
+  align-items: center;
 }
 /* Footer Styling */
 .footer {

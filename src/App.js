@@ -11,6 +11,8 @@ import Rates from './pages/Rates'
 import LocationDetails from './pages/LocationDetails'
 import BusinessBanking from './pages/BusinessBanking'
 import Merchant from './pages/MerchantServices'
+import Construction from './pages/ConstructionLotLoans'
+import LoanOfficers from './pages/LoanOfficers'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 
@@ -37,6 +39,8 @@ function App() {
               <Route path="/rates" element={<Rates />}/>
               <Route path="/business-banking" element={<BusinessBanking />}/>
               <Route path="/merchant-services" element={<Merchant />}/>
+              <Route path="/construction-lot-loans" element={<Construction />}/>
+              <Route path="/loan-officers" element={<LoanOfficers />}/>
             </Routes>
             <SiteFooter />
           </div>

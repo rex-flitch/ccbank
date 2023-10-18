@@ -96,7 +96,7 @@ export default function Merchant() {
               </div>
           </div>
       </div>
-      <h2 className='green center'>{data.merchantService.data.attributes.MerchantTitle}</h2>
+      <h2 className='green center mg-top-50 mg-bottom-50'>{data.merchantService.data.attributes.MerchantTitle}</h2>
       <div className='alt-image-color'>
         <div className='container'>
             {data.merchantService.data.attributes.MerchantAltCTA.map((altcta) => (
@@ -141,7 +141,7 @@ export default function Merchant() {
           <div className='background-left-text-text container'>
             <h3 className='max-400 white'>{data.merchantService.data.attributes.EachTransaction.Title}</h3>
             <hr className="orange"></hr>
-            <p className='max-400 white mg-top-50'>{parse(data.merchantService.data.attributes.EachTransaction.Text)}</p>
+            <p className='max-400 white mg-top-20'>{parse(data.merchantService.data.attributes.EachTransaction.Text)}</p>
           </div>
       </div>
     </div>
