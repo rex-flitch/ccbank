@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
+
 const LOANOFFICERSINFO = gql`
     query getLoanOfficers {
         loanOfficer {
@@ -160,16 +162,19 @@ export default function LoanOfficers() {
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.loanOfficer.data.attributes.LoanOfficersHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.loanOfficer.data.attributes.LoanOfficersHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.loanOfficer.data.attributes.LoanOfficersHero.Description !== null &&
-                    <p>{data.loanOfficer.data.attributes.LoanOfficersHero.Description}</p>
-                  }
-                  {data.loanOfficer.data.attributes.LoanOfficersHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.loanOfficer.data.attributes.LoanOfficersHero.ButtonTitle}</Link></div>
-                  }
-              </div>
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.loanOfficer.data.attributes.LoanOfficersHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.loanOfficer.data.attributes.LoanOfficersHero.Description !== null &&
+                        <p>{data.loanOfficer.data.attributes.LoanOfficersHero.Description}</p>
+                    }
+                    {data.loanOfficer.data.attributes.LoanOfficersHero.ButtonTitle !== null &&
+                        <div className='btn-green'><Link to=''>{data.loanOfficer.data.attributes.LoanOfficersHero.ButtonTitle}</Link></div>
+                    }
+                </div>
+            </div>
           </div>
       </div>
       <h2 className='center mg-top-50'>{data.loanOfficer.data.attributes.LoanOfficersTitle}</h2>

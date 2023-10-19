@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
+
 const RATESPAGE = gql`
     query getRates {
         ratepage {
@@ -106,15 +108,18 @@ export default function Rates() {
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.ratepage.data.attributes.RatesHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.ratepage.data.attributes.RatesHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.ratepage.data.attributes.RatesHero.Description !== null &&
-                    <p>{data.ratepage.data.attributes.RatesHero.Description}</p>
-                  }
-                  {data.ratepage.data.attributes.RatesHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.ratepage.data.attributes.RatesHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.ratepage.data.attributes.RatesHero.Description !== null &&
+                      <p>{data.ratepage.data.attributes.RatesHero.Description}</p>
+                    }
+                    {data.ratepage.data.attributes.RatesHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

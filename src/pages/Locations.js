@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 // import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
+
 const LOCATIONSPAGE = gql`
     query getLocations {
         ccBankLocations(sort:"City:asc") {
@@ -75,15 +77,18 @@ export default function Locations() {
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.location.data.attributes.LocationsHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.location.data.attributes.LocationsHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.location.data.attributes.LocationsHero.Description !== null &&
-                    <p>{data.location.data.attributes.LocationsHero.Description}</p>
-                  }
-                  {data.location.data.attributes.LocationsHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.location.data.attributes.LocationsHero.ButtonTitle}</Link></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.location.data.attributes.LocationsHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.location.data.attributes.LocationsHero.Description !== null &&
+                      <p>{data.location.data.attributes.LocationsHero.Description}</p>
+                    }
+                    {data.location.data.attributes.LocationsHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.location.data.attributes.LocationsHero.ButtonTitle}</Link></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

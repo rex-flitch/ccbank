@@ -13,6 +13,7 @@ import BusinessBanking from './pages/BusinessBanking'
 import Merchant from './pages/MerchantServices'
 import Construction from './pages/ConstructionLotLoans'
 import LoanOfficers from './pages/LoanOfficers'
+import Heloc from './pages/Heloc'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 
@@ -41,6 +42,7 @@ function App() {
               <Route path="/merchant-services" element={<Merchant />}/>
               <Route path="/construction-lot-loans" element={<Construction />}/>
               <Route path="/loan-officers" element={<LoanOfficers />}/>
+              <Route path="/heloc" element={<Heloc />}/>
             </Routes>
             <SiteFooter />
           </div>

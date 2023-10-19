@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
 import Team from '../components/Team'
+import AccountLogin from '../components/AccountLogin'
 
 const ABOUTOVERVIEWPAGEINFO = gql`
     query getAboutOverview {
@@ -84,15 +85,18 @@ export default function AboutOverview() {
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.aboutOverview.data.attributes.OveriewHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.aboutOverview.data.attributes.OveriewHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.aboutOverview.data.attributes.OveriewHero.Description !== null &&
-                    <p>{data.aboutOverview.data.attributes.OveriewHero.Description}</p>
-                  }
-                  {data.aboutOverview.data.attributes.OveriewHero.ButtonTitle !== null &&
-                    <div className='btn-green'><a href="/">{data.aboutOverview.data.attributes.OveriewHero.ButtonTitle}</a></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.aboutOverview.data.attributes.OveriewHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.aboutOverview.data.attributes.OveriewHero.Description !== null &&
+                      <p>{data.aboutOverview.data.attributes.OveriewHero.Description}</p>
+                    }
+                    {data.aboutOverview.data.attributes.OveriewHero.ButtonTitle !== null &&
+                      <div className='btn-green'><a href="/">{data.aboutOverview.data.attributes.OveriewHero.ButtonTitle}</a></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
+
 const ABOUTPAGEINFO = gql`
     query getAbout {
         about {
@@ -68,11 +70,14 @@ export default function About() {
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.about.data.attributes.AboutHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.about.data.attributes.AboutHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  <p>{data.about.data.attributes.AboutHero.Description}</p>
-                  <div className='btn-green'><a href="/">{data.about.data.attributes.AboutHero.ButtonTitle}</a></div>
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.about.data.attributes.AboutHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    <p>{data.about.data.attributes.AboutHero.Description}</p>
+                    <div className='btn-green'><a href="/">{data.about.data.attributes.AboutHero.ButtonTitle}</a></div>
+                </div>
               </div>
           </div>
       </div>
@@ -95,7 +100,7 @@ export default function About() {
                       </video>
                   }
                   {data.about.data.attributes.AboutVideo.YouTubeSRC !== null &&
-                      <iframe class="youtube" src={data.about.data.attributes.AboutVideo.YouTubeSRC} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <iframe className="youtube" src={data.about.data.attributes.AboutVideo.YouTubeSRC} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   }
                   
               </div>
@@ -117,7 +122,7 @@ export default function About() {
                           <div className='title'><h3 className='orange'>{iconcta.Title}</h3></div>
                           <hr className='green'></hr>
                           <div className='desciption'><p>{iconcta.Description}</p></div>
-                          <div className='btn-ghost-green'><Link to={`/api/details/${iconcta.id}`}>Read more</Link></div>
+                          <div className='btn-ghost-green'><Link to={iconcta.ButtonURL}>{iconcta.ButtonTitle}</Link></div>
                       </div>
                   </div>
               ))}

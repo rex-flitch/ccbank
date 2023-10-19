@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
+
 const MERCHANTSERVICEINFO = gql`
     query getMerchant {
         merchantService {
@@ -84,15 +86,18 @@ export default function Merchant() {
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.merchantService.data.attributes.MerchantHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.merchantService.data.attributes.MerchantHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.merchantService.data.attributes.MerchantHero.Description !== null &&
-                    <p>{data.merchantService.data.attributes.MerchantHero.Description}</p>
-                  }
-                  {data.merchantService.data.attributes.MerchantHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.merchantService.data.attributes.MerchantHero.ButtonTitle}</Link></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.merchantService.data.attributes.MerchantHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.merchantService.data.attributes.MerchantHero.Description !== null &&
+                      <p>{data.merchantService.data.attributes.MerchantHero.Description}</p>
+                    }
+                    {data.merchantService.data.attributes.MerchantHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.merchantService.data.attributes.MerchantHero.ButtonTitle}</Link></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

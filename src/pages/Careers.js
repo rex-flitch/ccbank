@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
 const CAREERSPAGE = gql`
     query getAbout {
         career {
@@ -57,15 +58,18 @@ export default function Careers() {
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.career.data.attributes.CareersHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.career.data.attributes.CareersHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.career.data.attributes.CareersHero.Description !== null &&
-                    <p>{data.career.data.attributes.CareersHero.Description}</p>
-                  }
-                  {data.career.data.attributes.CareersHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.career.data.attributes.CareersHero.ButtonTitle}</Link></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.career.data.attributes.CareersHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.career.data.attributes.CareersHero.Description !== null &&
+                      <p>{data.career.data.attributes.CareersHero.Description}</p>
+                    }
+                    {data.career.data.attributes.CareersHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.career.data.attributes.CareersHero.ButtonTitle}</Link></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
+
 const CONSTRUCTIONLOTLOANINFO = gql`
     query getConstruction {
         constructionAndLotLoan {
@@ -76,15 +78,18 @@ export default function Construction() {
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.constructionAndLotLoan.data.attributes.ConstructionHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.constructionAndLotLoan.data.attributes.ConstructionHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.constructionAndLotLoan.data.attributes.ConstructionHero.Description !== null &&
-                    <p>{data.constructionAndLotLoan.data.attributes.ConstructionHero.Description}</p>
-                  }
-                  {data.constructionAndLotLoan.data.attributes.ConstructionHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.constructionAndLotLoan.data.attributes.ConstructionHero.ButtonTitle}</Link></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.constructionAndLotLoan.data.attributes.ConstructionHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.constructionAndLotLoan.data.attributes.ConstructionHero.Description !== null &&
+                      <p>{data.constructionAndLotLoan.data.attributes.ConstructionHero.Description}</p>
+                    }
+                    {data.constructionAndLotLoan.data.attributes.ConstructionHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.constructionAndLotLoan.data.attributes.ConstructionHero.ButtonTitle}</Link></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

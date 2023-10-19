@@ -4,6 +4,7 @@ import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import AccountLogin from '../components/AccountLogin'
 
 const BUSINESSBANKING = gql`
     query getBusinessBanking {
@@ -101,15 +102,18 @@ export default function BusinessBanking() {
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.businessBanking.data.attributes.BusinessBankingHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-hero'>
-                  <h1>{data.businessBanking.data.attributes.BusinessBankingHero.Title}</h1>
-                  <hr className='orange'></hr>
-                  {data.businessBanking.data.attributes.BusinessBankingHero.Description !== null &&
-                    <p>{data.businessBanking.data.attributes.BusinessBankingHero.Description}</p>
-                  }
-                  {data.businessBanking.data.attributes.BusinessBankingHero.ButtonTitle !== null &&
-                    <div className='btn-green'><Link to=''>{data.businessBanking.data.attributes.BusinessBankingHero.ButtonTitle}</Link></div>
-                  }
+              <div className='inner-container'>
+                <AccountLogin />
+                <div className='inner-hero'>
+                    <h1>{data.businessBanking.data.attributes.BusinessBankingHero.Title}</h1>
+                    <hr className='orange'></hr>
+                    {data.businessBanking.data.attributes.BusinessBankingHero.Description !== null &&
+                      <p>{data.businessBanking.data.attributes.BusinessBankingHero.Description}</p>
+                    }
+                    {data.businessBanking.data.attributes.BusinessBankingHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.businessBanking.data.attributes.BusinessBankingHero.ButtonTitle}</Link></div>
+                    }
+                </div>
               </div>
           </div>
       </div>

@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import AccountLogin from '../components/AccountLogin'
 
 const HOMEPAGEINFO = gql`
     query getCtas {
@@ -207,11 +208,14 @@ export default function Homepage() {
             <div className='hero-banner'>
                 <div className='hero' style={{backgroundImage: `url(${data.homepage.data.attributes.HomepageHero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
-                    <div className='inner-hero'>
-                        <h1>{data.homepage.data.attributes.HomepageHero.Title}</h1>
-                        <hr className='orange'></hr>
-                        <p>{data.homepage.data.attributes.HomepageHero.Description}</p>
-                        <div className='btn-green'><a href="/">{data.homepage.data.attributes.HomepageHero.ButtonTitle}</a></div>
+                    <div className='inner-container'>
+                        <AccountLogin />
+                        <div className='inner-hero'>
+                            <h1>{data.homepage.data.attributes.HomepageHero.Title}</h1>
+                            <hr className='orange'></hr>
+                            <p>{data.homepage.data.attributes.HomepageHero.Description}</p>
+                            <div className='btn-green'><a href="/">{data.homepage.data.attributes.HomepageHero.ButtonTitle}</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
