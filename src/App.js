@@ -15,6 +15,7 @@ import Construction from './pages/ConstructionLotLoans'
 import LoanOfficers from './pages/LoanOfficers'
 import Heloc from './pages/Heloc'
 import CommercialIndustrialLoans from './pages/CommercialIndustrialLoans'
+import SBALoans from './pages/SBALoans'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 
@@ -45,6 +46,7 @@ function App() {
               <Route path="/loan-officers" element={<LoanOfficers />}/>
               <Route path="/heloc" element={<Heloc />}/>
               <Route path="/commercial-industrial-loans" element={<CommercialIndustrialLoans />}/>
+              <Route path="/sbaloans" element={<SBALoans />}/>
             </Routes>
             <SiteFooter />
           </div>

@@ -36,9 +36,9 @@ export default function SiteHeader() {
     <div className="site-header">
       <div className="top-header">
         <ul className="container">
-          <li><Link to="/about">Solar Loan Payment</Link></li>
-          <li><Link to="/careers">Careers</Link></li>
-          <li><Link to="/locations">Branch Locations</Link></li>
+          <li><Link to="/about"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment"/>Solar Loan Payment</Link></li>
+          <li><Link to="/careers"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698101083/careers_icon_b81ac6f9b1.png" alt="Careers Icon" />Careers</Link></li>
+          <li><Link to="/locations"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698101186/locations_icon_772a372fd8.png" alt="Branch Locations Icon" />Branch Locations</Link></li>
         </ul>
       </div>
       <div className='main-header container'>

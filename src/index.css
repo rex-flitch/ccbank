@@ -214,9 +214,12 @@ hr.center {
   color:#fff;
 }
 .top-header a {
-  color:#fff;
+  color:#DEDEDE;
   text-decoration: none;
   font-size:16px;
+  display:flex;
+  align-items: center;
+  gap:6px;
 }
 .top-header ul {
   list-style-type: none;
@@ -225,7 +228,7 @@ hr.center {
   padding:0;
 }
 .top-header li {
-  padding:8px 10px;
+  padding:8px 18px;
   list-style-image: none;
 }
 .main-header {
@@ -1039,6 +1042,9 @@ details[open] summary:after {
 .loan-officers:nth-of-type(even) {
   background-color:#F0F0F0;
 }
+.sbateam {
+  background-color:#fff;
+}
 .loan-officers-inner {
   padding:30px;
 }
@@ -1160,6 +1166,25 @@ input[type=submit] {
   color:#fff;
   cursor: pointer;
 }
+/* SBA Loans */
+.sbaloans-intro {
+  display:flex;
+  align-items: center;
+  gap:30px;
+}
+.sba-text {
+  width:50%;
+}
+.sba-image {
+  width:50%;
+}
+.sba-image img {
+  width:100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  object-fit: cover;
+}
+
 /* Footer Styling */
 .footer {
   background-color:#222;
