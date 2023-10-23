@@ -154,6 +154,12 @@ hr.center {
 .mg-top-50 {
   margin-top:50px!important;
 }
+.mg-top-80 {
+  margin-top:80px!important;
+}
+.mg-top-100 {
+  margin-top:100px!important;
+}
 .mg-bottom-50 {
   margin-bottom:50px!important;
 }
@@ -985,6 +991,9 @@ details[open] summary:after {
   gap:20px;
   margin:30px auto;
 }
+.flex-row {
+  flex-direction:column;
+}
 .box-item {
   box-shadow: 0 0 12px rgba(34, 34, 34, .5);
   width:100%;
@@ -993,6 +1002,9 @@ details[open] summary:after {
   flex-direction: column;
   align-items: center;
   background-color:#fff;
+}
+.flex-row .box-item {
+  align-items:flex-start;
 }
 .box-item h5 {
   font-size:14px;
