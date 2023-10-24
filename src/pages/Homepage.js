@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
 import AccountLogin from '../components/AccountLogin'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 const HOMEPAGEINFO = gql`
     query getCtas {
@@ -204,22 +206,64 @@ export default function Homepage() {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
 
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        }
+      };
+
     console.log(data)
     return (
         <div className='wrapper'>
-            <div className='hero-banner'>
-                <div className='hero' style={{backgroundImage: `url(${data.homepage.data.attributes.HomepageHero.BackgroundImage.data[0].attributes.url})`}}>
+            <div className='hero-banner banner-slider'>
+            <AccountLogin />
+            <Carousel 
+            swipeable={true}
+            draggable={true}
+            showDots={false}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={8000}
+            keyBoardControl={true}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+            className='hero-slider'
+            >
+                {data.homepage.data.attributes.HomepageHero.map((hero) => (
+                <div className='hero' style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
-                        <AccountLogin />
+                        
                         <div className='inner-hero'>
-                            <h1>{data.homepage.data.attributes.HomepageHero.Title}</h1>
+                            <h1>{hero.Title}</h1>
                             <hr className='orange'></hr>
-                            <p>{data.homepage.data.attributes.HomepageHero.Description}</p>
-                            <div className='btn-green'><a href="/">{data.homepage.data.attributes.HomepageHero.ButtonTitle}</a></div>
+                            {hero.Description !== null &&
+                                <p>{hero.Description}</p>
+                            }
+                            {hero.ButtonTitle !== null &&
+                                <div className='btn-green'><Link to={hero.ButtonURL}>{hero.ButtonTitle}</Link></div>
+                            }
                         </div>
                     </div>
                 </div>
+                ))}
+                </Carousel>
             </div>
             <div className='looking-for'>
                 <div className='container'>

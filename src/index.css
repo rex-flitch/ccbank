@@ -273,11 +273,23 @@ hr.center {
   min-height:550px;
   background-size:cover;
   background-repeat: no-repeat;
+  background-position: center;
   display:flex;
   align-items:center;
+  position: relative;
 }
 .hero-banner h1, .hero-banner p {
   color:#fff;
+}
+.hero-slider li {
+  padding-left:0;
+  list-style-image:none;
+}
+.react-multiple-carousel__arrow--left {
+  left: calc(1% + 1px)!important;
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(1% + 1px)!important;
 }
 .grad-overlay {
   background: rgb(0,0,0);
@@ -291,6 +303,9 @@ hr.center {
   padding-right:100px;
   margin:0 0 0 50px;
   z-index: 2;
+}
+.banner-slider .inner-hero {
+  margin:0 0 0 350px;
 }
 .hero-banner .btn-green {
   font-size:14px;
@@ -1088,6 +1103,11 @@ details[open] summary:after {
   z-index: 2;
   background-color:#fff;
   width:300px;
+}
+.banner-slider .login-containter {
+  position:absolute;
+  top:85px;
+  left:100px;
 }
 .accordion-title {
   background-color:#03873D;
