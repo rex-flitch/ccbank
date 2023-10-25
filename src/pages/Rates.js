@@ -141,7 +141,7 @@ export default function Rates() {
                 <div className='rates-cta-box'>
                     <div className='rates-cta-type'>{data.ratepage.data.attributes.RatesCTA.GreenAreaText}</div>
                     <div className='rates-cta-info'>
-                        <h2>{data.ratepage.data.attributes.RatesCTA.type_of_rate.data.attributes.rates.data[1].attributes.APY}</h2>
+                        <h2>{data.ratepage.data.attributes.RatesCTA.type_of_rate.data.attributes.rates.data[2].attributes.APY}</h2>
                         <h4>{data.ratepage.data.attributes.RatesCTA.BelowRateText}</h4>
                         <hr className='green center' />
                         <p>{data.ratepage.data.attributes.RatesCTA.BottomAreaText}</p>

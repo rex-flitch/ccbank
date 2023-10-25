@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import HolidayHours from '../components/HolidayHours'
+import parse from 'html-react-parser'
 
 const LOCATION = gql`
     query GetLocation($slug: String!) {
@@ -48,13 +49,14 @@ export default function LocationDetails() {
     const { loading, error, data } = useQuery(LOCATION, {
         variables: { slug: slug }
     })
+    const pageclassname = `${slug} location-details-image`;
     console.log(data)
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
     
     return (
         <div className='wrapper location'>
-            <div className='location-details-image' style={{backgroundImage: `url(${data.ccBankLocations.data[0].attributes.Image.data.attributes.url})`}}></div>
+            <div className={pageclassname} style={{backgroundImage: `url(${data.ccBankLocations.data[0].attributes.Image.data.attributes.url})`}}></div>
             <div className='container'>
                 <h1 className='center orange mg-top-50'>{data.ccBankLocations.data[0].attributes.City}</h1>
                 <hr className='center green' />
@@ -83,14 +85,14 @@ export default function LocationDetails() {
                     <div className='hours-item'>
                         <h2 className='center orange'>Lobby Hours</h2>
                         <hr className='center green' />
-                        <p className='center'>{data.ccBankLocations.data[0].attributes.LobbyHours}</p>
+                        <p className='center'>{parse(data.ccBankLocations.data[0].attributes.LobbyHours)}</p>
                     </div>
                     }
                     {data.ccBankLocations.data[0].attributes.DriveThroughHours !== null &&
                     <div className='hours-item'>
                         <h2 className='center orange'>Drive Through Hours</h2>
                         <hr className='center green' />
-                        <p className='center'>{data.ccBankLocations.data[0].attributes.DriveThroughHours}</p>
+                        <p className='center'>{parse(data.ccBankLocations.data[0].attributes.DriveThroughHours)}</p>
                     </div>
                     }
                 </div>

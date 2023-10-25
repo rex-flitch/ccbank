@@ -690,6 +690,12 @@ option {
   background-size:cover;
   background-repeat:no-repeat;
 }
+.location-details-image.sandy {
+  background-position: 50% 23%;
+}
+.location-details-image.salem {
+  background-position: 50% 35%;
+}
 .location-team {
   background-color:#F4F4F4;
   padding:50px 0;
@@ -851,13 +857,18 @@ option {
   display:flex;
   width:500px;
 }
-.holiday-item div {
-  width:22%;
+.holiday-item .h-date {
+  width:24%;
+  padding:8px 0;
+}
+.holiday-item .h-day {
+  width:20%;
   padding:8px 0;
 }
 .holiday-item .h-name {
   font-weight:bold;
   width:56%;
+  padding:8px 0;
 }
 /* Rates Page */
 .rates-table {
