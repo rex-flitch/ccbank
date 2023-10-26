@@ -80,6 +80,12 @@ hr.green {
   border: 2px solid #03873d;
   margin: 0;
 }
+hr.white {
+  color:#fff;
+  background-color:#fff;
+  border: 2px solid #fff;
+  margin: 0;
+}
 hr.center {
   margin:0 auto;
 }
@@ -231,12 +237,19 @@ hr.center {
   padding:8px 18px;
   list-style-image: none;
 }
+.top-header img {
+  height:16px;
+  width: auto;
+}
 .main-header {
   min-height:100px;
   display:flex;
 }
 .main-header .logo-area {
-  width:100%;
+  width:40%;
+}
+.main-header .main-nav {
+  width:60%;
 }
 .main-header nav ul {
   display:flex;
@@ -246,16 +259,89 @@ hr.center {
 }
 .main-header nav ul li {
   list-style-image: none;
+  width: 100%;
+  text-align: center;
+  margin-top:36px;
+  position: relative;
 }
 .main-header nav ul li a {
   display:inline-block;
-  padding:40px 20px;
+  padding:15px 0;
   color: #666666;
   text-transform:uppercase;
   font-size:16px;
   font-weight:500;
+  width:100%;
+  border-bottom:4px solid #fff;
 }
-
+.main-header nav ul li:hover a {
+  background-color:#F4F4F4;
+  border-bottom:4px solid #de7205;
+}
+#main_1 {
+  left:-400px;
+}
+#main_2 {
+  left:-600px;
+}
+#main_3 {
+  left:-390px;
+}
+.mega-menu {
+  /* display:none; */
+  position:absolute;
+  z-index: 4;
+  background-color:#F4F4F4;
+  display:none;
+}
+.main-nav ul li:hover .mega-menu {
+  display:flex;
+}
+.mega-menu .col {
+  width:210px;
+  padding:50px 25px;
+  box-sizing: border-box;
+}
+.mega-menu .col h4 {
+  text-align: left;
+  margin-bottom:4px;
+}
+.mega-menu .col hr {
+  width:125px;
+  border-width: 1px;
+}
+.mega-menu .first h4 {
+  color:#fff;
+}
+.mega-menu .first a {
+  color:#fff;
+}
+.mega-menu .col ul {
+  display:flex;
+  flex-direction: column;
+  margin-top:30px;
+}
+.mega-menu .col ul li {
+  text-align: left;
+  margin-top:0;
+}
+.mega-menu .col ul li a {
+  text-transform: unset;
+  border-bottom: 0;
+  padding:6px 0;
+  font-size:14px;
+  border-bottom:0!important;
+  background-color:unset!important;
+}
+.mega-menu .col ul li:hover a {
+  border-bottom:0;
+  background-color:unset;
+  font-weight:bold;
+}
+.mega-menu .first {
+  order:-1;
+  background-color:#03873D;
+}
 /* Heros */
 
 .hero-banner {
