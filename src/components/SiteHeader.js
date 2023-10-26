@@ -63,7 +63,7 @@ export default function SiteHeader() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
 
-  console.log(data)
+  //console.log(data)
 
   return (
     <div className="site-header">
@@ -93,7 +93,7 @@ export default function SiteHeader() {
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           //Only show the links that belong in that category
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li><Link to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            <li key={links.id}><Link to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
                       </div>
@@ -106,7 +106,7 @@ export default function SiteHeader() {
                         <ul>
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li><Link to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            <li key={links.id}><Link to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
                       </div>

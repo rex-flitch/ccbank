@@ -26,8 +26,8 @@ export default function AccountLogin() {
                     <div className="accordion-title" onClick={() => toggleClass(1)}>Personal Banking</div>
                     <div className={`accordion-body ${isActive1 ? 'active' : 'inactive'}`}>
                         <form className="login-fields" action="https://cibng.ibanking-services.com/EamWeb/Remote/RemoteLoginAPI.aspx? FIORG=18U&orgId=18U_124302927&FIFID=124302927&brand=18U_124302927&appId=ceb" method="POST"> 
-                            <input className="login-input" name="_textBoxUserId" type="text" maxlength="32" id="_textBoxUserId" placeholder="User ID" aria-label="User ID"/> 
-                            <input name="_textBoxCompanyId" type="hidden" maxlength="26" id="_textBoxCompanyId" value="18U_124302927"/> 
+                            <input className="login-input" name="_textBoxUserId" type="text" maxLength="32" id="_textBoxUserId" placeholder="User ID" aria-label="User ID"/> 
+                            <input name="_textBoxCompanyId" type="hidden" maxLength="26" id="_textBoxCompanyId" value="18U_124302927"/> 
                             <input name="_buttonContinue" type="submit" value="Sign In" id="_buttonContinue" className="login-btn-1" /> 
                         </form>
                         <div className="login-buttons">
@@ -44,8 +44,8 @@ export default function AccountLogin() {
                     <div className={`accordion-body ${isActive2 ? 'active' : 'inactive'}`}>
                         <form className="login-fields" action="https://ccbankutah.ebanking-services.com/EamWeb/Remote/RemoteLoginApi.aspx?appID=beb&brand=ccbankutah" method="POST"> 
                             <span className="cid-messg">If you don’t have the company ID, please call 801-763-5066</span>
-                            <input className="login-input" name="_textBoxCompanyId" type="text" maxlength="26" id="_textBoxCompanyId" placeholder="Company ID" aria-label="Company ID"/>
-                            <input className="login-input" name="_textBoxUserId" type="text" maxlength="32" id="_textBoxUserId" placeholder="User ID" aria-label="User ID"/> 
+                            <input className="login-input" name="_textBoxCompanyId" type="text" maxLength="26" id="_textBoxCompanyId" placeholder="Company ID" aria-label="Company ID"/>
+                            <input className="login-input" name="_textBoxUserId" type="text" maxLength="32" id="_textBoxUserId" placeholder="User ID" aria-label="User ID"/> 
                             <input name="_buttonContinue" type="submit" value="Sign In" id="_buttonContinue" className="remoteFrame button login-btn-1" /> 
                         </form> 
                         <div className='account-button'><Link to='https://ccbankutah.ebanking-services.com/Nubi/Trace/Enroll.aspx' target="_blank" rel="noopener noreferrer">Enroll in Business Banking</Link></div>

@@ -282,7 +282,7 @@ export default function Homepage() {
             className='hero-slider'
             >
                 {data.homepage.data.attributes.HomepageHero.map((hero) => (
-                <div className='hero' style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
+                <div key={hero.id} className='hero' style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
                         
@@ -356,7 +356,7 @@ export default function Homepage() {
                         <h5>{data.homepage.data.attributes.HomepageRates.SuperTitle}</h5>
                         <h2>{data.homepage.data.attributes.HomepageRates.Title}</h2>
                         <hr className='orange' />
-                        <p>{parse(data.homepage.data.attributes.HomepageRates.Description)}</p>
+                        <div>{parse(data.homepage.data.attributes.HomepageRates.Description)}</div>
                         <div className='btn-orange'><Link to={data.homepage.data.attributes.HomepageRates.ButtonURL}>{data.homepage.data.attributes.HomepageRates.ButtonTitle}</Link></div>
                     </div>
                     <div className='rates-cta-item'>
@@ -399,7 +399,7 @@ export default function Homepage() {
                     {parse(data.homepage.data.attributes.Quote)}
                 </div>
             </div>
-            <div className='icon-cta'>
+            {/* <div className='icon-cta'>
                 <div className='container cta-icon-box'>
                     {data.homepage.data.attributes.HomepageIconCTA.map((iconcta) => (
                         <div key={iconcta.id} className='iconcta'>
@@ -413,22 +413,42 @@ export default function Homepage() {
                         </div>
                     ))}
                 </div>
+            </div> */}
+            <div className='video-wrapper'>
+                <div className='video-box container'>
+                    <div className='video-player'>
+                        {data.homepage.data.attributes.HomepageVideo[1].Video.data !== null &&
+                            <video controls>
+                                <source src={data.homepage.data.attributes.HomepageVideo[1].Video.data.attributes.url} type="video/mp4"/>
+                            </video>
+                        }
+                        {data.homepage.data.attributes.HomepageVideo[1].YouTubeSRC !== null &&
+                            <iframe className="youtube" src={data.homepage.data.attributes.HomepageVideo[1].YouTubeSRC} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        }
+                        
+                    </div>
+                    <div className='video-info'>
+                        <h2>{data.homepage.data.attributes.HomepageVideo[1].Title}</h2>
+                        <hr className='green'></hr>
+                        <p>{data.homepage.data.attributes.HomepageVideo[1].Description}</p>
+                    </div>
+                </div>
             </div>
             <div className='video-wrapper'>
                 <div className='video-box container'>
                     <div className='video-info'>
-                        <h2>{data.homepage.data.attributes.HomepageVideo.Title}</h2>
+                        <h2>{data.homepage.data.attributes.HomepageVideo[0].Title}</h2>
                         <hr className='green'></hr>
-                        <p>{data.homepage.data.attributes.HomepageVideo.Description}</p>
+                        <p>{data.homepage.data.attributes.HomepageVideo[0].Description}</p>
                     </div>
                     <div className='video-player'>
-                        {data.homepage.data.attributes.HomepageVideo.Video.data !== null &&
+                        {data.homepage.data.attributes.HomepageVideo[0].Video.data !== null &&
                             <video controls>
-                                <source src={data.homepage.data.attributes.HomepageVideo.Video.data.attributes.url} type="video/mp4"/>
+                                <source src={data.homepage.data.attributes.HomepageVideo[0].Video.data.attributes.url} type="video/mp4"/>
                             </video>
                         }
-                        {data.homepage.data.attributes.HomepageVideo.YouTubeSRC !== null &&
-                            <iframe class="youtube" src={data.homepage.data.attributes.HomepageVideo.YouTubeSRC} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        {data.homepage.data.attributes.HomepageVideo[0].YouTubeSRC !== null &&
+                            <iframe className="youtube" src={data.homepage.data.attributes.HomepageVideo[0].YouTubeSRC} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         }
                         
                     </div>
