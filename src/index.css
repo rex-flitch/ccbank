@@ -397,6 +397,35 @@ hr.center {
   font-size:14px;
 }
 /* I'm Looking For */
+.looking-item {
+  display:flex;
+  padding: 0 100px;
+  align-items: center;
+  gap:30px;
+}
+.look-info {
+  width:50%;
+}
+.look-image {
+  width:50%;
+}
+.look-image img {
+  width:100%;
+}
+.looking-for .react-multi-carousel-dot-list {
+  align-items:start;
+  top:0;
+  bottom:unset!important;
+  width:100%;
+  border-bottom:1px solid #000;
+}
+.looking-for .react-multi-carousel-dot-list button {
+ width:100%;
+ padding:15px 0;
+}
+.looking-for .react-multi-carousel-track {
+  margin-top:100px;
+}
 .looking-for {
   padding:75px 0;
 }

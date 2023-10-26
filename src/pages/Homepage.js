@@ -130,7 +130,22 @@ const HOMEPAGEINFO = gql`
                             }
                         }
                     }
-                    Quote
+                    Quote,
+                    LookingFor {
+                        id,
+                        Title,
+                        Description,
+                        ButtonURL,
+                        ButtonTitle,
+                        Image {
+                          data {
+                            attributes {
+                              url,
+                              alternativeText
+                            }
+                          }
+                        }
+                    }
                 }
             }
         }
@@ -206,6 +221,27 @@ export default function Homepage() {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
 
+    const CustomDot = ({ index, onClick, active }) => {
+        const dotText = ['PERSONAL CHECKING', 'SAVINGS & CDS', 'COMMERCIAL LOANS','HOME EQUITY LINE OF CREDIT','BUSINESS CHECKING'][index]; // Define your custom dot texts
+      
+        return (
+          <button
+            style={{
+              color: active ? '#de7205' : '#666666', // Change the active and inactive dot color
+              fontWeight: active ? 'bold' : '500',
+              border: 'none',
+              borderBottom: active ? '4px solid #03873d' : 'none',
+              cursor: 'pointer',
+              background: 'none',
+              margin: '0 5px', // Adjust the spacing between dots
+            }}
+            onClick={() => onClick()}
+          >
+            {dotText}
+          </button>
+        );
+      };
+
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -265,17 +301,38 @@ export default function Homepage() {
                 ))}
                 </Carousel>
             </div>
-            <div className='looking-for'>
-                <div className='container'>
-                    <h2>{data.lookingFors.data[0].attributes.Title}</h2>
-                    <hr className="green"></hr>
-                    <select>
-                    {data.lookingFors.data[0].attributes.LookingForList.map((list) => (
-                        <option key={list.id}>{list.LinkText}</option>
-                    ))}
-                    </select>
-                    <div className='btn-ghost-green'><Link to={data.lookingFors.data[0].attributes.ButtonURL}>{data.lookingFors.data[0].attributes.ButtonTitle}</Link></div>
-                </div>
+            <div className='looking-for container'>
+                <Carousel 
+                swipeable={true}
+                draggable={true}
+                showDots={true}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                autoPlay={false}
+                autoPlaySpeed={6000}
+                keyBoardControl={true}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+                className='hero-slider'
+                customDot={<CustomDot />}
+                >
+                {data.homepage.data.attributes.LookingFor.map((look) => (
+                    <div key={look.id} className='looking-item'>
+                        <div className='look-info'>
+                            <h3 className='orange'>{look.Title}</h3>
+                            <hr className='green'></hr>
+                            <p>{parse(look.Description)}</p>
+                            <div className='btn-green mg-top-50'><Link to={look.ButtonURL}>{look.ButtonTitle}</Link></div>
+                        </div>
+                        <div className='look-image'>
+                            <img src={look.Image.data.attributes.url} alt={look.Image.data.attributes.alternativeText}/>
+                        </div>
+                    </div>
+                ))}
+                </Carousel>
             </div>
             <div className='cta-wrapper'>
                 <div className='cta-box container'>
@@ -292,10 +349,6 @@ export default function Homepage() {
                     ))}
                 </div>
             </div>
-            <div className='container mg-top-50 mg-bottom-50'>
-                <h2 className='center'>Featured Rates</h2>
-                <hr className="green center"></hr>
-            </div>
             <div className='rates-cta' style={{backgroundImage: `url(${data.homepage.data.attributes.HomepageRates.BackgroundImage.data.attributes.url})`}}>
                 <div className='overlay'></div>
                 <div className='container rates-cta-flex max-800 mg-auto'>
@@ -310,7 +363,7 @@ export default function Homepage() {
                         <div className='rates-cta-box'>
                             <div className='rates-cta-type'>{data.homepage.data.attributes.HomepageRates.GreenAreaText}</div>
                             <div className='rates-cta-info'>
-                                <h2>{data.homepage.data.attributes.HomepageRates.type_of_rate.data.attributes.rates.data[1].attributes.APY}</h2>
+                                <h2>{data.homepage.data.attributes.HomepageRates.type_of_rate.data.attributes.rates.data[2].attributes.APY}</h2>
                                 <h4>{data.homepage.data.attributes.HomepageRates.BelowRateText}</h4>
                                 <hr className='green center' />
                                 <p>{data.homepage.data.attributes.HomepageRates.BottomAreaText}</p>
