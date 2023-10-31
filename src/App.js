@@ -16,6 +16,7 @@ import LoanOfficers from './pages/LoanOfficers'
 import Heloc from './pages/Heloc'
 import CommercialIndustrialLoans from './pages/CommercialIndustrialLoans'
 import SBALoans from './pages/SBALoans'
+import TeamMemberDetails from './pages/TeamMemberDetails'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 
@@ -47,6 +48,7 @@ function App() {
               <Route path="/heloc" element={<Heloc />}/>
               <Route path="/commercial-industrial-loans" element={<CommercialIndustrialLoans />}/>
               <Route path="/sbaloans" element={<SBALoans />}/>
+              <Route path="/team/:slug" element={<TeamMemberDetails />}/>
             </Routes>
             <SiteFooter />
           </div>

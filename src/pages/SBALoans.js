@@ -51,6 +51,7 @@ const SBALOANSINFO = gql`
                   TeamMemberEmail,
                   TeamMemberPosition
                   NMLS,
+                  slug,
                   Bio,
                   TeamMemberImage {
                     data {
@@ -122,10 +123,13 @@ export default function SBALoans() {
             <div className='team-container container'>
                 {data.sbaLoan.data.attributes.SBALendingTeam.map((team) => (
                     <div key='team.id' className='location-team-item'>
+                        <div className='link-overlay'><Link to={`/team/${team.slug}`}></Link></div>
                         <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
                         <h3 className='green uppercase'>{team.TeamMemberName}</h3>
                         <p>{team.TeamMemberPosition}</p>
-                        <p>NMLS {team.NMLS}</p>
+                        {team.NMLS !== null &&
+                          <p>NMLS {team.NMLS}</p>
+                        }
                         <p className='mg-top-20'>{parse(team.TeamMemberPhone)}</p>
                         <p>{team.TeamMemberEmail}</p>
                         {team.Bio !== null &&

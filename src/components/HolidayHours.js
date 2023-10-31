@@ -3,7 +3,7 @@ import { useQuery, gql } from '@apollo/client'
 
 const HOLIDAYS = gql`
     query getHolidays {
-        holidaySchedules {
+        holidaySchedules(sort: "id") {
             data {
               attributes {
                 Date,

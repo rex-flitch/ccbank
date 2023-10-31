@@ -60,7 +60,7 @@ export default function SiteFooter() {
         <div className='footer-middle-line'>
             <span>Routing &amp; Transit Number: {data.ccBankSettings.data[0].attributes.RouterNumber}</span>
             <span>NMLS Number: {data.ccBankSettings.data[0].attributes.NMLSnumber}</span>
-            <span className='grey'>EQUAL HOUSING LENDER | MEMBER FDIC</span>
+            <span>EQUAL HOUSING LENDER | MEMBER FDIC</span>
         </div>
         <div className='footer-bottom-line'>
             <ul>
@@ -71,7 +71,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className='footer-copy'>
-        <p>Copyright &copy; 2022-2023 CCBank. Al Right Reserved</p>
+        <p>Copyright &copy; 2023-2024 CCBank. Al Right Reserved</p>
       </div>
     </div>
   )

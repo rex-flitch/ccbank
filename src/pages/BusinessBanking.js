@@ -38,7 +38,8 @@ const BUSINESSBANKING = gql`
                   }
                 }
               }
-              TeamMemberName
+              TeamMemberName,
+              slug
             }
             BeyondBanking {
               Title,
@@ -166,6 +167,7 @@ export default function BusinessBanking() {
         >
         {data.businessBanking.data.attributes.OurBankingTeam.map((members) => (
           <div className='slider-member'>
+            <div className='link-overlay'><Link to={`/team/${members.slug}`}></Link></div>
             <div className='slider-image'><img src={members.TeamMemberImage.data.attributes.url} alt={members.TeamMemberImage.data.attributes.alternativeText} /></div>
             <h4 className='green'>{members.TeamMemberName}</h4>
           </div>
