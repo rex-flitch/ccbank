@@ -1,13 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
-
-const script = document.createElement('script');
-
-script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
-script.async = true;
-
-document.body.appendChild(script);
 
 const CCSettings = gql`
 query getHomepage {
@@ -65,6 +58,25 @@ query getHomepage {
 `
 
 export default function SiteHeader() {
+  // const checkForSGI = () => {
+  //   const sgiElement = document.getElementById('sgi');
+  //   if (sgiElement) {
+  //     // Your script here
+  //     console.log('Element with ID "sgi" exists on the DOM');
+  //     const script = document.createElement('script');
+
+  //     script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
+  //     script.async = true;
+
+  //     document.body.appendChild(script);
+  //   } else {
+  //     setTimeout(checkForSGI, 5000); // Check again after 1 second
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   checkForSGI(); // Start checking when the component mounts
+  // }, []);
 
   const { loading, error, data } = useQuery(CCSettings)
 
