@@ -724,28 +724,60 @@ option {
 }
 
 /* CC Bank Locations */
-.cc-locations {
-  background-color:#444444;
-}
 .cc-locations-box {
   padding:50px 0;
-  max-width:1400px;
 }
 .cc-locations-inner {
-  display:flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   width:100%;
-  height:920px;
-  gap:12px;
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 860px;
+  background-size: cover;
+  padding:50px 0;
+}
+.cc-locations-innerhtml {
+  background-color:#fff;
+  display: flex;
+}
+.cc-locations-flex.left {
+  width:40%;
+  padding: 50px;
+}
+.cc-locations-flex.right {
+  width:60%;
+}
+.locations-info-titles {
+  padding:8px 0;
+  border-bottom:1px solid #f4f4f4;
+  cursor: pointer;
 }
 .locate {
   width:50%;
   display: flex;
   
+}
+.locations-info {
+  display:flex;
+}
+.left-links {
+  width:40%;
+}
+.right-map {
+  width:60%;
+}
+.locations-info {
+  display:none;
+}
+.locations-info.active {
+  display:block;
+}
+.hours-info {
+  background-color:#222;
+  color:#fff;
+  display: flex;
+  padding:20px;
+}
+.hours-info div {
+  width:50%;
 }
 .locate-info {
   background-color:#fff;

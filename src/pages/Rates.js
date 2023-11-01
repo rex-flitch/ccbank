@@ -85,6 +85,13 @@ const RATESPAGE = gql`
 `
 export default function Rates() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
+  const script = document.createElement('script');
+
+  script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
+  script.async = true;
+  
+  document.body.appendChild(script);
+
   const { loading, error, data } = useQuery(RATESPAGE)
   
   // const [selectedIdx, setSelectedIdx] = useState(null);
@@ -134,7 +141,7 @@ export default function Rates() {
                 <h5>{data.ratepage.data.attributes.RatesCTA.SuperTitle}</h5>
                 <h2>{data.ratepage.data.attributes.RatesCTA.Title}</h2>
                 <hr className='orange' />
-                <p>{parse(data.ratepage.data.attributes.RatesCTA.Description)}</p>
+                <div>{parse(data.ratepage.data.attributes.RatesCTA.Description)}</div>
                 <div className='btn-orange'><Link to={data.ratepage.data.attributes.RatesCTA.ButtonURL}>{data.ratepage.data.attributes.RatesCTA.ButtonTitle}</Link></div>
             </div>
             <div className='rates-cta-item'>
@@ -171,10 +178,10 @@ export default function Rates() {
         <hr className='green center' />
         <table className='mg-top-50'>
             <tr>
-                <th className='orange-header' colspan='4'>DEMAND DEPOSIT PRODUCTS</th>
+                <th className='orange-header' colSpan='4'>DEMAND DEPOSIT PRODUCTS</th>
             </tr>
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[0].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[0].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -187,12 +194,12 @@ export default function Rates() {
             </tr>
             ))}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[1].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[1].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
             {data.typeOfRates.data[1].attributes.rates.data.map((rate) => (
-            <tr key={rate.id} class={counter}>
+            <tr key={rate.id} className={counter}>
                 <td>{counter === 0 ? 'Balance' : ''}</td>
                 <td>{rate.attributes.Balances}</td>
                 <td className='center'>{rate.attributes.InterestRate}</td>
@@ -202,7 +209,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[2].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[2].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -217,7 +224,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[3].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[3].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -232,7 +239,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[4].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[4].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -247,7 +254,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[5].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[5].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -262,7 +269,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[6].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[6].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -277,7 +284,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[7].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[7].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -295,10 +302,10 @@ export default function Rates() {
         <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div>
         <table>
             <tr>
-                <th className='orange-header' colspan='4'>CERTIFICATE OF DEPOSIT</th>
+                <th className='orange-header' colSpan='4'>CERTIFICATE OF DEPOSIT</th>
             </tr>
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[8].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[8].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -313,7 +320,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[9].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[9].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>
@@ -328,7 +335,7 @@ export default function Rates() {
             ))}
             {resetcounter()}
             <tr>
-                <th colspan='2'>{data.typeOfRates.data[10].attributes.RateType}</th>
+                <th colSpan='2'>{data.typeOfRates.data[10].attributes.RateType}</th>
                 <th className='center'>INTEREST RATE</th>
                 <th className='center'>APY</th>
             </tr>

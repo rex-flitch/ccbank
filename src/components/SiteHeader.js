@@ -2,6 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 
+const script = document.createElement('script');
+
+script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
+script.async = true;
+
+document.body.appendChild(script);
+
 const CCSettings = gql`
 query getHomepage {
   ccBankSettings {
@@ -58,11 +65,12 @@ query getHomepage {
 `
 
 export default function SiteHeader() {
+
   const { loading, error, data } = useQuery(CCSettings)
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
-
+  
   //console.log(data)
 
   return (

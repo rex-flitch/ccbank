@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 //import useFetch from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
@@ -208,7 +208,11 @@ const HOMEPAGEINFO = gql`
                 Zip,
                 State,
                 Telephone,
-                HasATM
+                HasATM,
+                Map,
+                EmbedMapCode,
+                LobbyHours,
+                DriveThroughHours
               }
             }
         }
@@ -216,11 +220,16 @@ const HOMEPAGEINFO = gql`
 `
 export default function Homepage() {
     //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleLinkClick = (index) => {
+        setActiveIndex(index);
+    };
     const { loading, error, data } = useQuery(HOMEPAGEINFO)
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
-
+    
     const CustomDot = ({ index, onClick, active }) => {
         const dotText = ['PERSONAL CHECKING', 'SAVINGS & CDS', 'COMMERCIAL LOANS','HOME EQUITY LINE OF CREDIT','BUSINESS CHECKING'][index]; // Define your custom dot texts
       
@@ -455,23 +464,60 @@ export default function Homepage() {
                 </div>
             </div>
             <div className='cc-locations'>
-                <div className='cc-locations-box container'>
-                    <h2 className='center white'>{data.homepage.data.attributes.Locations.Title}</h2>
+                <div className='cc-locations-box'>
+                    <h2 className='center orange'>{data.homepage.data.attributes.Locations.Title}</h2>
                     <hr className='green center mg-bottom-50'></hr>
                     <div className='cc-locations-inner' style={{backgroundImage: `url(${data.homepage.data.attributes.Locations.LocationMap.data.attributes.url})`}}>
-                        {data.ccBankLocations.data.map((locate, index) => (
-                            // <div key={locate.id} className={`locate item-${index+1}`}>
-                            <div key={locate.id} className={`locate item-${index+1 > 3 ? 'right' : 'left'}`}>
-                                <div className='locate-info'>
-                                    <div className='city'><h3 className='green'>{locate.attributes.City}</h3></div>
-                                    <div className='address'><p>{locate.attributes.Address}</p></div>
-                                    <div className='address-1'><p>{locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>
-                                    <div className='telephone'><p>{locate.attributes.Telephone}</p></div>
-                                    <div className='atm'><p>{locate.attributes.HasATM === true ? 'ATM Available' : ''}</p></div>
-                                    <div className='btn-green'><a href="/">HOURS & DIRECTIONS</a></div>
+                        <div className='container cc-locations-innerhtml'>
+                            <div className='cc-locations-flex left'>
+                            {data.ccBankLocations.data.map((locate, index) => (
+                                // <div key={locate.id} className={`locate item-${index+1}`}>
+                                // <div key={locate.id} className={`locate item-${index+1 > 3 ? 'right' : 'left'}`}>
+                                //     <div className='locate-info'>
+                                //         <div className='city'><h3 className='green'>{locate.attributes.City}</h3></div>
+                                //         <div className='address'><p>{locate.attributes.Address}</p></div>
+                                //         <div className='address-1'><p>{locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>
+                                //         <div className='telephone'><p>{locate.attributes.Telephone}</p></div>
+                                //         <div className='atm'><p>{locate.attributes.HasATM === true ? 'ATM Available' : ''}</p></div>
+                                //         <div className='btn-green'><a href="/">HOURS & DIRECTIONS</a></div>
+                                //     </div>
+                                // </div>
+                                <div key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
+                                    <div className='left-links'>
+                                        <div>{locate.attributes.City}</div>
+                                    </div>
                                 </div>
+                            ))}
                             </div>
-                        ))}
+                            <div className='cc-locations-flex right'>
+                            {data.ccBankLocations.data.map((locate2, index) => (
+                                <div key={locate2.id} className={`locations-info ${activeIndex === index ? 'active' : ''}`}>
+                                    <div className='right-map'>
+                                    {locate2.attributes.EmbedMapCode !== null &&
+                                        <div>{parse(locate2.attributes.EmbedMapCode)}</div>
+                                    }
+                                    </div>
+                                    <div className='hours-info'>
+                                        <div className='location-address'>
+                                            <p><strong>{locate2.attributes.City}</strong></p>
+                                            <p>{locate2.attributes.Address}<br />
+                                            {locate2.attributes.City}, {locate2.attributes.State} {locate2.attributes.Zip}</p>
+                                            <p>{locate2.attributes.Telephone}</p>
+                                        </div>
+                                        <div className='location-hours-home'>
+                                        {locate2.attributes.LobbyHours !== null &&
+                                            <p><strong>Lobby Hours</strong><br />{locate2.attributes.LobbyHours}</p>
+                                        }
+                                        {locate2.attributes.DriveThroughHours !== null &&
+                                            <p><strong>Drive-Through Hours</strong><br />{parse(locate2.attributes.DriveThroughHours)}</p>
+                                        }
+                                        </div>
+                                    </div>
+                                </div>
+
+                            ))}
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
