@@ -2,11 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import TagManager from 'react-gtm-module';
-
-TagManager.initialize({
-  gtmId: 'GTM-WWQ497TF', // Replace with your GTM container ID
-});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

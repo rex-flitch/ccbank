@@ -19,6 +19,12 @@ import SBALoans from './pages/SBALoans'
 import TeamMemberDetails from './pages/TeamMemberDetails'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-WWQ497TF'
+}
+TagManager.initialize(tagManagerArgs);
 
 // apollo client
 const client = new ApolloClient({
