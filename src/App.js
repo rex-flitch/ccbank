@@ -17,6 +17,7 @@ import Heloc from './pages/Heloc'
 import CommercialIndustrialLoans from './pages/CommercialIndustrialLoans'
 import SBALoans from './pages/SBALoans'
 import TeamMemberDetails from './pages/TeamMemberDetails'
+import Calc from './pages/Calc'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -29,8 +30,12 @@ TagManager.initialize(tagManagerArgs);
 // apollo client
 const client = new ApolloClient({
   uri: 'https://whispering-hamlet-41063-0292a439d9c6.herokuapp.com/graphql',
-  //uri: 'http://localhost:1337/graphql',
-  cache: new InMemoryCache()
+  // uri: 'http://localhost:1337/graphql',
+  cache: new InMemoryCache(),
+  debug: true,
+  tracing: true,
+  introspection: true,
+  playground: true
 })
 
 function App() {
@@ -55,6 +60,7 @@ function App() {
               <Route path="/commercial-industrial-loans" element={<CommercialIndustrialLoans />}/>
               <Route path="/sbaloans" element={<SBALoans />}/>
               <Route path="/team/:slug" element={<TeamMemberDetails />}/>
+              <Route path="/calc" element={<Calc />}/>
             </Routes>
             <SiteFooter />
           </div>
