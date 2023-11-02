@@ -85,12 +85,7 @@ const RATESPAGE = gql`
 `
 export default function Rates() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const script = document.createElement('script');
-
-  script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
-  script.async = true;
   
-  document.body.appendChild(script);
 
   const { loading, error, data } = useQuery(RATESPAGE)
   

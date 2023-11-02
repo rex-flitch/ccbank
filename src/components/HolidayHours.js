@@ -19,7 +19,7 @@ export default function HolidayHours() {
   const { loading, error, data } = useQuery(HOLIDAYS)
 
   if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  if (error) return <p>Error</p>
 
   // console.log(data)
 
