@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 // import parse from 'html-react-parser'
+import HolidayHours from '../components/HolidayHours'
 import AccountLogin from '../components/AccountLogin'
 
 const LOCATIONSPAGE = gql`
@@ -112,23 +113,9 @@ contact us in person, on the phone, or online.</p>
             ))}
         </div>
       </div>
-      <div className='holidays'>
-        <div className='container'>
-            <h2 className='center'>{data.location.data.attributes.HolidaysTitle}</h2>
-            <hr className='green center' />
-            <div className='holidays-container'>
-            {data.holidaySchedules.data.map((holiday) => (
-                <div className='holiday-item'>
-                    <div className='h-date'>{holiday.attributes.Date}</div>
-                    <div className='h-day'>{holiday.attributes.DayOfWeek}</div>
-                    <div className='h-name'>{holiday.attributes.HolidayName}</div>
-                </div>
-            ))}
-            </div>
-            <h4 className='center green mg-0 mg-top-50'>Routing Number</h4>
+      <HolidayHours />
+      <h4 className='center green mg-0 mg-top-50'>Routing Number</h4>
             <p className='center mg-0'>{data.ccBankSettings.data[0].attributes.RouterNumber}</p>
-        </div>
-      </div>
     </div>
   )
 }

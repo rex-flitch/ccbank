@@ -5,6 +5,7 @@ const HOLIDAYS = gql`
     query getHolidays {
         holidaySchedules(sort: "id") {
             data {
+              id,
               attributes {
                 Date,
                 DayOfWeek,

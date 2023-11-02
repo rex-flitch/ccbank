@@ -29,6 +29,7 @@ const CONSTRUCTIONLOTLOANINFO = gql`
                 ReputableAffiliationsDescriptionTop,
                 ReputableAffiliationsDescriptionBottom,
                 ReputableAffiliationsBoxes {
+                  id,
                   SuperTitle,
                   MainTitle
                 }
@@ -95,18 +96,18 @@ export default function Construction() {
       </div>
       <h2 className='center mg-top-50'>{data.constructionAndLotLoan.data.attributes.ConstructionTitle}</h2>
       <hr className='green center'></hr>
-      <p className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ConstructionDescription)}</p>
+      <div className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ConstructionDescription)}</div>
       <div className='agreement mg-top-50' style={{backgroundImage: `url(${data.constructionAndLotLoan.data.attributes.AgreeableTerms.BackgroundImage.data.attributes.url})`}}>
         <div className='grad-overlay'></div>
         <div className='background-left-text-text pd-tb-30 container max-800'>
             <h2 className='white max-400'>{data.constructionAndLotLoan.data.attributes.AgreeableTerms.Title}</h2>
             <hr className='orange'></hr>
-            <p className='max-400 white'>{parse(data.constructionAndLotLoan.data.attributes.AgreeableTerms.Text)}</p>
+            <div className='max-400 white'>{parse(data.constructionAndLotLoan.data.attributes.AgreeableTerms.Text)}</div>
         </div>
       </div>
       <h2 className='mg-top-50 center'>{data.constructionAndLotLoan.data.attributes.ReputableAffiliationsTitle}</h2>
       <hr className='green center'></hr>
-      <p className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ReputableAffiliationsDescriptionTop)}</p>
+      <div className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ReputableAffiliationsDescriptionTop)}</div>
       <div className='box-cta max-800 mg-auto'>
         {data.constructionAndLotLoan.data.attributes.ReputableAffiliationsBoxes.map((box) => (
             <div key='box.id' className='box-item'>
@@ -115,7 +116,7 @@ export default function Construction() {
             </div>
         ))}
       </div>
-      <p className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ReputableAffiliationsDescriptionBottom)}</p>
+      <div className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ReputableAffiliationsDescriptionBottom)}</div>
       <div className='calculators'>
         <div id='sgi' data-guid='b147b219-a6a5-4b4d-9f60-00e285df54de'></div>
       </div>
@@ -123,7 +124,7 @@ export default function Construction() {
             <div className='ric-info'>
                 <h2>{data.constructionAndLotLoan.data.attributes.LotLoans.Title}</h2>
                 <hr className='green'></hr>
-                <p>{parse(data.constructionAndLotLoan.data.attributes.LotLoans.Text)}</p>
+                <div>{parse(data.constructionAndLotLoan.data.attributes.LotLoans.Text)}</div>
                 <div className='btn-green'><Link to={data.constructionAndLotLoan.data.attributes.LotLoans.ButtonURL}>{data.constructionAndLotLoan.data.attributes.LotLoans.ButtonTitle}</Link></div>
                 <ul className='green'>
                     <li>Up to 75% financing</li>

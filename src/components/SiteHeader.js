@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 
@@ -58,6 +58,8 @@ query getHomepage {
 `
 
 export default function SiteHeader() {
+  
+  
   // const checkForSGI = () => {
   //   const sgiElement = document.getElementById('sgi');
   //   if (sgiElement) {
