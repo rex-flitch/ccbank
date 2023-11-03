@@ -52,15 +52,17 @@ const HELOCINFO = gql`
 `
 export default function Heloc() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const { loading, error, data } = useQuery(HELOCINFO)
+  const { data } = useQuery(HELOCINFO)
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error :(</p>
 
   console.log(data)
   return (
     <div className='wrapper merchant'>
-      <div className='hero-banner'>
+      {data && (
+        <>
+        <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.heloc.data.attributes.HELOCHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
@@ -111,6 +113,8 @@ export default function Heloc() {
             </div>
         </div>
       </div>
+        </>
+      )}
       <div className='calculators'>
         <div id='sgi' data-guid='a72417a0-9193-4d41-885f-3d3d6a37af3d'></div>
       </div>

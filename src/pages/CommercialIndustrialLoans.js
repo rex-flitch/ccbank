@@ -61,10 +61,10 @@ const CONSTRUCTIONINDUSTRIALINFO = gql`
 `
 export default function CommercialIndustrialLoans() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const { loading, error, data } = useQuery(CONSTRUCTIONINDUSTRIALINFO)
+  const { data } = useQuery(CONSTRUCTIONINDUSTRIALINFO)
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error :(</p>
 
   const responsive = {
     desktop: {
@@ -87,7 +87,9 @@ export default function CommercialIndustrialLoans() {
   console.log(data)
   return (
     <div className='wrapper merchant'>
-      <div className='hero-banner'>
+      {data && (
+        <>
+        <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.commercialAndIndustrialCAndILoan.data.attributes.CandIHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
@@ -155,8 +157,10 @@ export default function CommercialIndustrialLoans() {
         ))}
         </Carousel>
       </div>
+        </>
+      )}
       <div className='calculators'>
-        <div id='sgi' data-guid='b147b219-a6a5-4b4d-9f60-00e285df54de'></div>
+        <div id='sgi' data-guid='992bb347-c05f-4ea6-aa25-aaa0352409e2'></div>
       </div>
     </div>
   )

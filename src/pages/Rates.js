@@ -87,7 +87,7 @@ export default function Rates() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   
 
-  const { loading, error, data } = useQuery(RATESPAGE)
+  const { data } = useQuery(RATESPAGE)
   
   // const [selectedIdx, setSelectedIdx] = useState(null);
 
@@ -101,13 +101,15 @@ export default function Rates() {
   const addcounter = () => {
     counter = counter + 1
   }
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error :(</p>
 
   console.log(data)
   return (
     <div className='wrapper rates'>
-      <div className='hero-banner'>
+      {data && (
+        <>
+        <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.ratepage.data.attributes.RatesHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
@@ -165,10 +167,14 @@ export default function Rates() {
           ))}
         </div>
       </div>
+        </>
+      )}
       <div className='calculators'>
         <div id='sgi' data-guid='b147b219-a6a5-4b4d-9f60-00e285df54de'></div>
       </div>
-      <div className='rates-table container'>
+      {data && (
+        <>
+        <div className='rates-table container'>
         <h2 className='rates center'>Rates</h2>
         <hr className='green center' />
         <table className='mg-top-50'>
@@ -347,6 +353,8 @@ export default function Rates() {
         </table>
         <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div>
       </div>
+        </>
+      )}
     </div>
   )
 }
