@@ -84,8 +84,8 @@ export default function News() {
                         <div className='cc-news-page-info'>
                             <h5 className='center'>PRESS RELEASE</h5>
                             <hr className='center orange'></hr>
-                            <h4 className="orange fjalla center">{news.attributes.Title}</h4>
-                            <h5 className='center grey'>{news.attributes.Date}</h5>
+                            <h5 className='center dark-grey'>{news.attributes.Date}</h5>
+                            <h4 className="fjalla center">{news.attributes.Title}</h4>
                         </div>
                     </div>
                 ))}
