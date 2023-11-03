@@ -35,7 +35,8 @@ const client = new ApolloClient({
   debug: true,
   tracing: true,
   introspection: true,
-  playground: true
+  playground: true,
+  connectToDevTools: true
 })
 
 function App() {
