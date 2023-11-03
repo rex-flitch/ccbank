@@ -18,6 +18,8 @@ import CommercialIndustrialLoans from './pages/CommercialIndustrialLoans'
 import SBALoans from './pages/SBALoans'
 import TeamMemberDetails from './pages/TeamMemberDetails'
 import Calc from './pages/Calc'
+import IntraFi from './pages/IntraFi'
+import News from './pages/News'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -52,7 +54,7 @@ function App() {
               <Route path="/locations" element={<Locations />}/>
               <Route path="/locations/:slug" element={<LocationDetails />}/>
               <Route path="/careers" element={<Careers />}/>
-              <Route path="/rates" element={<Rates />}/>
+              <Route path="/rates" element={<Rates key={new Date()} />}/>
               <Route path="/business-banking" element={<BusinessBanking />}/>
               <Route path="/merchant-services" element={<Merchant />}/>
               <Route path="/construction-lot-loans" element={<Construction />}/>
@@ -62,6 +64,8 @@ function App() {
               <Route path="/sbaloans" element={<SBALoans />}/>
               <Route path="/team/:slug" element={<TeamMemberDetails />}/>
               <Route path="/calc" element={<Calc />}/>
+              <Route path="/intrafi" element={<IntraFi />}/>
+              <Route path="/news" element={<News />}/>
             </Routes>
             <SiteFooter />
           </div>

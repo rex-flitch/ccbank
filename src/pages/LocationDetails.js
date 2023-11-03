@@ -31,6 +31,7 @@ const LOCATION = gql`
                     TeamMemberPhone,
                     TeamMemberPosition,
                     TeamMemberEmail,
+                    NMLS,
                     TeamMemberImage {
                       data {
                         attributes {
@@ -72,7 +73,10 @@ export default function LocationDetails() {
                         <div key='team.id' className='location-team-item'>
                             <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
                             <h3 className='green uppercase'>{team.TeamMemberName}</h3>
-                            <p>{team.TeamMemberPosition}</p>
+                            <p>{parse(team.TeamMemberPosition)}</p>
+                            {team.NMLS && 
+                                <p>NMLS: {team.NMLS}</p>
+                            }
                             <p>Direct: {team.TeamMemberPhone}</p>
                             <p>{team.TeamMemberEmail}</p>
                         </div>

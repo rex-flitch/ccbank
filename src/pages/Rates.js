@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -83,9 +83,17 @@ const RATESPAGE = gql`
         }
     }
 `
-export default function Rates() {
+const Rates = ({ shouldReload }) => {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  
+  const [hasReloaded, setHasReloaded] = useState(true);
+
+  useEffect(() => {
+    // Ensure that reload happens only once
+    if (shouldReload && !hasReloaded) {
+      window.location.reload(true);
+      setHasReloaded(true); // Set the state to avoid a reload loop
+    }
+  }, [shouldReload, hasReloaded]);
 
   const { data } = useQuery(RATESPAGE)
   
@@ -139,7 +147,7 @@ export default function Rates() {
                 <h2>{data.ratepage.data.attributes.RatesCTA.Title}</h2>
                 <hr className='orange' />
                 <div>{parse(data.ratepage.data.attributes.RatesCTA.Description)}</div>
-                <div className='btn-orange'><Link to={data.ratepage.data.attributes.RatesCTA.ButtonURL}>{data.ratepage.data.attributes.RatesCTA.ButtonTitle}</Link></div>
+                <div className='btn-white'><Link to={data.ratepage.data.attributes.RatesCTA.ButtonURL}>{data.ratepage.data.attributes.RatesCTA.ButtonTitle}</Link></div>
             </div>
             <div className='rates-cta-item'>
                 <div className='rates-cta-box'>
@@ -155,7 +163,7 @@ export default function Rates() {
         </div>
       </div>
       <div className='qa-section container'>
-        <h2 className='center'>{data.ratepage.data.attributes.QATitle}</h2>
+        <h2 className='center mg-top-50'>{data.ratepage.data.attributes.QATitle}</h2>
         <hr className='center green'></hr>
         
         <div className='qa-container'>
@@ -358,3 +366,4 @@ export default function Rates() {
     </div>
   )
 }
+export default Rates;
