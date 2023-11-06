@@ -80,6 +80,7 @@ export default function SiteHeader() {
   //   checkForSGI(); // Start checking when the component mounts
   // }, []);
 
+
   const { loading, error, data } = useQuery(CCSettings)
 
   if (loading) return <p>Loading...</p>

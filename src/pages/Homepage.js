@@ -189,7 +189,7 @@ const HOMEPAGEINFO = gql`
                 attributes {
                     Title,
                     Date,
-                    Story,
+                    ShortStory,
                     Media {
                         data {
                             attributes {
@@ -530,7 +530,7 @@ export default function Homepage() {
                             <div className='cc-news-image' style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
                             <div className='cc-news-info'>
                                 <h4 className="orange fjalla">{news.attributes.Title}</h4>
-                                <p>{news.attributes.Story.substring(0, 250)}...</p>
+                                <p>{news.attributes.ShortStory.substring(0, 250)}...</p>
                                 <div><Link className='bold uppercase' to={`/news/${news.id}`}>Read more</Link></div>
                             </div>
                         </div>

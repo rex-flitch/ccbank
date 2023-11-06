@@ -75,6 +75,7 @@ const CONSTRUCTIONLOTLOANINFO = gql`
   }
 `
 export default function Calc() {
+  
     const { data } = useQuery(CONSTRUCTIONLOTLOANINFO)
 
     return (
