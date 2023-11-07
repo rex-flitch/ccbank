@@ -190,6 +190,7 @@ const HOMEPAGEINFO = gql`
                     Title,
                     Date,
                     ShortStory,
+                    slug,
                     Media {
                         data {
                             attributes {
@@ -531,7 +532,7 @@ export default function Homepage() {
                             <div className='cc-news-info'>
                                 <h4 className="orange fjalla">{news.attributes.Title}</h4>
                                 <p>{news.attributes.ShortStory.substring(0, 250)}...</p>
-                                <div><Link className='bold uppercase' to={`/news/${news.id}`}>Read more</Link></div>
+                                <div><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}>Read more</Link></div>
                             </div>
                         </div>
                     ))}

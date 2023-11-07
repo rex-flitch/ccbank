@@ -68,6 +68,12 @@ h4 {
 .dark-grey {
   color:#888888;
 }
+.black {
+  color:#000;
+}
+.bg-grey {
+  background-color:#F4F4F4;
+}
 .center {
   text-align: center!important;
 }
@@ -745,6 +751,10 @@ option {
 .cc-news-page-box {
   display:flex;
   gap:20px;
+  flex-wrap:wrap;
+}
+.cc-news-page-inner .video-player {
+  width:100%;
 }
 .cc-news-page-inner {
   display:flex;
@@ -782,6 +792,11 @@ option {
 }
 .cc-news-page-inner:hover img {
   opacity: 1;
+}
+.news-story img {
+  float:left;
+  max-width:400px;
+  padding: 10px 20px 20px 0;
 }
 /* CC Bank Locations */
 .cc-locations-box {

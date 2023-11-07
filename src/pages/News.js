@@ -33,7 +33,8 @@ const NEWSINFO = gql`
                 attributes {
                     Title,
                     Date,
-                    Story,
+                    ShortStory,
+                    slug,
                     Media {
                         data {
                             attributes {
@@ -44,6 +45,16 @@ const NEWSINFO = gql`
                     }
                 }
             }
+        }
+        ccBankVideoLibraries {
+          data {
+            id
+            attributes {
+              Title
+              Description
+              YouTubeSRC
+            }
+          }
         }
     }
 `
@@ -79,7 +90,7 @@ export default function News() {
             <div className='cc-news-page-box container'>
                 {data.ccBanksNews.data.map((news) => (
                     <div key={news.id} className='cc-news-page-inner'>
-                        <div className='cc-news-overlay'><Link className='bold uppercase' to={`/news/${news.id}`}></Link></div>
+                        <div className='cc-news-overlay'><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}></Link></div>
                         <div className='cc-news-page-image'><img src={news.attributes.Media.data[0].attributes.url} alt={news.attributes.Media.data[0].attributes.alternativeText} /></div>
                         <div className='cc-news-page-info'>
                             <h5 className='center'>PRESS RELEASE</h5>
@@ -88,6 +99,23 @@ export default function News() {
                             <h4 className="fjalla center">{news.attributes.Title}</h4>
                         </div>
                     </div>
+                ))}
+            </div>
+        </div>
+        <div className='cc-news-preview bg-grey'>
+          <h2 className='center black'>Videos</h2>
+          <hr className='center orange'></hr>
+            <div className='cc-news-page-box container mg-top-50'>
+                {data.ccBankVideoLibraries.data.map((video) => (
+                  <div key={video.id} className='cc-news-page-inner'>
+                    <div className='video-player'>
+                      {video.attributes.YouTubeSRC !== null &&
+                          <iframe className="youtube" src={video.attributes.YouTubeSRC} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      }
+                    </div>
+                    <h4>{video.attributes.Title}</h4>
+                    <hr className='orange'></hr>
+                  </div>
                 ))}
             </div>
         </div>

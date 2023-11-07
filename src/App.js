@@ -20,6 +20,10 @@ import TeamMemberDetails from './pages/TeamMemberDetails'
 import Calc from './pages/Calc'
 import IntraFi from './pages/IntraFi'
 import News from './pages/News'
+import NewsDetails from './pages/NewsDetails'
+import AuthorizationAchDebits from './pages/AuthorizationAchDebits'
+import AuthorizationStorage from './pages/AuthorizationStorage'
+import AuthorizationStorageDC from './pages/AuthorizationStorageDC'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -66,6 +70,10 @@ function App() {
               <Route path="/calc" element={<Calc />}/>
               <Route path="/intrafi" element={<IntraFi />}/>
               <Route path="/news" element={<News />}/>
+              <Route path="/news/:slug" element={<NewsDetails />}/>
+              <Route path="/biller-solutions/authorization-ach-debits" element={<AuthorizationAchDebits />}/>
+              <Route path="/biller-solutions/authorization-storage-of-bank-information" element={<AuthorizationStorage />}/>
+              <Route path="/biller-solutions/authorization-cc-payments" element={<AuthorizationStorageDC />}/>
             </Routes>
             <SiteFooter />
           </div>
