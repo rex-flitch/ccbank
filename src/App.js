@@ -24,6 +24,12 @@ import NewsDetails from './pages/NewsDetails'
 import AuthorizationAchDebits from './pages/AuthorizationAchDebits'
 import AuthorizationStorage from './pages/AuthorizationStorage'
 import AuthorizationStorageDC from './pages/AuthorizationStorageDC'
+import EppTermsConditions from './pages/EppTermsConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import OnlinePrivacyPolicy from './pages/OnlinePrivacyPolicy'
+import SecurityStatements from './pages/SecurityStatements'
+import BusinessChecking from './pages/BusinessChecking'
+import PersonalBanking from './pages/PersonalBanking'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -74,6 +80,12 @@ function App() {
               <Route path="/biller-solutions/authorization-ach-debits" element={<AuthorizationAchDebits />}/>
               <Route path="/biller-solutions/authorization-storage-of-bank-information" element={<AuthorizationStorage />}/>
               <Route path="/biller-solutions/authorization-cc-payments" element={<AuthorizationStorageDC />}/>
+              <Route path="/biller-solutions/epp-terms-and-conditions" element={<EppTermsConditions />}/>
+              <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
+              <Route path="/online-privacy-policy" element={<OnlinePrivacyPolicy />}/>
+              <Route path="/biller-solutions/security-statements" element={<SecurityStatements />}/>
+              <Route path="/business-checking" element={<BusinessChecking />}/>
+              <Route path="/personal-banking" element={<PersonalBanking />}/>
             </Routes>
             <SiteFooter />
           </div>

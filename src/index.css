@@ -74,6 +74,16 @@ h4 {
 .bg-grey {
   background-color:#F4F4F4;
 }
+.bg-orange {
+  background-color:#de7205!important;
+  color:#fff;
+}
+.bg-dark-grey {
+  background-color:#DEDEDE;
+}
+.bg-white {
+  background-color:#fff;
+}
 .center {
   text-align: center!important;
 }
@@ -176,6 +186,9 @@ hr.center {
 }
 .pd-tb-30 {
   padding:30px 0;
+}
+.pd-tb-50 {
+  padding:50px 0;
 }
 .mg-top-20 {
   margin-top:20px!important;
@@ -488,6 +501,15 @@ option {
 }
 .cta-info hr {
   margin:0 auto;
+}
+.cta-info ul li {
+  text-align: left;
+}
+.col-2 .cta-box {
+  flex-wrap: wrap;
+}
+.col-2 .cta-box .cta {
+  width:48%;
 }
 .cta-box {
   display:flex;
@@ -1211,6 +1233,46 @@ th.orange-header {
 }
 .rates-table td:nth-of-type(4) {
   width:25%;
+}
+/* Commercial Banking Product Comparison Table */
+.bold {
+  font-weight: bold;
+}
+.cc-bank-table {
+  padding:50px 0;
+}
+.cbpc {
+  padding:10px;
+  box-shadow: 0 0 12px rgba(34, 34, 34, .15);
+}
+.cbpc table caption {
+  background-color:#000;
+  color:#fff;
+  padding:8px 0;
+  font-size:28px;
+  font-weight: bold;
+}
+.cbpc th {
+  background-color:#de7205;
+  color:#fff;
+  font-weight:bold;
+}
+.cbpc tr:nth-of-type(odd) {
+  background-color:#f4f4f4;
+}
+.cbpc td {
+  padding:20px;
+}
+.table-flex-col {
+  display:flex;
+  flex-direction: row;
+  font-weight: bold;
+}
+.table-flex-col div:first-of-type {
+  width:40%;
+}
+.table-flex-col div {
+  width:20%;
 }
 /* QA Section */
 .qa-item .question {

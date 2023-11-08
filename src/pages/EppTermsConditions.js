@@ -5,13 +5,13 @@ import parse from 'html-react-parser'
 import AccountLogin from '../components/AccountLogin'
 const BILLERSOLUTIONSAUTH = gql`
     query billerSolutions {
-        authorizationForStorageOfDc {
+        eppTermsAndCondition {
             data {
               id
               attributes {
                 Title
                 MainContent
-                StorageDCHero {
+                EPPHero {
                     Title
                   Description
                   ButtonURL
@@ -30,7 +30,7 @@ const BILLERSOLUTIONSAUTH = gql`
           }
     }
 `
-export default function AuthorizationStorageDC() {
+export default function EppTermsConditions() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(BILLERSOLUTIONSAUTH)
 
@@ -41,27 +41,27 @@ export default function AuthorizationStorageDC() {
   return (
     <div className='wrapper biller-solutions'>
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${data.authorizationForStorageOfDc.data.attributes.StorageDCHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' style={{backgroundImage: `url(${data.eppTermsAndCondition.data.attributes.EPPHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />
                 <div className='inner-hero'>
-                    <h1>{data.authorizationForStorageOfDc.data.attributes.StorageDCHero.Title}</h1>
+                    <h1>{data.eppTermsAndCondition.data.attributes.EPPHero.Title}</h1>
                     <hr className='orange'></hr>
-                    {data.authorizationForStorageOfDc.data.attributes.StorageDCHero.Description !== null &&
-                      <p>{data.authorizationForStorageOfDc.data.attributes.StorageDCHero.Description}</p>
+                    {data.eppTermsAndCondition.data.attributes.EPPHero.Description !== null &&
+                      <p>{data.eppTermsAndCondition.data.attributes.EPPHero.Description}</p>
                     }
-                    {data.authorizationForStorageOfDc.data.attributes.StorageDCHero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to=''>{data.authorizationForStorageOfDc.data.attributes.StorageDCHero.ButtonTitle}</Link></div>
+                    {data.eppTermsAndCondition.data.attributes.EPPHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to=''>{data.eppTermsAndCondition.data.attributes.EPPHero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
           </div>
       </div>
       <div className='container mg-top-80 mg-bottom-50'>
-        <h2 className='center orange'>{data.authorizationForStorageOfDc.data.attributes.Title}</h2>
+        <h2 className='center orange'>{data.eppTermsAndCondition.data.attributes.Title}</h2>
         <hr className='green center'></hr>
-        <div>{parse(data.authorizationForStorageOfDc.data.attributes.MainContent)}</div>
+        <div>{parse(data.eppTermsAndCondition.data.attributes.MainContent)}</div>
       </div>
     </div>
   )
