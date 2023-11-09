@@ -69,14 +69,16 @@ const SBALOANSINFO = gql`
 `
 export default function SBALoans() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const { loading, error, data } = useQuery(SBALOANSINFO)
+  const { data } = useQuery(SBALOANSINFO)
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error :(</p>
 
   console.log(data)
   return (
     <div className='wrapper sbaloans'>
+      {data && (
+        <>
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.sbaLoan.data.attributes.SBAHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -139,6 +141,11 @@ export default function SBALoans() {
                 ))}
             </div>
         </div>
+      </div>
+      </>
+      )}
+      <div className='calculators'>
+        <div id='sgi' data-guid='793f8707-fa07-4f89-899f-75fc786d3401'></div>
       </div>
     </div>
   )

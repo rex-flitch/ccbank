@@ -213,7 +213,15 @@ const HOMEPAGEINFO = gql`
                 Map,
                 EmbedMapCode,
                 LobbyHours,
-                DriveThroughHours
+                DriveThroughHours,
+                Image {
+                    data {
+                        attributes {
+                            url,
+                            alternativeText
+                        }
+                    }
+                }
               }
             }
         }
@@ -489,6 +497,13 @@ export default function Homepage() {
                                     </div>
                                 </div>
                             ))}
+                                <div className='location-img mg-top-50'>
+                                    {data.ccBankLocations.data.map((locate, index) => (
+                                        <div key={locate.id} className={`locations-info ${activeIndex === index ? 'active' : ''}`}>
+                                            <img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.Image.data.attributes.alternativeText} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                             <div className='cc-locations-flex right'>
                             {data.ccBankLocations.data.map((locate2, index) => (

@@ -243,6 +243,13 @@ hr.center {
 .mg-auto {
   margin:0 auto;
 }
+.p-center p {
+  text-align: center;
+}
+.p-center ul {
+  max-width:400px;
+  margin:0 auto;
+}
 .logo-area {
   display:flex;
   align-items: center;
@@ -929,7 +936,18 @@ option {
   margin:0;
   padding:0 15px;
 }
-
+.location-img img {
+  width:100%;
+}
+.left-links div::after {
+  content: '\203A';
+  display: inline-block;
+  float: right;
+  font-size:16px;
+}
+.locations-info-titles.active {
+  font-weight:bold;
+}
 /* Location Details */
 .location-details-image {
   height:550px;
@@ -1262,6 +1280,12 @@ th.orange-header {
 }
 .cbpc td {
   padding:20px;
+}
+.cbpc td div {
+  padding: 8px 0;
+}
+.cbpc span {
+  font-size:16px;
 }
 .table-flex-col {
   display:flex;

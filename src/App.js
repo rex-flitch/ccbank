@@ -30,6 +30,7 @@ import OnlinePrivacyPolicy from './pages/OnlinePrivacyPolicy'
 import SecurityStatements from './pages/SecurityStatements'
 import BusinessChecking from './pages/BusinessChecking'
 import PersonalBanking from './pages/PersonalBanking'
+import DepositAccounts from './pages/DepositAccounts'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -86,6 +87,7 @@ function App() {
               <Route path="/biller-solutions/security-statements" element={<SecurityStatements />}/>
               <Route path="/business-checking" element={<BusinessChecking />}/>
               <Route path="/personal-banking" element={<PersonalBanking />}/>
+              <Route path="/deposit-accounts" element={<DepositAccounts />}/>
             </Routes>
             <SiteFooter />
           </div>
