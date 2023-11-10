@@ -32,6 +32,7 @@ const LOCATION = gql`
                     TeamMemberPosition,
                     TeamMemberEmail,
                     NMLS,
+                    slug,
                     TeamMemberImage {
                       data {
                         attributes {
@@ -71,6 +72,7 @@ export default function LocationDetails() {
                 <div className='team-container container'>
                     {data.ccBankLocations.data[0].attributes.Team.map((team) => (
                         <div key='team.id' className='location-team-item'>
+                            <div className='link-overlay'><Link to={`/team/${team.slug}`}></Link></div>
                             <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
                             <h3 className='green uppercase'>{team.TeamMemberName}</h3>
                             <p>{parse(team.TeamMemberPosition)}</p>

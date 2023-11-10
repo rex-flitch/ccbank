@@ -323,7 +323,7 @@ hr.center {
   width:100%;
   border-bottom:4px solid #fff;
 }
-.main-header nav ul li:hover a {
+.main-header nav.main-nav ul li:hover a {
   background-color:#F4F4F4;
   border-bottom:4px solid #de7205;
 }
@@ -391,6 +391,174 @@ hr.center {
   order:-1;
   background-color:#03873D;
 }
+.mobile-menu ul {
+  flex-direction: column;;
+}
+/* Mobile Menu */
+.hamburger-icon {
+  cursor: pointer;
+  display: none; /* Hidden by default, shown in media query */
+}
+
+/* Hamburger bars */
+.hamburger-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px 0 5px auto;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Start off-screen */
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+  transition: right 0.3s;
+  z-index: 10;
+}
+
+.menu.open {
+  right: 0; /* Slide into view */
+}
+.submenu {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Start off-screen */
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* Different background for distinction */
+  transition: left 0.3s;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu .submenu .col {
+  background-color:#fff;
+  padding:20px 20px;
+}
+.submenu .first{
+  order:-1;
+  background-color: #03873D!important;
+  color:#fff;
+}
+.submenu .first a {
+  color:#fff;
+}
+.submenu.open {
+  right: 0; /* Slide into view */
+}
+.mobile-menu {
+  display:none;
+}
+.main-header nav.mobile-menu ul li {
+  margin-top:0;
+  text-align:left;
+}
+.main-header nav.mobile-menu ul li a {
+  border-bottom:0;
+  padding:4px 0;
+}
+.main-header nav.mobile-menu h4 {
+  margin:8px 0;
+}
+.main-header nav.mobile-menu hr {
+  margin-bottom:8px;
+}
+.top-header-mobile {
+  display:none;
+}
+@media (max-width: 768px) {
+  .main-nav {
+    display:none;
+  }
+  .open > ul {
+    margin-top:50px!important;
+  }
+  .mobile-menu {
+    display:flex;
+    width:60%;
+    text-align: right;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right:30px;
+  }
+  .hamburger-icon {
+    display: block;
+    
+  }
+  body, .main-container {
+    overflow-x: hidden;
+  }
+  .close-btn, .back-btn {
+    position: absolute;
+    top: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 200;
+    font-size:16px;
+    color:#fff;
+    /* Additional styling */
+  }
+  
+  .close-btn {
+    right: 10px;
+    top:15px;
+  }
+  
+  .back-btn {
+    left: 10px;
+    top:-32px;
+  }
+  .top-level-link {
+    color:#fff!important;
+    padding:8px 20px!important;
+  }
+  .top-level-li {
+    border-left:4px solid #222;
+  }
+  .top-level-li:hover {
+    border-left:4px solid #03873D;
+  }
+  .right-arrow::after {
+    content: '\203A';
+    display: inline-block;
+    float: right;
+    font-size:16px;
+    position:absolute;
+    right:20px;
+  }
+  .top-header-mobile {
+    display:flex;
+  }
+  .mobile-account-login {
+    background-color: #03873D;
+    width:65%;
+  }
+  .mobile-top-right {
+    width:35%;
+    background-color: #222;
+    text-align: right;
+  }
+  .mobile-top-right a {
+    padding:10px;
+    display: inline-block;
+  }
+  .mobile-top-right img {
+    max-height:18px;
+  }
+  .mobile-account-login a {
+    color:#fff;
+    display:inline-block;
+    width:100%;
+    padding:10px;
+  }
+  .top-header {
+    display:none;
+  }
+}
+
 /* Heros */
 
 .hero-banner {
@@ -1700,4 +1868,50 @@ nav.footer-nav ul li a {
 .footer-copy p {
   color:#888888;
   margin:0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding:0 30px;
+  }
+  .login-containter {
+    display:none;
+  }
+  .alt-cta {
+    flex-direction: column;
+  }
+  .alt-cta-image {
+    order:-1;
+    width:100%;
+  }
+  .alt-cta-info {
+    width: 100%;
+  }
+  .footer-top-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-logo-area {
+    padding-right:0;
+    border-right:0;
+    border-bottom:1px solid #fff;
+    padding:15px 30px;
+  }
+  .footer-social {
+    padding:0;
+    margin:20px 0;
+  }
+  nav.footer-nav ul {
+    flex-direction: column;
+  }
+  .footer-middle-line {
+    display:flex;
+    flex-direction: column;
+  }
+  .footer-middle-line span {
+    padding:10px 0;
+  }
+  .footer-bottom-line ul {
+    flex-direction: column;
+  }
 }

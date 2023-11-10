@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
+import MobileMenu from './MobileMenu'
 
 const CCSettings = gql`
 query getHomepage {
@@ -98,6 +99,10 @@ export default function SiteHeader() {
           <li><Link to="/contact"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698267025/phone_icon_e6f6950c1e.png" alt="Contact Icon" />Contact</Link></li>
         </ul>
       </div>
+      <div className='top-header-mobile'>
+        <div className='mobile-account-login'><Link to="/">ACCOUNT LOGIN</Link></div>
+        <div className='mobile-top-right'><Link to="/locations"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698101186/locations_icon_772a372fd8.png" alt="Branch Locations Icon" /></Link></div>
+      </div>
       <div className='main-header container'>
         <div className='logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.Logo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
         <nav className="main-nav">
@@ -141,6 +146,7 @@ export default function SiteHeader() {
             ))}
           </ul>
         </nav>
+        <MobileMenu />
       </div>
     </div>
   )
