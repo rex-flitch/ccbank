@@ -487,7 +487,7 @@ hr.center {
     display: block;
     
   }
-  body, .main-container {
+  body, .main-container, #root {
     overflow-x: hidden;
   }
   .close-btn, .back-btn {
@@ -607,9 +607,9 @@ hr.center {
   margin:0 0 0 50px;
   z-index: 2;
 }
-.banner-slider .inner-hero {
+/* .banner-slider .inner-hero {
   margin:0 0 0 350px;
-}
+} */
 .hero-banner .btn-green {
   font-size:14px;
 }
@@ -1673,6 +1673,10 @@ details[open] summary:after {
   top:85px;
   left:100px;
 }
+.login-container {
+  z-index: 2;
+  width:370px;
+}
 .accordion-title {
   background-color:#03873D;
   color:#fff;
@@ -1871,6 +1875,9 @@ nav.footer-nav ul li a {
 }
 
 @media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
   .container {
     padding:0 30px;
   }
@@ -1886,6 +1893,74 @@ nav.footer-nav ul li a {
   }
   .alt-cta-info {
     width: 100%;
+  }
+  .cta-box {
+    flex-direction: column;
+  }
+  .rates-cta .container {
+    flex-direction: column;
+  }
+  .rates-cta-item {
+    width:100%;
+  }
+  .video-box {
+    flex-direction: column;
+  }
+  .video-player {
+    width:100%;
+    order:-1;
+  }
+  .video-info {
+    width: 100%;
+  }
+  .cc-locations-innerhtml {
+    flex-direction: column;
+  }
+  .cc-locations-flex.left {
+    width:100%;
+    padding:50px 0;
+  }
+  .cc-locations-flex.right {
+    width:100%;
+  }
+  .hours-info {
+    flex-direction: column;
+  }
+  .right-map {
+    width:100%;
+  }
+  .right-map iframe {
+    width: 100%;
+  }
+  .cc-locations-inner {
+    padding:0;
+  }
+  .cc-news-preview-inner {
+    flex-direction: column;
+    width:100%;
+  }
+  .cc-news-image {
+    min-height:300px;
+    width:100%;
+  }
+  .cc-news-info {
+    width:100%;
+  }
+  .looking-for .react-multi-carousel-dot-list {
+    flex-direction: column;
+  }
+  .looking-for .react-multi-carousel-track {
+    margin-top:300px;
+  }
+  .looking-item {
+    flex-direction: column;
+    padding:0 30px;
+  }
+  .look-info {
+    width:100%;
+  }
+  .look-image {
+    width:100%;
   }
   .footer-top-line {
     flex-direction: column;

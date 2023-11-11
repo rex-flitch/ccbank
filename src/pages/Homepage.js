@@ -291,7 +291,7 @@ export default function Homepage() {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             autoPlay={true}
-            autoPlaySpeed={6000}
+            autoPlaySpeed={60000}
             keyBoardControl={true}
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
@@ -303,7 +303,7 @@ export default function Homepage() {
                 <div key={hero.id} className='hero' style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
-                        
+                        <div className='login-container'></div>
                         <div className='inner-hero'>
                             <h1>{hero.Title}</h1>
                             <hr className='orange'></hr>
