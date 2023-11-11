@@ -487,8 +487,9 @@ hr.center {
     display: block;
     
   }
-  body, .main-container, #root {
+  #root {
     overflow-x: hidden;
+    position: relative;
   }
   .close-btn, .back-btn {
     position: absolute;
@@ -1883,6 +1884,13 @@ nav.footer-nav ul li a {
   }
   .login-containter {
     display:none;
+  }
+  .login-container {
+    display:none;
+  }
+  .inner-hero {
+    width:100%;
+    max-width: 100%!important;
   }
   .alt-cta {
     flex-direction: column;
