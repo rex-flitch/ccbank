@@ -121,7 +121,7 @@ export default function SiteHeader() {
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           //Only show the links that belong in that category
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li key={links.id}><Link to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
                       </div>
@@ -134,7 +134,7 @@ export default function SiteHeader() {
                         <ul>
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li key={links.id}><Link to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
                       </div>

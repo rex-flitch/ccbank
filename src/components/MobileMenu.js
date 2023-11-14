@@ -101,7 +101,7 @@ export default function MobileMenu() {
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           //Only show the links that belong in that category
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li key={links.id}><Link to={links.attributes.LinkURL}  onClick={() => setIsOpen(!isOpen)}>{links.attributes.LinkTitle}</Link></li>
+                            <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}  onClick={() => setIsOpen(!isOpen)}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
                       </div>
@@ -114,7 +114,7 @@ export default function MobileMenu() {
                         <ul>
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li key={links.id}><Link to={links.attributes.LinkURL}  onClick={() => setIsOpen(!isOpen)}>{links.attributes.LinkTitle}</Link></li>
+                            <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}  onClick={() => setIsOpen(!isOpen)}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
                       </div>
@@ -126,10 +126,10 @@ export default function MobileMenu() {
                 {addcounter()}
               </li>
             ))}
-            <li className='top-level-li'><Link className='top-level-link' to="/about">Solar Loan Payment</Link></li>
-            <li className='top-level-li'><Link className='top-level-link' to="/careers">Careers</Link></li>
-            <li className='top-level-li'><Link className='top-level-link' to="/locations">Branch Locations</Link></li>
-            <li className='top-level-li'><Link className='top-level-link' to="/contact">Contact</Link></li>
+            <li className='top-level-li'><Link className='top-level-link' to="/about" onClick={() => setIsOpen(!isOpen)}>Solar Loan Payment</Link></li>
+            <li className='top-level-li'><Link className='top-level-link' to="/careers" onClick={() => setIsOpen(!isOpen)}>Careers</Link></li>
+            <li className='top-level-li'><Link className='top-level-link' to="/locations" onClick={() => setIsOpen(!isOpen)}>Branch Locations</Link></li>
+            <li className='top-level-li'><Link className='top-level-link' to="/contact" onClick={() => setIsOpen(!isOpen)}>Contact</Link></li>
           </ul>
         </div>
     </nav>

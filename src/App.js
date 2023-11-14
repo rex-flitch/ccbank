@@ -31,6 +31,10 @@ import SecurityStatements from './pages/SecurityStatements'
 import BusinessChecking from './pages/BusinessChecking'
 import PersonalBanking from './pages/PersonalBanking'
 import DepositAccounts from './pages/DepositAccounts'
+import OppLoans from './pages/OppLoans'
+import CcConnect from './pages/CcConnect'
+import CcFlow from './pages/CcFlow'
+import ChoiceCash from './pages/ChoiceCash'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -88,6 +92,10 @@ function App() {
               <Route path="/business-checking" element={<BusinessChecking />}/>
               <Route path="/personal-banking" element={<PersonalBanking />}/>
               <Route path="/deposit-accounts" element={<DepositAccounts />}/>
+              <Route path="/ccbank-partners/opploans" element={<OppLoans />}/>
+              <Route path="/ccbank-partners/ccconnect" element={<CcConnect />}/>
+              <Route path="/ccbank-partners/ccflow" element={<CcFlow />}/>
+              <Route path="/ccbank-partners/choice-cash" element={<ChoiceCash />}/>
             </Routes>
             <SiteFooter />
           </div>
