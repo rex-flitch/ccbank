@@ -18,9 +18,9 @@ const ContactForm = () => {
           variables: {
             input: {
               data: {
-                name: values.name,
-                email: values.email,
-                message: values.message,
+                Name: values.name,
+                Email: values.email,
+                Message: values.message,
               },
             },
           },

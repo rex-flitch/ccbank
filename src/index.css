@@ -927,6 +927,25 @@ option {
 .image-cta-grey-player img {
   width:100%;
 }
+.img-cta-container {
+  display:flex;
+  gap:75px;
+  justify-content:center;
+  margin-top:50px;
+  flex-wrap: wrap;
+}
+.img-cta-team-item {
+  width:calc(25% - 58px);
+  border-bottom:4px solid #de7205;
+  padding-bottom:25px;
+  position:relative;
+}
+.img-cta-team-image img {
+  width:100%;
+  aspect-ratio: 1 /1;
+  object-fit: cover;
+  object-position:top;
+}
 /* CC Bank News Preview */
 .cc-news-preview {
   padding:100px 0;
@@ -1145,6 +1164,7 @@ option {
   gap:75px;
   justify-content:center;
   margin-top:50px;
+  flex-wrap: wrap;
 }
 .location-team-image img {
   width:100%;
@@ -1154,7 +1174,7 @@ option {
   /* object-view-box: inset(1% 0 26% 0); */
 }
 .location-team-item {
-  width:30%;
+  width:calc(33.3% - 50px);
   border-bottom:4px solid #de7205;
   padding-bottom:50px;
   position:relative;
@@ -1949,6 +1969,9 @@ nav.footer-nav ul li a {
   .cc-news-page-inner {
     width:calc(50% - 15px);
   }
+  .img-cta-team-item {
+    width:calc(50% - 40px);
+  }
 }
 @media (max-width: 768px) {
   .mg-auto {
@@ -2118,6 +2141,9 @@ nav.footer-nav ul li a {
     width:100%;
   }
   .location-team-item {
+    width:100%;
+  }
+  .img-cta-team-item {
     width:100%;
   }
 }

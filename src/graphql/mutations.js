@@ -7,9 +7,7 @@ export const CREATE_CONTACT_MUTATION = gql`
         id {
             attributes {
                 Name
-                Company
                 Email
-                Phone
                 Message
             }
         }

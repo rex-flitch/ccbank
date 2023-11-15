@@ -30,11 +30,17 @@ import OnlinePrivacyPolicy from './pages/OnlinePrivacyPolicy'
 import SecurityStatements from './pages/SecurityStatements'
 import BusinessChecking from './pages/BusinessChecking'
 import PersonalBanking from './pages/PersonalBanking'
+import PersonalBankingLanding from './pages/PersonalBankingLanding'
 import DepositAccounts from './pages/DepositAccounts'
 import OppLoans from './pages/OppLoans'
 import CcConnect from './pages/CcConnect'
 import CcFlow from './pages/CcFlow'
 import ChoiceCash from './pages/ChoiceCash'
+import Lendly from './pages/Lendly'
+import Rise from './pages/Rise'
+import Mdg from './pages/Mdg'
+import Today from './pages/Today'
+import Xact from './pages/Xact'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -90,12 +96,18 @@ function App() {
               <Route path="/online-privacy-policy" element={<OnlinePrivacyPolicy />}/>
               <Route path="/biller-solutions/security-statements" element={<SecurityStatements />}/>
               <Route path="/business-checking" element={<BusinessChecking />}/>
-              <Route path="/personal-banking" element={<PersonalBanking />}/>
+              <Route path="/personal-banking-solutions" element={<PersonalBanking />}/>
+              <Route path="/personal-banking" element={<PersonalBankingLanding />}/>
               <Route path="/deposit-accounts" element={<DepositAccounts />}/>
               <Route path="/ccbank-partners/opploans" element={<OppLoans />}/>
               <Route path="/ccbank-partners/ccconnect" element={<CcConnect />}/>
               <Route path="/ccbank-partners/ccflow" element={<CcFlow />}/>
               <Route path="/ccbank-partners/choice-cash" element={<ChoiceCash />}/>
+              <Route path="/ccbank-partners/lendly" element={<Lendly />}/>
+              <Route path="/ccbank-partners/rise" element={<Rise />}/>
+              <Route path="/ccbank-partners/mdg" element={<Mdg />}/>
+              <Route path="/ccbank-partners/today" element={<Today />}/>
+              <Route path="/ccbank-partners/xact" element={<Xact />}/>
             </Routes>
             <SiteFooter />
           </div>
