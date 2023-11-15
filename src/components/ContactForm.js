@@ -1,51 +1,52 @@
-import React from 'react';
-import { useFormik } from 'formik';
-import { useMutation } from '@apollo/client';
-import { CREATE_CONTACT_MUTATION } from '../graphql/mutations';
+import React, { useState } from 'react';
+// import { useFormik } from 'formik';
+import { useMutation, gql } from '@apollo/client';
 
-const ContactForm = () => {
-  const [createContact] = useMutation(CREATE_CONTACT_MUTATION);
-
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-    onSubmit: async (values) => {
-      try {
-        await createContact({
-          variables: {
-            input: {
-              data: {
-                Name: values.name,
-                Email: values.email,
-                Message: values.message,
-              },
-            },
-          },
-        });
-
-        // Optionally, send email using a backend service (e.g., Nodemailer)
-        // and notify user that their message has been sent.
-      } catch (error) {
-        console.error(error);
+// import { CREATE_CONTACT_MUTATION } from '../graphql/mutations';
+const CREATE_CONTACT_MUTATION = gql`
+  mutation CreateContact($email: String!, $fullname: String!, $message: String!) {
+    createContactForm(data: { Email: $email, Name: $fullname, Message: $message }) {
+      data {
+        id 
+        attributes {
+            Name
+            Email
+            Message
+        }
       }
-    },
-  });
+    }
+  }
+`
+export default function ContactForm() {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [createEmailEntry] = useMutation(CREATE_CONTACT_MUTATION);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, fullname, message } = event.target.elements;
+
+    try {
+      await createEmailEntry({ variables: { email: email.value, fullname: fullname.value, message: message.value } });
+      // Handle success - maybe clear the form or show a success message
+      setFormSubmitted(true);
+    } catch (error) {
+      // Handle error
+    }
+  };
+
+  if (formSubmitted) {
+    return <div><h3>Thank you for your submission!</h3></div>;
+  }
 
   return (
     <div>
         <h2 className='center'>Contact Us</h2>
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
         <div className='form-input'>
             <label htmlFor="name">Name</label>
             <input
-            id="name"
-            name="name"
+            id="fullname"
+            name="fullname"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.name}
             />
         </div>
         <div className='form-input'>
@@ -54,8 +55,6 @@ const ContactForm = () => {
             id="email"
             name="email"
             type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
             />
         </div>
         <div className='form-input'>
@@ -63,14 +62,10 @@ const ContactForm = () => {
             <textarea
             id="message"
             name="message"
-            onChange={formik.handleChange}
-            value={formik.values.message}
             />
         </div>
         <button type="submit" className='btn-green'>Submit</button>
         </form>
     </div>
-  );
-};
-
-export default ContactForm;
+  )
+}
