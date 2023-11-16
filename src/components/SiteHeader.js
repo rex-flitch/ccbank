@@ -91,7 +91,9 @@ export default function SiteHeader() {
 
   return (
     <div className="site-header">
-      <Link href="#main" class="skip">Skip to main content</Link>
+      <a href="#main-nav" class="skip">Skip to main navigation</a>
+      <a href="#main" class="skip">Skip to main content</a>
+      <a href="#footer" class="skip">Skip to footer</a>
       <div className="top-header">
         <ul className="container">
           <li><Link to="/about"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment"/>Solar Loan Payment</Link></li>
@@ -106,7 +108,7 @@ export default function SiteHeader() {
       </div>
       <div className='main-header container'>
         <div className='logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.Logo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
-        <nav className="main-nav">
+        <nav className="main-nav" id="main-nav">
           <ul>
             {data.mainNavigations.data.map((nav) => (
               <li key={nav.id}><Link aria-haspopup="true" to={nav.attributes.Link}>{nav.attributes.Title}</Link>

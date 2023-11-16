@@ -38,7 +38,7 @@ export default function SiteFooter() {
   // console.log(data)
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className='footer-main container'>
         <div className='footer-top-line'>
             <div className='footer-logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.FooterLogo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
