@@ -76,7 +76,7 @@ export default function SBALoans() {
 
   console.log(data)
   return (
-    <div className='wrapper sbaloans'>
+    <main className='wrapper sbaloans' id='main' tabindex="-1">
       {data && (
         <>
       <div className='hero-banner'>
@@ -147,6 +147,6 @@ export default function SBALoans() {
       <div className='calculators'>
         <div id='sgi' data-guid='793f8707-fa07-4f89-899f-75fc786d3401'></div>
       </div>
-    </div>
+    </main>
   )
 }

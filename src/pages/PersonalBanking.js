@@ -51,7 +51,7 @@ export default function PersonalBanking() {
 
   console.log(data)
   return (
-    <div className='wrapper personal-banking'>
+    <main className='wrapper personal-banking' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.personalBanking.data.attributes.PersonalBankingHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -89,6 +89,6 @@ export default function PersonalBanking() {
                 ))}
             </div>
         </div>
-    </div>
+    </main>
   )
 }

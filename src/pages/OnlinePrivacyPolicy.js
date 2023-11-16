@@ -39,7 +39,7 @@ export default function OnlinePrivacyPolicy() {
 
   console.log(data)
   return (
-    <div className='wrapper biller-solutions'>
+    <main className='wrapper biller-solutions' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.onlinePrivacyPolicy.data.attributes.OnlinePrivacyHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -63,6 +63,6 @@ export default function OnlinePrivacyPolicy() {
         <hr className='green center'></hr>
         <div>{parse(data.onlinePrivacyPolicy.data.attributes.MainContent)}</div>
       </div>
-    </div>
+    </main>
   )
 }

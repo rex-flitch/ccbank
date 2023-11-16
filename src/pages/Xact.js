@@ -51,7 +51,7 @@ export default function Xact() {
 
   console.log(data)
   return (
-    <div className='wrapper opp-loans'>
+    <main className='wrapper opp-loans' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.xact.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -89,6 +89,6 @@ export default function Xact() {
         </div>
       </div>
       <div className='container mg-bottom-50'>{parse(data.xact.data.attributes.Footnotes)}</div>
-    </div>
+    </main>
   )
 }

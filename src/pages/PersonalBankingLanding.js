@@ -67,7 +67,7 @@ export default function PersonalBankingLanding() {
 
   
   return (
-    <div className='wrapper personal-banking-landing'>
+    <main className='wrapper personal-banking-landing' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.personalBankingLanding.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -123,6 +123,6 @@ export default function PersonalBankingLanding() {
                 ))}
             </div>
         </div>
-    </div>
+    </main>
   )
 }

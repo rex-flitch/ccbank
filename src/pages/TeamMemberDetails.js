@@ -44,7 +44,7 @@ export default function TeamMemberDetails() {
   
     console.log(data)
     return (
-      <div className='wrapper team-details'>
+      <main className='wrapper team-details' id='main' tabindex="-1">
         <div className='max-600 mg-auto'>
             <div className='details-flex'>
                 <div className='details-image'>
@@ -65,7 +65,7 @@ export default function TeamMemberDetails() {
                 <ContactForm />
             </div>
         </div>
-      </div>
+      </main>
     )
   }
   

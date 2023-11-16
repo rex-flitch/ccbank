@@ -114,7 +114,7 @@ const Rates = ({ shouldReload }) => {
 
   console.log(data)
   return (
-    <div className='wrapper rates'>
+    <main className='wrapper rates' id='main' tabindex="-1">
       {data && (
         <>
         <div className='hero-banner'>
@@ -363,7 +363,7 @@ const Rates = ({ shouldReload }) => {
       </div>
         </>
       )}
-    </div>
+    </main>
   )
 }
 export default Rates;
