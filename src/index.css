@@ -28,6 +28,7 @@ p, li {
   font-size:1.4rem;
 }
 h1 {
+  color:#222222;
   font-family: 'Fjalla One', sans-serif;
 }
 h2 {
@@ -37,6 +38,7 @@ h2 {
   margin:15px 0;
 }
 h3 {
+  color:#222222;
   font-family: 'Fjalla One', sans-serif;
   margin:15px 0;
   font-size:30px;
@@ -69,7 +71,7 @@ h4 {
   color:#888888;
 }
 .black {
-  color:#000;
+  color:#222222;
 }
 .bg-grey {
   background-color:#F4F4F4;
@@ -168,7 +170,7 @@ hr.center {
   color:#de7205;
 }
 .btn-white a {
-  color:#000;
+  color:#222222;
   background-color:#fff;
   padding:6px 20px;
   text-transform: uppercase;
@@ -342,6 +344,7 @@ hr.center {
   z-index: 4;
   background-color:#F4F4F4;
   display:none;
+  box-shadow: 0 0 12px rgba(34, 34, 34, .15);
 }
 .main-nav ul li:hover .mega-menu {
   display:flex;
@@ -389,7 +392,7 @@ hr.center {
 }
 .mega-menu .first {
   order:-1;
-  background-color:#000;
+  background-color:#03873D;
 }
 .mobile-menu ul {
   flex-direction: column;;
@@ -641,7 +644,7 @@ hr.center {
   top:0;
   bottom:unset!important;
   width:100%;
-  border-bottom:1px solid #000;
+  border-bottom:1px solid #222222;
 }
 .looking-for .react-multi-carousel-dot-list button {
  width:100%;
@@ -833,7 +836,7 @@ option {
   width:300px;
 }
 .rates-cta-info p {
-  color:#000;
+  color:#222222;
   text-align:center;
   margin:6px 0;
 }
@@ -1459,7 +1462,7 @@ th.orange-header {
   box-shadow: 0 0 12px rgba(34, 34, 34, .15);
 }
 .cbpc table caption {
-  background-color:#000;
+  background-color:#222222;
   color:#fff;
   padding:8px 0;
   font-size:28px;
@@ -1495,7 +1498,7 @@ th.orange-header {
 }
 /* QA Section */
 .qa-item .question {
-  border:1px solid #000;
+  border:1px solid #222222;
   border-bottom:0;
   padding:10px 40px;
   cursor: pointer;
@@ -1504,7 +1507,7 @@ th.orange-header {
   text-align:right!important;
 }
 .qa-item:last-of-type {
-  border-bottom:1px solid #000;
+  border-bottom:1px solid #222222;
 }
 .qa-item .answer {
   padding:10px 40px;
@@ -1714,11 +1717,11 @@ details[open] summary:after {
 }
 .commercial-banking .accordion-title {
   background-color:#fff;
-  color:#000;
+  color:#222222;
 }
 .credit-card .accordion-title {
   background-color:#fff;
-  color:#000;
+  color:#222222;
 }
 .commercial-banking .accordion-title {
 
@@ -1764,7 +1767,7 @@ form.login-fields {
   border:0;
 }
 .cclogin a {
-  color:#000;
+  color:#222222;
 }
 .login-buttons {
   padding:0 20px;

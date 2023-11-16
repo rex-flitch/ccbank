@@ -493,7 +493,7 @@ export default function Homepage() {
                                 // </div>
                                 <div key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
                                     <div className='left-links'>
-                                        <div>{locate.attributes.City}</div>
+                                        <div role="button">{locate.attributes.City}</div>
                                     </div>
                                 </div>
                             ))}

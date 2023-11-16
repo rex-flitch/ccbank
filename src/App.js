@@ -41,6 +41,7 @@ import Rise from './pages/Rise'
 import Mdg from './pages/Mdg'
 import Today from './pages/Today'
 import Xact from './pages/Xact'
+import OnlineAccountOpening from './pages/OnlineAccountOpening'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -108,6 +109,7 @@ function App() {
               <Route path="/ccbank-partners/mdg" element={<Mdg />}/>
               <Route path="/ccbank-partners/today" element={<Today />}/>
               <Route path="/ccbank-partners/xact" element={<Xact />}/>
+              <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
             </Routes>
             <SiteFooter />
           </div>

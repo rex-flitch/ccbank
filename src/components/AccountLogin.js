@@ -23,7 +23,7 @@ export default function AccountLogin() {
             <div className="accordion-wrapper">
 
                 <div className="accordion-item personal-banking">
-                    <div className="accordion-title" onClick={() => toggleClass(1)}>Personal Banking</div>
+                    <div className="accordion-title" role="button" onClick={() => toggleClass(1)}>Personal Banking</div>
                     <div className={`accordion-body ${isActive1 ? 'active' : 'inactive'}`}>
                         <form className="login-fields" action="https://cibng.ibanking-services.com/EamWeb/Remote/RemoteLoginAPI.aspx? FIORG=18U&orgId=18U_124302927&FIFID=124302927&brand=18U_124302927&appId=ceb" method="POST"> 
                             <input className="login-input" name="_textBoxUserId" type="text" maxLength="32" id="_textBoxUserId" placeholder="User ID" aria-label="User ID"/> 
@@ -32,15 +32,15 @@ export default function AccountLogin() {
                         </form>
                         <div className="login-buttons">
                             <ul className="login-button-group">
-                            <li className="pw-reset-link"><a href="https://cibng.ibanking-services.com/EamWeb/Remote/RemoteLoginApi.aspx?orgId=18U_124302927&FIFID=124302927&brand=18U_124302927&appId=CeB&FIORG=18U&startPage=ForgotUserId" target="_blank" rel="noreferrer" className="reset-link">Forgot  ID/Password?</a> </li>
+                            <li className="pw-reset-link"><a href="https://cibng.ibanking-services.com/EamWeb/Remote/RemoteLoginApi.aspx?orgId=18U_124302927&FIFID=124302927&brand=18U_124302927&appId=CeB&FIORG=18U&startPage=ForgotUserId" target="_blank" rel="noreferrer" className="reset-link" aria-label='New Window'>Forgot  ID/Password?</a> </li>
                             </ul>
                         </div>
-                        <div className='account-button'><Link to='https://cibng.ibanking-services.com/cib/themes/cib_enroll/enroll/enroll.jsp?FIORG=18U&FIFID=124302927' target="_blank" rel="noopener noreferrer">Enroll in Personal Banking</Link></div>
+                        <div className='account-button'><Link to='https://cibng.ibanking-services.com/cib/themes/cib_enroll/enroll/enroll.jsp?FIORG=18U&FIFID=124302927' target="_blank" rel="noopener noreferrer" aria-label='New Window'>Enroll in Personal Banking</Link></div>
                     </div>
                 </div>
 
                 <div className="accordion-item commercial-banking">
-                    <div className="accordion-title" onClick={() => toggleClass(2)}>Business Banking</div>
+                    <div className="accordion-title" role="button" onClick={() => toggleClass(2)}>Business Banking</div>
                     <div className={`accordion-body ${isActive2 ? 'active' : 'inactive'}`}>
                         <form className="login-fields" action="https://ccbankutah.ebanking-services.com/EamWeb/Remote/RemoteLoginApi.aspx?appID=beb&brand=ccbankutah" method="POST"> 
                             <span className="cid-messg">If you don’t have the company ID, please call 801-763-5066</span>
@@ -48,7 +48,7 @@ export default function AccountLogin() {
                             <input className="login-input" name="_textBoxUserId" type="text" maxLength="32" id="_textBoxUserId" placeholder="User ID" aria-label="User ID"/> 
                             <input name="_buttonContinue" type="submit" value="Sign In" id="_buttonContinue" className="remoteFrame button login-btn-1" /> 
                         </form> 
-                        <div className='account-button'><Link to='https://ccbankutah.ebanking-services.com/Nubi/Trace/Enroll.aspx' target="_blank" rel="noopener noreferrer">Enroll in Business Banking</Link></div>
+                        <div className='account-button'><Link to='https://ccbankutah.ebanking-services.com/Nubi/Trace/Enroll.aspx' target="_blank" rel="noopener noreferrer" aria-label='New Window'>Enroll in Business Banking</Link></div>
                     </div>
                 </div>
 
