@@ -67,7 +67,7 @@ export default function BusinessChecking() {
 
   console.log(data)
   return (
-    <div className='wrapper biller-solutions'>
+    <main className='wrapper biller-solutions' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.businessChecking.data.attributes.BCHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -158,6 +158,6 @@ export default function BusinessChecking() {
                 </table>
             </div>
         </div>
-    </div>
+    </main>
   )
 }

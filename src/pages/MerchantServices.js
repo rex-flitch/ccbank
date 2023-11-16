@@ -82,7 +82,7 @@ export default function Merchant() {
 
   console.log(data)
   return (
-    <div className='wrapper merchant'>
+    <main className='wrapper merchant' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.merchantService.data.attributes.MerchantHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -149,6 +149,6 @@ export default function Merchant() {
             <p className='max-400 white mg-top-20'>{parse(data.merchantService.data.attributes.EachTransaction.Text)}</p>
           </div>
       </div>
-    </div>
+    </main>
   )
 }

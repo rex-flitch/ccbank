@@ -99,7 +99,7 @@ export default function BusinessBanking() {
   };
   console.log(data)
   return (
-    <div className='wrapper businessBanking'>
+    <main className='wrapper businessBanking' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.businessBanking.data.attributes.BusinessBankingHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -182,6 +182,6 @@ export default function BusinessBanking() {
             <p className='max-400 white mg-top-50'>{parse(data.businessBanking.data.attributes.BeyondBanking.Text)}</p>
           </div>
       </div>
-    </div>
+    </main>
   )
 }

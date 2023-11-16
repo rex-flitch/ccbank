@@ -50,7 +50,7 @@ export default function ChoiceCash() {
 
   console.log(data)
   return (
-    <div className='wrapper opp-loans'>
+    <main className='wrapper opp-loans' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.choiceCash.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -89,6 +89,6 @@ export default function ChoiceCash() {
       </div>
       <h6 className='container'>This information is provided as a courtesy to CCBank customers who have obtained a ChoiceCash loan. Any other use of this information is prohibited.</h6>
       <h6 className='container mg-bottom-50'>{parse(data.affiliatedCompaniesDisclaimers.data[0].attributes.Info)}</h6>
-    </div>
+    </main>
   )
 }

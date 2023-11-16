@@ -70,7 +70,7 @@ export default function DepositAccounts() {
   )
   console.log(filteredItems)
   return (
-    <div className='wrapper deposit-account'>
+    <main className='wrapper deposit-account' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.depositAccount.data.attributes.DepositHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -189,6 +189,6 @@ export default function DepositAccounts() {
                 ))}
             </div>
         </div>
-    </div>
+    </main>
   )
 }

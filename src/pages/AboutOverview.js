@@ -81,7 +81,7 @@ export default function AboutOverview() {
   // };
   console.log(data)
   return (
-    <div className='wrapper aboutoverview'>
+    <main className='wrapper aboutoverview' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.aboutOverview.data.attributes.OveriewHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -133,6 +133,6 @@ export default function AboutOverview() {
         <div className='max-800 mg-auto'>{parse(data.aboutOverview.data.attributes.CommunityGivingDescription)}</div>
       </div>
       <Team teamMembers={data.ccBankLeadershipTeams.data} />
-    </div>
+    </main>
   )
 }

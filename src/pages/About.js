@@ -66,7 +66,7 @@ export default function About() {
 
   console.log(data)
   return (
-    <div className='wrapper about'>
+    <main className='wrapper about' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.about.data.attributes.AboutHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -128,6 +128,6 @@ export default function About() {
               ))}
           </div>
       </div>
-    </div>
+    </main>
   )
 }

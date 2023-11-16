@@ -37,12 +37,12 @@ export default function NewsDetails() {
     if (error) return <p>Error :(</p>
     
     return (
-        <div className='wrapper news-items mg-top-50'>
+        <main className='wrapper news-items mg-top-50' id='main' tabindex="-1">
             <div className='container max-800 mg-auto'>
                 <h1>{data.ccBanksNews.data[0].attributes.Title}</h1>
                 <h5>{data.ccBanksNews.data[0].attributes.Date}</h5>
                 <div className='news-story'><img src={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.url} alt={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.alternativeText} />{parse(data.ccBanksNews.data[0].attributes.MainStory)}</div>
             </div>
-        </div>
+        </main>
     )
 }

@@ -39,7 +39,7 @@ export default function AuthorizationAchDebits() {
 
   console.log(data)
   return (
-    <div className='wrapper biller-solutions'>
+    <main className='wrapper biller-solutions' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.billerSolutionsAuthorizationAchDebit.data.attributes.AuthAchHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -62,6 +62,6 @@ export default function AuthorizationAchDebits() {
         <h2 className='center orange'>{data.billerSolutionsAuthorizationAchDebit.data.attributes.Title}</h2>
         <div>{parse(data.billerSolutionsAuthorizationAchDebit.data.attributes.MainContent)}</div>
       </div>
-    </div>
+    </main>
   )
 }

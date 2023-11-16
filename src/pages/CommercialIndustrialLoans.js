@@ -86,7 +86,7 @@ export default function CommercialIndustrialLoans() {
 
   console.log(data)
   return (
-    <div className='wrapper merchant'>
+    <main className='wrapper merchant' id='main' tabindex="-1">
       {data && (
         <>
         <div className='hero-banner'>
@@ -162,6 +162,6 @@ export default function CommercialIndustrialLoans() {
       <div className='calculators'>
         <div id='sgi' data-guid='992bb347-c05f-4ea6-aa25-aaa0352409e2'></div>
       </div>
-    </div>
+    </main>
   )
 }

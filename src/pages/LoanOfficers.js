@@ -158,7 +158,7 @@ export default function LoanOfficers() {
 
   console.log(data)
   return (
-    <div className='wrapper merchant'>
+    <main className='wrapper merchant' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.loanOfficer.data.attributes.LoanOfficersHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -306,6 +306,6 @@ export default function LoanOfficers() {
             ))}
         </div>
       </div>
-    </div>
+    </main>
   )
 }

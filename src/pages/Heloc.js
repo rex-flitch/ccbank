@@ -59,7 +59,7 @@ export default function Heloc() {
 
   console.log(data)
   return (
-    <div className='wrapper merchant'>
+    <main className='wrapper merchant' id='main' tabindex="-1">
       {data && (
         <>
         <div className='hero-banner'>
@@ -118,6 +118,6 @@ export default function Heloc() {
       <div className='calculators'>
         <div id='sgi' data-guid='a72417a0-9193-4d41-885f-3d3d6a37af3d'></div>
       </div>
-    </div>
+    </main>
   )
 }

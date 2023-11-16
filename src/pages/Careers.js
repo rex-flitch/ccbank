@@ -54,7 +54,7 @@ export default function Careers() {
 
   console.log(data)
   return (
-    <div className='wrapper careers'>
+    <main className='wrapper careers' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.career.data.attributes.CareersHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -96,6 +96,6 @@ export default function Careers() {
         <div className='max-800 mg-auto'>{parse(data.career.data.attributes.CommittedToYouText)}</div>
         <div className='btn-green max-800 mg-auto pd-top-20'><Link to={data.career.data.attributes.EmploymentOpportunitesButtonURL}>{data.career.data.attributes.EmploymentOpportunitesButtonText}</Link></div>
       </div>
-    </div>
+    </main>
   )
 }

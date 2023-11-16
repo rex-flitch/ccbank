@@ -39,7 +39,7 @@ export default function AuthorizationStorageDC() {
 
   console.log(data)
   return (
-    <div className='wrapper biller-solutions'>
+    <main className='wrapper biller-solutions' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.authorizationForStorageOfDc.data.attributes.StorageDCHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -63,6 +63,6 @@ export default function AuthorizationStorageDC() {
         <hr className='green center'></hr>
         <div>{parse(data.authorizationForStorageOfDc.data.attributes.MainContent)}</div>
       </div>
-    </div>
+    </main>
   )
 }

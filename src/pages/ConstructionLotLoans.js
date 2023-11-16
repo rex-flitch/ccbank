@@ -79,7 +79,7 @@ export default function Calc() {
     const { data } = useQuery(CONSTRUCTIONLOTLOANINFO)
 
     return (
-        <div className='wrapper merchant'>
+        <main className='wrapper merchant' id='main' tabindex="-1">
             <div className='hero-banner'>
             {data && (
                 <>
@@ -161,6 +161,6 @@ export default function Calc() {
             </div>
                 </>
             )}
-        </div>
+        </main>
     );
 }

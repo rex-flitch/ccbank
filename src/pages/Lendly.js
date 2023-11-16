@@ -50,7 +50,7 @@ export default function Lendly() {
 
   console.log(data)
   return (
-    <div className='wrapper opp-loans'>
+    <main className='wrapper opp-loans' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.lendly.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -88,6 +88,6 @@ export default function Lendly() {
         </div>
       </div>
       <h6 className='container mg-bottom-50'>{parse(data.affiliatedCompaniesDisclaimers.data[0].attributes.Info)}</h6>
-    </div>
+    </main>
   )
 }

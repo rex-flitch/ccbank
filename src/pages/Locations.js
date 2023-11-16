@@ -74,7 +74,7 @@ export default function Locations() {
 
   
   return (
-    <div className='wrapper locations'>
+    <main className='wrapper locations' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.location.data.attributes.LocationsHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -116,6 +116,6 @@ contact us in person, on the phone, or online.</p>
       <HolidayHours />
       <h4 className='center green mg-0 mg-top-50'>Routing Number</h4>
             <p className='center mg-0'>{data.ccBankSettings.data[0].attributes.RouterNumber}</p>
-    </div>
+    </main>
   )
 }

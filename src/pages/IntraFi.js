@@ -45,7 +45,7 @@ export default function IntraFi() {
 
   console.log(data)
   return (
-    <div className='wrapper intafi'>
+    <main className='wrapper intrafi' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.intraFi.data.attributes.IntrafiHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -76,6 +76,6 @@ export default function IntraFi() {
       <div className='max-800 mg-top-50 mg-auto'>
         {parse(data.intraFi.data.attributes.BottomDescription)}
       </div>
-    </div>
+    </main>
   )
 }

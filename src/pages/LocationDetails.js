@@ -57,7 +57,7 @@ export default function LocationDetails() {
     if (error) return <p>Error :(</p>
     
     return (
-        <div className='wrapper location'>
+        <main className='wrapper location' id='main' tabindex="-1">
             <div className={pageclassname} style={{backgroundImage: `url(${data.ccBankLocations.data[0].attributes.Image.data.attributes.url})`}}></div>
             <div className='container'>
                 <h1 className='center orange mg-top-50'>{data.ccBankLocations.data[0].attributes.City}</h1>
@@ -104,6 +104,6 @@ export default function LocationDetails() {
                 </div>
             </div>
             <HolidayHours />
-        </div>
+        </main>
     )
 }

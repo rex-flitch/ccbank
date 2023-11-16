@@ -40,7 +40,7 @@ export default function OnlineAccountOpening() {
 
   console.log(data)
   return (
-    <div className='wrapper online-account-opening'>
+    <main className='wrapper online-account-opening' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.onlineAccountOpening.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -72,6 +72,6 @@ export default function OnlineAccountOpening() {
                 ))}
             </div>
         </div>
-    </div>
+    </main>
   )
 }

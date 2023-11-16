@@ -67,7 +67,7 @@ export default function News() {
 
   console.log(data)
   return (
-    <div className='wrapper intafi'>
+    <main className='wrapper merchant' id='main' tabindex="-1">
       <div className='hero-banner'>
           <div className='hero bg-center' style={{backgroundImage: `url(${data.new.data.attributes.NewsHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -119,6 +119,6 @@ export default function News() {
                 ))}
             </div>
         </div>
-    </div>
+    </main>
   )
 }

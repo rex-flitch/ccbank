@@ -33,7 +33,7 @@ export default function Calc() {
     const { data } = useQuery(GETCALCULATORINFO)
 
     return (
-        <div className='wrapper merchant'>
+      <main className='wrapper merchant' id='main' tabindex="-1">
             <div className='hero-banner'>
             {data && (
                 <>
@@ -95,6 +95,6 @@ export default function Calc() {
             <div className='bg-grey pd-tb-50'>
             <div id='sgi' data-guid='82f36897-fde6-4a8f-ae81-20045287813d'></div>
             </div>
-        </div>
+        </main>
     );
 }
