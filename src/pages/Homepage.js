@@ -284,7 +284,7 @@ export default function Homepage() {
 
     console.log(data)
     return (
-        <main className='wrapper' id='main'>
+        <main className='wrapper' id='main' tabindex="-1">
             <div className='hero-banner banner-slider'>
             <AccountLogin />
             <Carousel 
