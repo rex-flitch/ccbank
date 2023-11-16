@@ -250,7 +250,7 @@ export default function Homepage() {
           <button
             style={{
               color: active ? '#de7205' : '#666666', // Change the active and inactive dot color
-              fontWeight: active ? 'bold' : '500',
+              fontWeight: active ? 'bold' : '700',
               border: 'none',
               borderBottom: active ? '4px solid #03873d' : 'none',
               cursor: 'pointer',

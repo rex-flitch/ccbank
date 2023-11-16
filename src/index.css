@@ -130,6 +130,7 @@ hr.center {
   border:#03873d 1px solid;
   transition: .5s;
   font-size:18px;
+  font-weight:600;
 }
 .btn-green a:hover {
   background-color:transparent;
@@ -145,6 +146,7 @@ hr.center {
   border:#de7205 1px solid;
   transition: .5s;
   font-size:18px;
+  font-weight:600;
 }
 .btn-orange a:hover {
   background-color:transparent;
@@ -159,6 +161,7 @@ hr.center {
   border:#03873d 1px solid;
   transition: .5s;
   font-size:18px;
+  font-weight:600;
 }
 .btn-ghost-green a:hover {
   background-color:#03873d;
@@ -172,6 +175,7 @@ hr.center {
   border:#fff 1px solid;
   transition: .5s;
   font-size:18px;
+  font-weight:600;
 }
 .btn-ghost-white a:hover {
   background-color:#fff;
@@ -186,6 +190,7 @@ hr.center {
   border:#fff 1px solid;
   transition: .5s;
   font-size:18px;
+  font-weight:600;
 }
 .btn-white a:hover {
   background-color:transparent;
@@ -326,10 +331,10 @@ hr.center {
 .main-header nav ul li a {
   display:inline-block;
   padding:15px 0;
-  color: #000;
+  color: #666666;
   text-transform:uppercase;
   font-size:16px;
-  font-weight:500;
+  font-weight:700;
   width:100%;
   border-bottom:4px solid #fff;
 }
@@ -712,6 +717,7 @@ option {
   border-bottom:10px solid #de7205;
   box-shadow: 0 0 12px rgba(34, 34, 34, .15);
   width:100%;
+  background-color:#fff;
 }
 .cta-box .cta-info {
   padding:45px 70px;
