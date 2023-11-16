@@ -53,6 +53,7 @@ const HOMEPAGEINFO = gql`
                             data {
                                 attributes {
                                     url
+                                    alternativeText
                                 }
                             }
                         }
@@ -67,6 +68,7 @@ const HOMEPAGEINFO = gql`
                             data {
                                 attributes {
                                     url
+                                    alternativeText
                                 }
                             }
                         }
@@ -176,6 +178,7 @@ const HOMEPAGEINFO = gql`
                     data {
                         attributes {
                             url
+                            alternativeText
                         }
                     }
                 }
@@ -195,6 +198,7 @@ const HOMEPAGEINFO = gql`
                         data {
                             attributes {
                                 url
+                                alternativeText
                             }
                         }
                     }
@@ -280,7 +284,7 @@ export default function Homepage() {
 
     console.log(data)
     return (
-        <div className='wrapper'>
+        <main className='wrapper' id='main'>
             <div className='hero-banner banner-slider'>
             <AccountLogin />
             <Carousel 
@@ -356,7 +360,7 @@ export default function Homepage() {
                 <div className='cta-box container'>
                     {data.homepage.data.attributes.HomepageCTA.map((cta) => (
                         <div key={cta.id} className='cta'>
-                            <div className='cta-image' style={{backgroundImage: `url(${cta.Image.data.attributes.url})`}}></div>
+                            <div className='cta-image' role='img' aria-label={cta.Image.data.attributes.alternativeText} style={{backgroundImage: `url(${cta.Image.data.attributes.url})`}}></div>
                             <div className='cta-info'>
                                 <div className='title'><h2>{cta.Title}</h2></div>
                                 <hr className='green'></hr>
@@ -491,9 +495,9 @@ export default function Homepage() {
                                 //         <div className='btn-green'><a href="/">HOURS & DIRECTIONS</a></div>
                                 //     </div>
                                 // </div>
-                                <div key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
+                                <div role="button" tabindex="0" key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
                                     <div className='left-links'>
-                                        <div role="button">{locate.attributes.City}</div>
+                                        <div>{locate.attributes.City}</div>
                                     </div>
                                 </div>
                             ))}
@@ -543,7 +547,7 @@ export default function Homepage() {
                 <div className='cc-news-preview-box container'>
                     {data.ccBanksNews.data.slice(0, 3).map((news) => (
                         <div key={news.id} className='cc-news-preview-inner'>
-                            <div className='cc-news-image' style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
+                            <div className='cc-news-image' role='img' aria-label={news.attributes.Media.data[0].attributes.alternativeText}style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
                             <div className='cc-news-info'>
                                 <h4 className="orange fjalla">{news.attributes.Title}</h4>
                                 <p>{news.attributes.ShortStory.substring(0, 250)}...</p>
@@ -553,6 +557,6 @@ export default function Homepage() {
                     ))}
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

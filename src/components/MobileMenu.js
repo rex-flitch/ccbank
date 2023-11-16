@@ -87,7 +87,7 @@ export default function MobileMenu() {
         <button  onClick={() => setIsOpen(!isOpen)} className="close-btn">X</button>
           <ul className='top-level'>
             {data.mainNavigations.data.map((nav) => (
-              <li key={nav.id} className='top-level-li'><Link className='top-level-link right-arrow' to={nav.attributes.Link} onClick={() => toggleSubmenu(nav.id)}>{nav.attributes.Title}</Link>
+              <li key={nav.id} className='top-level-li'><Link aria-haspopup="true" className='top-level-link right-arrow' to={nav.attributes.Link} onClick={() => toggleSubmenu(nav.id)}>{nav.attributes.Title}</Link>
                 <Submenu  isOpen={openSubmenu === nav.id}
                 onBack={backToMain}>
                 {nav.attributes.category_navigations.data.map((subnav) => {

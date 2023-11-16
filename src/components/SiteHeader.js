@@ -91,6 +91,7 @@ export default function SiteHeader() {
 
   return (
     <div className="site-header">
+      <Link href="#main" class="skip">Skip to main content</Link>
       <div className="top-header">
         <ul className="container">
           <li><Link to="/about"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment"/>Solar Loan Payment</Link></li>
@@ -108,7 +109,7 @@ export default function SiteHeader() {
         <nav className="main-nav">
           <ul>
             {data.mainNavigations.data.map((nav) => (
-              <li key={nav.id}><Link to={nav.attributes.Link}>{nav.attributes.Title}</Link>
+              <li key={nav.id}><Link aria-haspopup="true" to={nav.attributes.Link}>{nav.attributes.Title}</Link>
                 <div className='mega-menu' id={`main_${nav.id}`}>
                 {nav.attributes.category_navigations.data.map((subnav) => {
                   // Checking to see if the category is the Featured Cat and moving it to the first.

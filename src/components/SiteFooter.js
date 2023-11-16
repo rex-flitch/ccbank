@@ -38,7 +38,7 @@ export default function SiteFooter() {
   // console.log(data)
 
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className='footer-main container'>
         <div className='footer-top-line'>
             <div className='footer-logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.FooterLogo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
@@ -73,6 +73,6 @@ export default function SiteFooter() {
       <div className='footer-copy'>
         <p>Copyright &copy; 2023-2024 CCBank. Al Right Reserved</p>
       </div>
-    </div>
+    </footer>
   )
 }
