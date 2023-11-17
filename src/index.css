@@ -40,7 +40,7 @@ h1 {
   font-family: 'Fjalla One', sans-serif;
 }
 h2 {
-  color:#de7205;
+  color:#03873d;
   font-size:36px;
   font-family: 'Fjalla One', sans-serif;
   margin:15px 0;
@@ -70,7 +70,7 @@ h4 {
   color:#fff;
 }
 .orange {
-  color:#de7205;
+  color:#03873d;
 }
 .green {
   color:#03873d;
@@ -107,9 +107,9 @@ hr.orange {
   margin: 0;
 }
 hr.green {
-  color:#03873d;
-  background-color:#03873d;
-  border: 2px solid #03873d;
+  color:#de7205;
+  background-color:#de7205;
+  border: 2px solid #de7205;
   margin: 0;
 }
 hr.white {
@@ -150,7 +150,7 @@ hr.center {
 }
 .btn-orange a:hover {
   background-color:transparent;
-  color:#de7205;
+  color:#fff;
   
 }
 .btn-ghost-green a {
@@ -833,14 +833,14 @@ option {
   font-size:18px;
 }
 .rates-cta-info h2 {
-  color:#de7205;
+  color:#03873d;
   font-size:70px;
   font-weight:normal;
   text-align:center;
   margin:30px 0 0;
 }
 .rates-cta-info h4 {
-  color:#de7205;
+  color:#03873d;
   font-size:20px;
   font-weight:bold;
   text-align:center;

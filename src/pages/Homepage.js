@@ -249,10 +249,10 @@ export default function Homepage() {
         return (
           <button
             style={{
-              color: active ? '#de7205' : '#666666', // Change the active and inactive dot color
+              color: active ? '#03873d' : '#666666', // Change the active and inactive dot color
               fontWeight: active ? 'bold' : '700',
               border: 'none',
-              borderBottom: active ? '4px solid #03873d' : 'none',
+              borderBottom: active ? '4px solid #de7205' : 'none',
               cursor: 'pointer',
               background: 'none',
               margin: '0 5px', // Adjust the spacing between dots
