@@ -379,7 +379,7 @@ export default function Homepage() {
                         <h2>{data.homepage.data.attributes.HomepageRates.Title}</h2>
                         <hr className='orange' />
                         <div>{parse(data.homepage.data.attributes.HomepageRates.Description)}</div>
-                        <div className='btn-orange'><Link to={data.homepage.data.attributes.HomepageRates.ButtonURL}>{data.homepage.data.attributes.HomepageRates.ButtonTitle}</Link></div>
+                        <div className='btn-green'><Link to={data.homepage.data.attributes.HomepageRates.ButtonURL}>{data.homepage.data.attributes.HomepageRates.ButtonTitle}</Link></div>
                     </div>
                     <div className='rates-cta-item'>
                         <div className='rates-cta-box'>

@@ -133,7 +133,7 @@ hr.center {
   font-weight:600;
 }
 .btn-green a:hover {
-  background-color:transparent;
+  background-color:#fff;
   color:#03873d;
   
 }
@@ -159,6 +159,7 @@ hr.center {
   text-transform: uppercase;
   display: inline-block;
   border:#03873d 1px solid;
+  background-color:#fff;
   transition: .5s;
   font-size:18px;
   font-weight:600;
