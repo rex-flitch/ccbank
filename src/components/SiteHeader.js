@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import MobileMenu from './MobileMenu'
@@ -80,7 +80,17 @@ export default function SiteHeader() {
   // useEffect(() => {
   //   checkForSGI(); // Start checking when the component mounts
   // }, []);
+  const [isExpanded, setIsExpanded] = useState(false);
 
+    // Event handler for mouse enter
+    const handleMouseEnter = () => {
+        setIsExpanded(true);
+    };
+
+    // Event handler for mouse leave
+    const handleMouseLeave = () => {
+        setIsExpanded(false);
+    };
 
   const { loading, error, data } = useQuery(CCSettings)
 
@@ -111,7 +121,7 @@ export default function SiteHeader() {
         <nav className="main-nav" id="main-nav">
           <ul>
             {data.mainNavigations.data.map((nav) => (
-              <li key={nav.id}><Link aria-haspopup="true" to={nav.attributes.Link}>{nav.attributes.Title}</Link>
+              <li key={nav.id}><Link aria-haspopup="true" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} aria-expanded={isExpanded} to={nav.attributes.Link}>{nav.attributes.Title}</Link>
                 <div className='mega-menu' id={`main_${nav.id}`}>
                 {nav.attributes.category_navigations.data.map((subnav) => {
                   // Checking to see if the category is the Featured Cat and moving it to the first.

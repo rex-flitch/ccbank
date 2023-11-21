@@ -255,6 +255,7 @@ export default function Homepage() {
               borderBottom: active ? '4px solid #de7205' : 'none',
               cursor: 'pointer',
               background: 'none',
+              role: 'list',
               margin: '0 5px', // Adjust the spacing between dots
             }}
             onClick={() => onClick()}
