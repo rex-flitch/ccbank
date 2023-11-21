@@ -965,6 +965,9 @@ option {
   object-fit: cover;
   object-position:top;
 }
+.img-cta-team-item p {
+  font-weight:500;
+}
 /* CC Bank News Preview */
 .cc-news-preview {
   padding:100px 0;
