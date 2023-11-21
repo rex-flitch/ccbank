@@ -1127,6 +1127,7 @@ option {
   width:32%;
   border-bottom:10px solid #de7205;
   box-shadow: 0 0 12px rgba(34, 34, 34, .15);
+  background-color:#fff;
 }
 .location-image img {
   width:100%;

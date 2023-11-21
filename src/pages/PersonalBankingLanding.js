@@ -93,7 +93,7 @@ export default function PersonalBankingLanding() {
                 <div key={imagecta.id} className='location-item'>
                     <div className='location-image'><img src={imagecta.Image.data.attributes.url} alt={imagecta.Image.data.attributes.alternativeText}/></div>
                     <div className='location-info'>
-                        <h4 className='green'>{imagecta.Title}</h4>
+                        <h4 className='black'>{imagecta.Title}</h4>
                         <div className='description'><p>{parse(imagecta.Description)}</p></div>
                     </div>
                 </div>
