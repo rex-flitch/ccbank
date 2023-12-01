@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -68,6 +68,14 @@ const ABOUTOVERVIEWPAGEINFO = gql`
 `
 
 export default function AboutOverview() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const section = document.getElementById(hash.substring(1));
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(ABOUTOVERVIEWPAGEINFO)
 
@@ -80,6 +88,7 @@ export default function AboutOverview() {
   //   setActive(!isActive); 
   // };
   console.log(data)
+  
   return (
     <main className='wrapper aboutoverview' id='main' tabindex="-1">
       <div className='hero-banner'>

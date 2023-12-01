@@ -33,7 +33,7 @@ query getHomepage {
             id,
             attributes {
               CategoryTitle,
-              mega_menu_links {
+              mega_menu_links(sort: "LinkTitle:asc") {
                 data {
                   id,
                   attributes {
@@ -137,6 +137,7 @@ export default function SiteHeader() {
                             <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
+                        <div className='btn-white'><Link to="/">Open Account</Link></div>
                       </div>
                     )
                   } else {
