@@ -64,6 +64,10 @@ h4 {
   font-weight: bold;
   margin:15px 0;
 }
+.disclosure {
+  font-size:14;
+  padding-bottom:30px;
+}
 .h-green h3 {
   color:#03873d;
 }
@@ -636,6 +640,9 @@ hr.center {
   align-items:center;
   position: relative;
 }
+.hero-banner h1 {
+  line-height: 63px;
+}
 .hero-banner h1, .hero-banner p {
   color:#fff;
 }
@@ -661,6 +668,9 @@ hr.center {
   padding-right:100px;
   margin:0 0 0 50px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* .banner-slider .inner-hero {
   margin:0 0 0 350px;
@@ -1775,9 +1785,6 @@ details[open] summary:after {
   background-color:#fff;
   color:#222222;
 }
-.commercial-banking .accordion-title {
-
-}
 .accordion-item {
   margin-bottom:4px;
   background-color:#fff;
@@ -1790,6 +1797,9 @@ details[open] summary:after {
 }
 .accordion-body form {
   padding:20px;
+}
+.accordion-body input {
+  border:1px solid #aaa;
 }
 form.login-fields {
   display: flex;

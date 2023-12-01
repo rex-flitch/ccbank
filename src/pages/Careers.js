@@ -10,6 +10,7 @@ const CAREERSPAGE = gql`
               attributes {
                 Title,
                 WelcomeParagraph,
+                Disclosure,
                 CommittedToYou,
                 CommittedToYouText,
                 EmploymentOpportunitesButtonText,
@@ -96,6 +97,7 @@ export default function Careers() {
         <div className='max-800 mg-auto'>{parse(data.career.data.attributes.CommittedToYouText)}</div>
         <div className='btn-green max-800 mg-auto pd-top-20'><Link to={data.career.data.attributes.EmploymentOpportunitesButtonURL}>{data.career.data.attributes.EmploymentOpportunitesButtonText}</Link></div>
       </div>
+      <div className='container disclosure'><em>{parse(data.career.data.attributes.Disclosure)}</em></div>
     </main>
   )
 }
