@@ -416,13 +416,15 @@ hr.center {
 }
 .mega-menu .col ul li:hover a {
   border-bottom:0;
-  background-color:#03873D!important;
-  color:#fff;
+  color:#03873D;
   font-weight:bold;
 }
 .mega-menu .first {
   order:-1;
   background-color:#03873D;
+}
+.mega-menu .first ul li:hover a {
+  color:#fff;
 }
 .mega-menu .btn-white a {
   color:#222222;
