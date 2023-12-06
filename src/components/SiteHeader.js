@@ -129,7 +129,7 @@ export default function SiteHeader() {
                     return (
                       <div key={subnav.id} className='col first' id={`cat_${subnav.id}`}>
                         <h4>{subnav.attributes.CategoryTitle}</h4>
-                        <hr className='white'></hr>
+                        <hr className='orange'></hr>
                         <ul>
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           //Only show the links that belong in that category
@@ -148,7 +148,11 @@ export default function SiteHeader() {
                         <ul>
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            links.attributes.LinkTitle === "Leadership Team" ? (
+                              <li key={links.id}><Link to={{pathname: links.attributes.LinkURL, hash: "#team"}}>{links.attributes.LinkTitle}</Link></li>
+                            ) : (
+                              <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            )
                           )))}
                         </ul>
                       </div>
