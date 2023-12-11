@@ -743,6 +743,18 @@ option {
 .col-2 .cta-box .cta {
   width:48%;
 }
+.col-3 .cta-box {
+  flex-wrap: wrap;
+}
+.col-3 .cta-box .cta {
+  width:31%;
+}
+.col-3 .cta-box .cta-info {
+  padding:45px;
+}
+.img-250 .cta-box .cta-image {
+  min-height:250px;
+}
 .cta-box {
   display:flex;
   gap:25px;
@@ -2068,6 +2080,9 @@ nav.footer-nav ul li a {
     width:100%;
   }
   .col-2 .cta-box .cta {
+    width:100%;
+  }
+  .col-3 .cta-box .cta {
     width:100%;
   }
   .login-containter {

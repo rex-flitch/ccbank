@@ -21,6 +21,7 @@ import Calc from './pages/Calc'
 import IntraFi from './pages/IntraFi'
 import News from './pages/News'
 import NewsDetails from './pages/NewsDetails'
+import CalculatorDetails from './pages/CalculatorDetails'
 import AuthorizationAchDebits from './pages/AuthorizationAchDebits'
 import AuthorizationStorage from './pages/AuthorizationStorage'
 import AuthorizationStorageDC from './pages/AuthorizationStorageDC'
@@ -42,6 +43,7 @@ import Mdg from './pages/Mdg'
 import Today from './pages/Today'
 import Xact from './pages/Xact'
 import OnlineAccountOpening from './pages/OnlineAccountOpening'
+import FinancialLibrary from './pages/FinancialLibrary'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -86,6 +88,7 @@ function App() {
               <Route path="/sbaloans" element={<SBALoans />}/>
               <Route path="/team/:slug" element={<TeamMemberDetails />}/>
               <Route path="/calc" element={<Calc />}/>
+              <Route path="/calculator/:slug" element={<CalculatorDetails />}/>
               <Route path="/intrafi" element={<IntraFi />}/>
               <Route path="/news" element={<News />}/>
               <Route path="/news/:slug" element={<NewsDetails />}/>
@@ -110,6 +113,7 @@ function App() {
               <Route path="/ccbank-partners/today" element={<Today />}/>
               <Route path="/ccbank-partners/xact" element={<Xact />}/>
               <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
+              <Route path="/financial-library" element={<FinancialLibrary />}/>
             </Routes>
             <SiteFooter />
           </div>
