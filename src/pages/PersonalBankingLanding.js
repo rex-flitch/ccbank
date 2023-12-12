@@ -109,7 +109,7 @@ export default function PersonalBankingLanding() {
                     <div key='team.id' className='img-cta-team-item'>
                         <div className='link-overlay'><Link to={`/team/${team.slug}`}></Link></div>
                         {team.TeamMemberImage.data && 
-                            <div className='img-cta-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
+                            <div className='img-cta-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberImage.data.attributes.alternativeText} /></div>
                         }
                         
                         <h3 className='green uppercase'>{team.TeamMemberName}</h3>

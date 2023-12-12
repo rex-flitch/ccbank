@@ -48,6 +48,7 @@ const ABOUTPAGEINFO = gql`
                     data {
                       attributes {
                         url
+                        alternativeText
                       }
                     }
                 }
@@ -117,7 +118,7 @@ export default function About() {
           <div className='container cta-icon-box'>
               {data.about.data.attributes.IconCTA.map((iconcta) => (
                   <div key={iconcta.id} className='iconcta'>
-                      <div className='iconcta-image'><img src={iconcta.Icon.data.attributes.url} alt={iconcta.Title}/></div>
+                      <div className='iconcta-image'><img src={iconcta.Icon.data.attributes.url} alt={iconcta.Icon.data.attributes.alternativeText}/></div>
                       <div className='iconcta-info'>
                           <div className='title'><h3 className='orange'>{iconcta.Title}</h3></div>
                           <hr className='green'></hr>

@@ -108,7 +108,7 @@ export default function Merchant() {
                 <div key={altcta.id} className='alt-cta'>
 
                     {altcta.ImagePlacement === 'Left' &&
-                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Image.data.attributes.alternativeText}/></div>
                     }
 
                     <div className='alt-cta-info'>
@@ -120,7 +120,7 @@ export default function Merchant() {
                         }
                     </div>
                     {altcta.ImagePlacement === 'Right' &&
-                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Image.data.attributes.alternativeText}/></div>
                     }
                 </div>
             ))}
@@ -132,7 +132,7 @@ export default function Merchant() {
         <div className='contact-container'>
             {data.merchantService.data.attributes.ContactUs.map((contact) => (
                 <div key='contact.id' className='location-team-item mg-auto mg-top-50'>
-                    <div className='location-team-image'><img src={contact.TeamMemberImage.data.attributes.url} alt={contact.TeamMemberName} /></div>
+                    <div className='location-team-image'><img src={contact.TeamMemberImage.data.attributes.url} alt={contact.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <h3 className='green uppercase'>{contact.TeamMemberName}</h3>
                     <p>{contact.TeamMemberPosition}</p>
                     <p>{parse(contact.TeamMemberPhone)}</p>

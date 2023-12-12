@@ -101,7 +101,7 @@ export default function Heloc() {
             <div className='team-container container'>
                 {data.heloc.data.attributes.LoanOfficer.map((team) => (
                     <div key='team.id' className='location-team-item'>
-                        <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberName} /></div>
+                        <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberImage.data.attributes.alternativeText} /></div>
                         <h3 className='green uppercase'>{team.TeamMemberName}</h3>
                         <p>{team.TeamMemberPosition}</p>
                         <p>NMLS {team.NMLS}</p>

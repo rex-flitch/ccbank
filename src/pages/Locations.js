@@ -21,6 +21,7 @@ const LOCATIONSPAGE = gql`
                   data {
                     attributes {
                       url
+                      alternativeText
                     }
                   }
                 }
@@ -38,6 +39,7 @@ const LOCATIONSPAGE = gql`
                     data {
                       attributes {
                         url
+                        alternativeText
                       }
                     }
                   }
@@ -101,7 +103,7 @@ contact us in person, on the phone, or online.</p>
         <div className='location-flex'>
             {data.ccBankLocations.data.map((locate, index) => (
             <div key={locate.id} className='location-item'>
-                <div className='location-image'><img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.City}/></div>
+                <div className='location-image'><img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.Image.data.attributes.alternativeText}/></div>
                 <div className='location-info'>
                     <h4 className='green'>{locate.attributes.City}</h4>
                     <div className='address'><p>{locate.attributes.Address} {locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>

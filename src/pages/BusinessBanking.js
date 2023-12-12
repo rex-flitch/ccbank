@@ -65,6 +65,7 @@ const BUSINESSBANKING = gql`
                   data {
                     attributes {
                       url
+                      alternativeText
                     }
                   }
                 }
@@ -131,7 +132,7 @@ export default function BusinessBanking() {
                 <div key={altcta.id} className='alt-cta'>
 
                     {altcta.ImagePlacement === 'Left' &&
-                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Image.data.attributes.alternativeText}/></div>
                     }
 
                     <div className='alt-cta-info'>
@@ -141,7 +142,7 @@ export default function BusinessBanking() {
                         <div className='btn-ghost-green'><Link to={altcta.ButtonURL}>{altcta.ButtonTitle}</Link></div>
                     </div>
                     {altcta.ImagePlacement === 'Right' &&
-                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Title}/></div>
+                        <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Image.data.attributes.alternativeText}/></div>
                     }
                 </div>
             ))}
