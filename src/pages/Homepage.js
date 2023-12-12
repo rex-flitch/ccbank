@@ -45,6 +45,7 @@ const HOMEPAGEINFO = gql`
                         }
                     }
                     HomepageHero {
+                        id,
                         Title,
                         Description,
                         ButtonURL,
@@ -310,7 +311,7 @@ export default function Homepage() {
             className='hero-slider'
             >
                 {data.homepage.data.attributes.HomepageHero.map((hero) => (
-                <div key={hero.id} className='hero' style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
+                <div key={hero.id} className='hero' id={`hero-id-${hero.id}`} style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
                         <div className='login-container'></div>

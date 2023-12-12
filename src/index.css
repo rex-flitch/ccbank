@@ -632,6 +632,9 @@ hr.center {
   align-items:center;
   position: relative;
 }
+.hero-banner #hero-id-8 {
+  background-position: 73% 50%;
+}
 .hero-banner h1 {
   line-height: 63px;
 }
