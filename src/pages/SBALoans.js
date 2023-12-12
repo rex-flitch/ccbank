@@ -10,6 +10,7 @@ const SBALOANSINFO = gql`
             data {
               attributes {
                 SBAHero {
+                  id,
                   Title,
                   Description,
                   ButtonURL,
@@ -80,7 +81,7 @@ export default function SBALoans() {
       {data && (
         <>
       <div className='hero-banner'>
-          <div className='hero bg-center' style={{backgroundImage: `url(${data.sbaLoan.data.attributes.SBAHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero bg-center' id={`sba-hero-id-${data.sbaLoan.data.attributes.SBAHero.id}`} style={{backgroundImage: `url(${data.sbaLoan.data.attributes.SBAHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />
@@ -106,7 +107,7 @@ export default function SBALoans() {
         <div className='sba-image'><img src={data.sbaLoan.data.attributes.SBALoansIntro.BackgroundImage.data.attributes.url} alt={data.sbaLoan.data.attributes.SBALoansIntro.BackgroundImage.data.attributes.alternativeText} /></div>
       </div>
       <div className='sbapreferredloans grey-box'>
-        <h2 className='center'>{data.sbaLoan.data.attributes.SBAPreferred}</h2>
+        <h2 className='center container'>{data.sbaLoan.data.attributes.SBAPreferred}</h2>
         <hr className='center green'></hr>
         <p className='max-800 mg-auto'>{parse(data.sbaLoan.data.attributes.SBAPreferredDescription)}</p>
         <div className='box-cta container'>

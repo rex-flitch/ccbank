@@ -107,9 +107,7 @@ export default function CommercialIndustrialLoans() {
               </div>
           </div>
       </div>
-      <h2 className='center mg-top-50'>{data.commercialAndIndustrialCAndILoan.data.attributes.CandITitle}</h2>
-      <hr className='green center'></hr>
-      <p className='max-800 mg-top-20 mg-auto center'>{parse(data.commercialAndIndustrialCAndILoan.data.attributes.CandIDescription)}</p>
+      <p className='max-800 mg-top-100 mg-auto center'>{parse(data.commercialAndIndustrialCAndILoan.data.attributes.CandIDescription)}</p>
       <div className='box-cta container mg-top-80'>
             {data.commercialAndIndustrialCAndILoan.data.attributes.LoanInfoCTA.map((box) => (
                 <div key='box.id' className='box-item'>

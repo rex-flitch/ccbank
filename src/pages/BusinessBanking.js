@@ -136,7 +136,7 @@ export default function BusinessBanking() {
                     }
 
                     <div className='alt-cta-info'>
-                        <div className='title'><h2>{altcta.Title}</h2></div>
+                        <div className='title'><h3>{altcta.Title}</h3></div>
                         <hr className='orange'></hr>
                         <div className='desciption'><p>{altcta.Description}</p></div>
                         <div className='btn-ghost-green'><Link to={altcta.ButtonURL}>{altcta.ButtonTitle}</Link></div>

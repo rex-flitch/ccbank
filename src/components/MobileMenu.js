@@ -15,7 +15,7 @@ query getMobileMenu {
             id,
             attributes {
               CategoryTitle,
-              mega_menu_links {
+              mega_menu_links(sort: "LinkTitle:asc") {
                 data {
                   id,
                   attributes {

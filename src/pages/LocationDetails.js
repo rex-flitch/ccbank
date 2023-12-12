@@ -57,7 +57,9 @@ export default function LocationDetails() {
     console.log(data)
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
-    
+    function extractNumbers(str) {
+        return str.replace(/\D/g, '');
+    }
     return (
         <main className='wrapper location' id='main' tabindex="-1">
             <div className={pageclassname} style={{backgroundImage: `url(${data.ccBankLocations.data[0].attributes.Image.data.attributes.url})`}}></div>
@@ -65,7 +67,7 @@ export default function LocationDetails() {
                 <h1 className='center orange mg-top-50'>{data.ccBankLocations.data[0].attributes.City}</h1>
                 <hr className='center green' />
                 <p className='center'>{data.ccBankLocations.data[0].attributes.Address} {data.ccBankLocations.data[0].attributes.City}, {data.ccBankLocations.data[0].attributes.State} {data.ccBankLocations.data[0].attributes.Zip}</p>
-                <p className='center'>{data.ccBankLocations.data[0].attributes.Telephone}</p>
+                <p className='center'><Link to={`tel:${data.ccBankLocations.data[0].attributes.Telephone}`}>{data.ccBankLocations.data[0].attributes.Telephone}</Link></p>
                 <div className='btn-green center mg-bottom-50'><Link to={data.ccBankLocations.data[0].attributes.Map} target="_blank" rel="noopener noreferrer">Map</Link></div>
             </div>
             <div className='location-team'>
@@ -81,7 +83,7 @@ export default function LocationDetails() {
                             {team.NMLS && 
                                 <p>NMLS: {team.NMLS}</p>
                             }
-                            <p>Direct: {team.TeamMemberPhone}</p>
+                            <p>{team.TeamMemberPhone}</p>
                             <p>{team.TeamMemberEmail}</p>
                         </div>
                     ))}

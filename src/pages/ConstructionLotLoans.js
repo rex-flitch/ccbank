@@ -102,14 +102,7 @@ export default function Calc() {
                 </>
             )}
             </div>
-            <h2 className='center mg-top-50'>{data && (
-                <>
-                {data.constructionAndLotLoan.data.attributes.ConstructionTitle}
-                </>
-            )}
-            </h2>
-            <hr className='green center'></hr>
-            <div className='max-800 mg-top-20 mg-auto'>
+            <div className='max-800 mg-top-50 mg-auto'>
             {data && (
                 <>
                 {parse(data.constructionAndLotLoan.data.attributes.ConstructionDescription)}

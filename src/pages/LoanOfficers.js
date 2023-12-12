@@ -10,6 +10,7 @@ const LOANOFFICERSINFO = gql`
             data {
               attributes {
                 LoanOfficersHero {
+                  id,
                   Title,
                   Description,
                   ButtonURL,
@@ -160,7 +161,7 @@ export default function LoanOfficers() {
   return (
     <main className='wrapper merchant' id='main' tabindex="-1">
       <div className='hero-banner'>
-          <div className='hero bg-center' style={{backgroundImage: `url(${data.loanOfficer.data.attributes.LoanOfficersHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero bg-center' id={`loanoff-hero-id-${data.loanOfficer.data.attributes.LoanOfficersHero.id}`} style={{backgroundImage: `url(${data.loanOfficer.data.attributes.LoanOfficersHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />
@@ -177,7 +178,7 @@ export default function LoanOfficers() {
             </div>
           </div>
       </div>
-      <h2 className='center mg-top-50'>{data.loanOfficer.data.attributes.LoanOfficersTitle}</h2>
+      <h2 className='center mg-top-50'>{parse(data.loanOfficer.data.attributes.LoanOfficersTitle)}</h2>
       <hr className='green center'></hr>
       <p className='max-800 mg-top-20 mg-auto'>{parse(data.loanOfficer.data.attributes.LoanOfficersDescription)}</p>
       <div className='loan-officers mg-top-50'>

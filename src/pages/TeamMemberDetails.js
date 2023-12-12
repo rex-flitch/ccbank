@@ -41,7 +41,10 @@ export default function TeamMemberDetails() {
   
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
-  
+    function extractNumbers(str) {
+        return str.replace(/\D/g, '');
+    }
+    const onlyNumbers = extractNumbers(data.ccBankAllTeamMembers.data[0].attributes.Phone);
     console.log(data)
     return (
       <main className='wrapper team-details' id='main' tabindex="-1">
@@ -55,7 +58,7 @@ export default function TeamMemberDetails() {
                         <h4 className='green'>{ data.ccBankAllTeamMembers.data[0].attributes.Name }</h4>
                         <p>{ data.ccBankAllTeamMembers.data[0].attributes.Position }<br />
                         NMLS { data.ccBankAllTeamMembers.data[0].attributes.NMLSNumber }<br />
-                        { data.ccBankAllTeamMembers.data[0].attributes.Phone }<br />
+                        <Link to={`tel:${onlyNumbers}`}>{ data.ccBankAllTeamMembers.data[0].attributes.Phone }</Link><br />
                         { data.ccBankAllTeamMembers.data[0].attributes.Email }</p>
                     </div>
                 </div>
