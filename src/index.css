@@ -2229,6 +2229,12 @@ nav.footer-nav ul li a {
   #sba-hero-id-19 {
     background-position:75% 50%;
   }
+  #personal-landing-hero-id-43 {
+    background-position:70% 50%;
+  }
+  #deposit-acounts-hero-id-33 {
+    background-position:75% 50%;
+  }
 }
 @media (max-width: 500px) {
   .team-flex .team-flex-item {
@@ -2242,5 +2248,11 @@ nav.footer-nav ul li a {
   }
   .item-content {
     height: calc(100% - 95px);
+  }
+  .cta-box .cta-info {
+    padding:45px;
+  }
+  .cta-info ul {
+    padding-left:20px;
   }
 }

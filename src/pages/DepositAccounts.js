@@ -14,6 +14,7 @@ const GETDEPOSITACCOUNT = gql`
                 CertificatesDepositTitle
                 CertificatesDepositInfo
                 DepositHero {
+                  id
                   Title
                   Description
                   ButtonURL
@@ -72,7 +73,7 @@ export default function DepositAccounts() {
   return (
     <main className='wrapper deposit-account' id='main' tabindex="-1">
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${data.depositAccount.data.attributes.DepositHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' id={`deposit-acounts-hero-id-${data.depositAccount.data.attributes.DepositHero.id}`} style={{backgroundImage: `url(${data.depositAccount.data.attributes.DepositHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />

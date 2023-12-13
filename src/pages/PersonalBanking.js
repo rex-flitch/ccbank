@@ -24,6 +24,7 @@ const PERSONALBANKING = gql`
                   }
                 }
                 PersonalBankingHero {
+                  id
                   Title
                   Description
                   ButtonURL
@@ -53,7 +54,7 @@ export default function PersonalBanking() {
   return (
     <main className='wrapper personal-banking' id='main' tabindex="-1">
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${data.personalBanking.data.attributes.PersonalBankingHero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' id={`sba-hero-id-${data.personalBanking.data.attributes.PersonalBankingHero.id}`} style={{backgroundImage: `url(${data.personalBanking.data.attributes.PersonalBankingHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />

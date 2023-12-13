@@ -10,6 +10,7 @@ const PERSONALBANKINGLANINGGET = gql`
             data {
               attributes {
                 Hero {
+                  id
                   Title
                   Description
                   ButtonURL
@@ -69,7 +70,7 @@ export default function PersonalBankingLanding() {
   return (
     <main className='wrapper personal-banking-landing' id='main' tabindex="-1">
       <div className='hero-banner'>
-          <div className='hero bg-center' style={{backgroundImage: `url(${data.personalBankingLanding.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero bg-center' id={`personal-landing-hero-id-${data.personalBankingLanding.data.attributes.Hero.id}`} style={{backgroundImage: `url(${data.personalBankingLanding.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />
@@ -102,7 +103,7 @@ export default function PersonalBankingLanding() {
         </div>
         </div>
         <div className='personal-banking-team container mg-top-50 mg-bottom-50'>
-            <h2 className='center'>Meet the Personal Banking</h2>
+            <h2 className='center'>Meet the Personal Banking Team</h2>
             <hr className='center green' />
             <div className='img-cta-container container'>
                 {data.personalBankingLanding.data.attributes.PBTeam.map((team) => (
