@@ -42,6 +42,7 @@ import Rise from './pages/Rise'
 import Mdg from './pages/Mdg'
 import Today from './pages/Today'
 import Xact from './pages/Xact'
+import Partners from './pages/Partners'
 import OnlineAccountOpening from './pages/OnlineAccountOpening'
 import FinancialLibrary from './pages/FinancialLibrary'
 import SiteHeader from './components/SiteHeader'
@@ -114,6 +115,7 @@ function App() {
               <Route path="/ccbank-partners/xact" element={<Xact />}/>
               <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
               <Route path="/financial-library" element={<FinancialLibrary />}/>
+              <Route path="/ccbank-partners" element={<Partners />}/>
             </Routes>
             <SiteFooter />
           </div>
