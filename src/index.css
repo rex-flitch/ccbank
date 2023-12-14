@@ -58,6 +58,12 @@ h4.fjalla {
   font-weight:100;
   margin:15px 0;
 }
+h4.fjalla a {
+  font-size:22px;
+  font-family:'Fjalla One', 'Roboto', sans-serif;
+  font-weight:100;
+  margin:15px 0;
+}
 h4 {
   font-size:18px;
   font-family:'Montserrat', 'Roboto', sans-serif;

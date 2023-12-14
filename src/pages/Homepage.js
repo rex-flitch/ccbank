@@ -558,7 +558,7 @@ export default function Homepage() {
                         <div key={news.id} className='cc-news-preview-inner'>
                             <div className='cc-news-image' role='img' aria-label={news.attributes.Media.data[0].attributes.alternativeText}style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
                             <div className='cc-news-info'>
-                                <h4 className="orange fjalla">{news.attributes.Title}</h4>
+                                <h4 className="orange fjalla"><Link to={`/news/${news.attributes.slug}`}>{news.attributes.Title}</Link></h4>
                                 <p>{news.attributes.ShortStory.substring(0, 250)}...</p>
                                 <div><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}>Read more</Link></div>
                             </div>
