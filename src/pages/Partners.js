@@ -5,7 +5,7 @@ import parse from 'html-react-parser'
 import AccountLogin from '../components/AccountLogin'
 const GETPARTNERS = gql`
     query partnersQuery {
-        partners {
+        partners(sort: "Title:asc") {
             data {
               id
               attributes {

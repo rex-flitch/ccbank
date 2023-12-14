@@ -688,6 +688,10 @@ hr.center {
 }
 .look-image img {
   width:100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  object-fit: cover;
+  object-position:center;
 }
 .looking-for .react-multi-carousel-dot-list {
   align-items:start;
@@ -2264,6 +2268,9 @@ nav.footer-nav ul li a {
   }
   .partners-section .choicecash-for-business {
     width:100%;
+  }
+  .cbpc {
+    overflow:scroll;
   }
 }
 @media (max-width: 500px) {
