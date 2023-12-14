@@ -2292,4 +2292,13 @@ nav.footer-nav ul li a {
   .cta-info ul {
     padding-left:20px;
   }
+  .details-flex {
+    flex-direction: column;
+  }
+  .details-info {
+    width:100%;
+  }
+  .details-image {
+    width:100%;
+  }
 }
