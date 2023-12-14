@@ -502,7 +502,7 @@ export default function Homepage() {
                                 //         <div className='btn-green'><a href="/">HOURS & DIRECTIONS</a></div>
                                 //     </div>
                                 // </div>
-                                <div role="button" tabindex="0" key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'} onClick={() => handleLinkClick(index)}>
+                                <div role="button" tabindex="0" key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
                                     <div className='left-links'>
                                         <div>{locate.attributes.City}</div>
                                     </div>
@@ -510,7 +510,7 @@ export default function Homepage() {
                             ))}
                                 <div className='location-img mg-top-50'>
                                     {data.ccBankLocations.data.map((locate, index) => (
-                                        <div key={locate.id} className={`locations-info ${activeIndex === index ? 'active' : ''}`} onClick={() => handleLinkClick(index)}>
+                                        <div key={locate.id} className={`locations-info ${activeIndex === index ? 'active' : ''}`}>
                                             <img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.Image.data.attributes.alternativeText} />
                                         </div>
                                     ))}
@@ -518,7 +518,7 @@ export default function Homepage() {
                             </div>
                             <div className='cc-locations-flex right'>
                             {data.ccBankLocations.data.map((locate2, index) => (
-                                <div key={locate2.id} className={`locations-info ${activeIndex === index ? 'active' : ''}`} onClick={() => handleLinkClick(index)}>
+                                <div key={locate2.id} className={`locations-info ${activeIndex === index ? 'active' : ''}`}>
                                     <div className='right-map'>
                                     {locate2.attributes.EmbedMapCode !== null &&
                                         <div>{parse(locate2.attributes.EmbedMapCode)}</div>
