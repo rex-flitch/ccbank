@@ -778,7 +778,10 @@ option {
 .cta-box .cta-image {
   min-height:300px;
   background-size:cover;
-  background-repeat: none;;
+  background-repeat: no-repeat;
+}
+.home .cta-box #cta-id-2 {
+  background-position:20% 50%;
 }
 /* Alt Call to Actions */
 .alt-image-color {
@@ -952,7 +955,9 @@ option {
 .quote-inner h3 {
   color:#03873d;
 }
-
+.quote-youtube img {
+  width:50px;
+}
 /* Video Columns */
 .video-wrapper {
   padding:40px 0;
@@ -2166,7 +2171,7 @@ nav.footer-nav ul li a {
   }
   .cc-locations-flex.left {
     width:100%;
-    padding:50px 0;
+    padding:0;
   }
   .cc-locations-flex.right {
     width:100%;
