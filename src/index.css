@@ -458,11 +458,12 @@ hr.center {
   margin: 5px 0 5px auto;
 }
 .menu {
-  position: absolute;
+  position: fixed;
+  overflow: scroll;
   top: 0;
   right: -100%; /* Start off-screen */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #222222;
   transition: right 0.3s;
   z-index: 10;
@@ -1074,6 +1075,7 @@ option {
   width:100%;
   height: 100%;
   top:0;
+  z-index: 1;
 }
 .cc-news-overlay a {
   display: flex;
@@ -1087,7 +1089,7 @@ option {
   width:100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  opacity: 0;
+  opacity: 1;
   transition: opacity .5s;
 }
 .cc-news-page-image {
@@ -1096,9 +1098,10 @@ option {
   background-position: center;
   background-repeat: no-repeat;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 .cc-news-page-inner:hover img {
-  opacity: 1;
+  opacity: 0;
 }
 .news-story img {
   float:left;

@@ -161,7 +161,7 @@ export default function BusinessBanking() {
         infinite={true}
         keyBoardControl={true}
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        // removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
         className='mg-top-50'
