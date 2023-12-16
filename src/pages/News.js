@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -59,12 +59,13 @@ const NEWSINFO = gql`
     }
 `
 export default function News() {
-
+  const [displayCount, setDisplayCount] = useState(1);
+  /// ----------------------- CHANGE THE useState(1) TO 6 TO DISPLAY 6 INSTEAD OF 1 ------------------
   const { loading, error, data } = useQuery(NEWSINFO)
   console.log(data)
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
-
+  
   console.log(data)
   return (
     <main className='wrapper merchant' id='main' tabindex="-1">
@@ -88,7 +89,7 @@ export default function News() {
       </div>
       <div className='cc-news-preview'>
             <div className='cc-news-page-box container'>
-                {data.ccBanksNews.data.map((news) => (
+                {data.ccBanksNews.data.slice(0, displayCount).map((news) => (
                     <div key={news.id} className='cc-news-page-inner'>
                         <div className='cc-news-overlay'><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}></Link></div>
                         <div className='cc-news-page-image'><img src={news.attributes.Media.data[0].attributes.url} alt={news.attributes.Media.data[0].attributes.alternativeText} /></div>
@@ -101,6 +102,10 @@ export default function News() {
                     </div>
                 ))}
             </div>
+            {displayCount < data.ccBanksNews.data.length && (
+              <div className='container width-150'><button className='btn-green center' onClick={() => setDisplayCount(displayCount + 1)}>Show More</button></div>
+              // ---------------------  CHANGE THE 1 TO 6 IS SHOW 6 MORE ABOVE ^- setDisplayCount(displayCount + 1)
+            )}
         </div>
         <div className='cc-news-preview bg-grey'>
           <h2 className='center black'>Videos</h2>

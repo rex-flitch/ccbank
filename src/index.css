@@ -249,6 +249,9 @@ hr.center {
   margin-top:15px;
   margin-bottom:15px;
 }
+.width-150 {
+  width:150px;
+}
 .bg-bottom {
   background-position: 0 bottom;
 }
