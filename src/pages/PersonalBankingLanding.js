@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -60,6 +60,23 @@ const PERSONALBANKINGLANINGGET = gql`
     }
 `
 export default function PersonalBankingLanding() {
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    const scrollToElement = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Wait for a bit and try again
+            setTimeout(scrollToElement, 100);
+        }
+    };
+
+    if (hash) {
+        scrollToElement();
+    }
+}, []);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(PERSONALBANKINGLANINGGET)
   console.log(data)
@@ -102,7 +119,7 @@ export default function PersonalBankingLanding() {
             </div>
         </div>
         </div>
-        <div className='personal-banking-team container mg-top-50 mg-bottom-50'>
+        <div id="personal-team" className='personal-banking-team container mg-top-50 mg-bottom-50'>
             <h2 className='center'>Meet the Personal Banking Team</h2>
             <hr className='center green' />
             <div className='img-cta-container container'>

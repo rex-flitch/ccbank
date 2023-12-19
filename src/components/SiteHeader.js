@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import MobileMenu from './MobileMenu'
@@ -59,7 +59,18 @@ query getHomepage {
 `
 
 export default function SiteHeader() {
+  useEffect(() => {
+    const script = document.createElement('script');
   
+    script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
+    script.async = true;
+  
+    document.body.appendChild(script);
+  
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
   
   // const checkForSGI = () => {
   //   const sgiElement = document.getElementById('sgi');
@@ -101,9 +112,9 @@ export default function SiteHeader() {
 
   return (
     <div className="site-header">
-      <a href="#main-nav" class="skip">Skip to main navigation</a>
-      <a href="#main" class="skip">Skip to main content</a>
-      <a href="#footer" class="skip">Skip to footer</a>
+      <a href="#main-nav" className="skip">Skip to main navigation</a>
+      <a href="#main" className="skip">Skip to main content</a>
+      <a href="#footer" className="skip">Skip to footer</a>
       <div className="top-header">
         <ul className="container">
           <li><Link to="/about"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment"/>Solar Loan Payment</Link></li>
@@ -149,7 +160,7 @@ export default function SiteHeader() {
                         {subnav.attributes.mega_menu_links.data.map((links) => (
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
                             links.attributes.LinkTitle === "Leadership Team" ? (
-                              <li key={links.id}><Link to={{pathname: links.attributes.LinkURL, hash: "#team"}}>{links.attributes.LinkTitle}</Link></li>
+                              <li key={links.id}><Link reloadDocument to={{pathname: links.attributes.LinkURL, hash: "#team"}}>{links.attributes.LinkTitle}</Link></li>
                             ) : (
                               <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                             )

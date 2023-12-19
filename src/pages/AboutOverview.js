@@ -72,11 +72,22 @@ const ABOUTOVERVIEWPAGEINFO = gql`
 export default function AboutOverview() {
   useEffect(() => {
     const hash = window.location.hash;
+
+    const scrollToElement = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Wait for a bit and try again
+            setTimeout(scrollToElement, 100);
+        }
+    };
+
     if (hash) {
-      const section = document.getElementById(hash.substring(1));
-      if (section) section.scrollIntoView({ behavior: 'smooth' });
+        scrollToElement();
     }
-  }, []);
+}, []);
+  
 
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(ABOUTOVERVIEWPAGEINFO)
@@ -92,7 +103,7 @@ export default function AboutOverview() {
   console.log(data)
   
   return (
-    <main className='wrapper aboutoverview' id='main' tabindex="-1">
+    <main className='wrapper aboutoverview' id='main' tabIndex="-1">
       <div className='hero-banner'>
           <div className='hero' style={{backgroundImage: `url(${data.aboutOverview.data.attributes.OveriewHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -114,7 +125,7 @@ export default function AboutOverview() {
       <div className='container mg-top-50 mg-bottom-50'>
         <h2 className='center'>{data.aboutOverview.data.attributes.Title}</h2>
         <hr className="green center"></hr>
-        <p className='max-800 mg-auto'>{parse(data.aboutOverview.data.attributes.Description)}</p>
+        <div className='max-800 mg-auto'>{parse(data.aboutOverview.data.attributes.Description)}</div>
       </div>
       <div className='alt-image-color'>
         <div className='container'>
@@ -143,6 +154,7 @@ export default function AboutOverview() {
         <hr className="green center"></hr>
         <div className='max-800 mg-auto'>{parse(data.aboutOverview.data.attributes.CommunityGivingDescription)}</div>
       </div>
+      <div name="team" id="team"></div>
       <Team teamMembers={data.ccBankLeadershipTeams.data} />
     </main>
   )

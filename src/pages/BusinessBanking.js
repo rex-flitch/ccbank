@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -76,6 +76,23 @@ const BUSINESSBANKING = gql`
     }
 `
 export default function BusinessBanking() {
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    const scrollToElement = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Wait for a bit and try again
+            setTimeout(scrollToElement, 100);
+        }
+    };
+
+    if (hash) {
+        scrollToElement();
+    }
+}, []);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(BUSINESSBANKING)
 
@@ -129,7 +146,7 @@ export default function BusinessBanking() {
                   <h2 class='center orange'>Lending Solutions</h2>
                   <hr className="green center"></hr>
             {data.businessBanking.data.attributes.BusinessBankingAltCTA.map((altcta) => (
-                <div key={altcta.id} className='alt-cta'>
+                <div key={altcta.id} className='alt-cta' id={`jump-${altcta.id}`}>
 
                     {altcta.ImagePlacement === 'Left' &&
                         <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image left alt-cta-orange' : 'alt-cta-image left alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Image.data.attributes.alternativeText}/></div>

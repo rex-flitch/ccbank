@@ -84,7 +84,10 @@ const RATESPAGE = gql`
     }
 `
 const Rates = ({ shouldReload }) => {
+  
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
+  
+  // window.Chimney.calculators.createCalc('sgi', 'b147b219-a6a5-4b4d-9f60-00e285df54de');
   const [hasReloaded, setHasReloaded] = useState(true);
 
   useEffect(() => {
