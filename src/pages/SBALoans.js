@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -69,6 +69,24 @@ const SBALOANSINFO = gql`
     }
 `
 export default function SBALoans() {
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89';
+    script.onload = () => setIsScriptLoaded(true);
+    document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    if (isScriptLoaded) {
+      setTimeout(() => {
+        if (window.Chimney?.calculators?.createCalc) {
+          window.Chimney.calculators.createCalc('calculators', '793f8707-fa07-4f89-899f-75fc786d3401');
+        }
+      }, 1000); // Adjust the delay as necessary
+    }
+  }, [isScriptLoaded]);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { data } = useQuery(SBALOANSINFO)
 
@@ -145,8 +163,7 @@ export default function SBALoans() {
       </div>
       </>
       )}
-      <div className='calculators'>
-        <div id='sgi' data-guid='793f8707-fa07-4f89-899f-75fc786d3401'></div>
+      <div className='calculators' id="calculators">
       </div>
     </main>
   )

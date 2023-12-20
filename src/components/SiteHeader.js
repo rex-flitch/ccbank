@@ -59,18 +59,19 @@ query getHomepage {
 `
 
 export default function SiteHeader() {
-  useEffect(() => {
-    const script = document.createElement('script');
   
-    script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
-    script.async = true;
+  // useEffect(() => {
+  //   const script = document.createElement('script');
   
-    document.body.appendChild(script);
+  //   script.src = "https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89";
+  //   script.async = true;
   
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
+  //   document.body.appendChild(script);
+  
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   }
+  // }, []);
   
   // const checkForSGI = () => {
   //   const sgiElement = document.getElementById('sgi');

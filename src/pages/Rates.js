@@ -84,7 +84,24 @@ const RATESPAGE = gql`
     }
 `
 const Rates = ({ shouldReload }) => {
-  
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89';
+    script.onload = () => setIsScriptLoaded(true);
+    document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    if (isScriptLoaded) {
+      setTimeout(() => {
+        if (window.Chimney?.calculators?.createCalc) {
+          window.Chimney.calculators.createCalc('calculators', 'b147b219-a6a5-4b4d-9f60-00e285df54de');
+        }
+      }, 1000); // Adjust the delay as necessary
+    }
+  }, [isScriptLoaded]);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   
   // window.Chimney.calculators.createCalc('sgi', 'b147b219-a6a5-4b4d-9f60-00e285df54de');
@@ -117,7 +134,7 @@ const Rates = ({ shouldReload }) => {
 
   console.log(data)
   return (
-    <main className='wrapper rates' id='main' tabindex="-1">
+    <main className='wrapper rates' id='main' tabIndex="-1">
       {data && (
         <>
         <div className='hero-banner'>
@@ -180,8 +197,8 @@ const Rates = ({ shouldReload }) => {
       </div>
         </>
       )}
-      <div className='calculators'>
-        <div id='sgi' data-guid='b147b219-a6a5-4b4d-9f60-00e285df54de'></div>
+      <div className='calculators' id="calculators">
+        {/* <div id='sgi' data-guid='b147b219-a6a5-4b4d-9f60-00e285df54de'></div> */}
       </div>
       {data && (
         <>

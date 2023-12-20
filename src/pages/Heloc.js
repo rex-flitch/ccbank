@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -51,6 +51,24 @@ const HELOCINFO = gql`
     }
 `
 export default function Heloc() {
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89';
+    script.onload = () => setIsScriptLoaded(true);
+    document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    if (isScriptLoaded) {
+      setTimeout(() => {
+        if (window.Chimney?.calculators?.createCalc) {
+          window.Chimney.calculators.createCalc('calculators', 'a72417a0-9193-4d41-885f-3d3d6a37af3d');
+        }
+      }, 1000); // Adjust the delay as necessary
+    }
+  }, [isScriptLoaded]);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { data } = useQuery(HELOCINFO)
 
@@ -115,8 +133,7 @@ export default function Heloc() {
       </div>
         </>
       )}
-      <div className='calculators'>
-        <div id='sgi' data-guid='a72417a0-9193-4d41-885f-3d3d6a37af3d'></div>
+      <div className='calculators' id="calculators">
       </div>
     </main>
   )

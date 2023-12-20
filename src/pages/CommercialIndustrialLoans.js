@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -60,6 +60,24 @@ const CONSTRUCTIONINDUSTRIALINFO = gql`
     }
 `
 export default function CommercialIndustrialLoans() {
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89';
+    script.onload = () => setIsScriptLoaded(true);
+    document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    if (isScriptLoaded) {
+      setTimeout(() => {
+        if (window.Chimney?.calculators?.createCalc) {
+          window.Chimney.calculators.createCalc('calculators', '992bb347-c05f-4ea6-aa25-aaa0352409e2');
+        }
+      }, 1000); // Adjust the delay as necessary
+    }
+  }, [isScriptLoaded]);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { data } = useQuery(CONSTRUCTIONINDUSTRIALINFO)
 
@@ -157,8 +175,7 @@ export default function CommercialIndustrialLoans() {
       </div>
         </>
       )}
-      <div className='calculators'>
-        <div id='sgi' data-guid='992bb347-c05f-4ea6-aa25-aaa0352409e2'></div>
+      <div className='calculators' id="calculators">
       </div>
     </main>
   )
