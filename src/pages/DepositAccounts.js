@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -57,6 +57,23 @@ const GETDEPOSITACCOUNT = gql`
     }
 `
 export default function DepositAccounts() {
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    const scrollToElement = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Wait for a bit and try again
+            setTimeout(scrollToElement, 100);
+        }
+    };
+
+    if (hash) {
+        scrollToElement();
+    }
+}, []);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(GETDEPOSITACCOUNT)
 
@@ -132,7 +149,7 @@ export default function DepositAccounts() {
                 </table>
             </div>
       </div>
-      <div className='container mg-top-80 mg-bottom-50'>
+      <div className='container mg-top-80 mg-bottom-50' name="cds" id="cds">
         <h2 className='center orange'>{data.depositAccount.data.attributes.CertificatesDepositTitle}</h2>
         <hr className='green center'></hr>
         <div className='p-center'>{parse(data.depositAccount.data.attributes.CertificatesDepositInfo)}</div>

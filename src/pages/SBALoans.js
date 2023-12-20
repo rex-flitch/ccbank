@@ -8,6 +8,7 @@ const SBALOANSINFO = gql`
     query getSBALoans {
         sbaLoan {
             data {
+              id,
               attributes {
                 SBAHero {
                   id,
@@ -25,6 +26,7 @@ const SBALOANSINFO = gql`
                   }
                 }
                 SBALoansIntro {
+                  id,
                   Title,
                   Text,
                   ButtonURL,
@@ -41,6 +43,7 @@ const SBALOANSINFO = gql`
                 SBAPreferred,
                 SBAPreferredDescription,
                 SBALoans {
+                  id,
                   MainTitle,
                   SuperTitle
                 }
@@ -95,7 +98,7 @@ export default function SBALoans() {
 
   console.log(data)
   return (
-    <main className='wrapper sbaloans' id='main' tabindex="-1">
+    <main className='wrapper sbaloans' id='main' tabIndex="-1">
       {data && (
         <>
       <div className='hero-banner'>
@@ -120,19 +123,19 @@ export default function SBALoans() {
         <div className='sba-text'>
             <h2>{data.sbaLoan.data.attributes.SBALoansIntro.Title}</h2>
             <hr className='green'></hr>
-            <p>{parse(data.sbaLoan.data.attributes.SBALoansIntro.Text)}</p>
+            <div>{parse(data.sbaLoan.data.attributes.SBALoansIntro.Text)}</div>
         </div>
         <div className='sba-image'><img src={data.sbaLoan.data.attributes.SBALoansIntro.BackgroundImage.data.attributes.url} alt={data.sbaLoan.data.attributes.SBALoansIntro.BackgroundImage.data.attributes.alternativeText} /></div>
       </div>
       <div className='sbapreferredloans grey-box'>
         <h2 className='center container'>{data.sbaLoan.data.attributes.SBAPreferred}</h2>
         <hr className='center green'></hr>
-        <p className='max-800 mg-auto'>{parse(data.sbaLoan.data.attributes.SBAPreferredDescription)}</p>
+        <div className='max-800 mg-auto'>{parse(data.sbaLoan.data.attributes.SBAPreferredDescription)}</div>
         <div className='box-cta container'>
             {data.sbaLoan.data.attributes.SBALoans.map((box) => (
-                <div key='box.id' className='box-item'>
+                <div key={box.id} className='box-item'>
                     <h4 className='green left'>{box.MainTitle}</h4>
-                    <p>{parse(box.SuperTitle)}</p>
+                    <div>{parse(box.SuperTitle)}</div>
                 </div>
             ))}
         </div>
@@ -151,10 +154,10 @@ export default function SBALoans() {
                         {team.NMLS !== null &&
                           <p>NMLS {team.NMLS}</p>
                         }
-                        <p className='mg-top-20'>{parse(team.TeamMemberPhone)}</p>
+                        <div className='mg-top-20'>{parse(team.TeamMemberPhone)}</div>
                         <p>{team.TeamMemberEmail}</p>
                         {team.Bio !== null &&
-                            <p className='mg-top-20'>{parse(team.Bio)}</p>
+                            <div className='mg-top-20'>{parse(team.Bio)}</div>
                         }   
                     </div>
                 ))}
