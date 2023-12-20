@@ -1118,7 +1118,7 @@ option {
 .cc-locations-inner {
   width:100%;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: 50% 30%;
   background-size: cover;
   padding:50px 0;
 }
@@ -1976,6 +1976,9 @@ nav.footer-nav ul li a {
   border-right:1px solid #de7205;
   padding:0 10px;
 }
+.footer-middle-line span.footer-last {
+  border-right:0;
+}
 .footer-middle-line span.grey {
   color:#808285;
   border:0;
@@ -2006,6 +2009,24 @@ nav.footer-nav ul li a {
 .footer-copy p {
   color:#888888;
   margin:0;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: #03873Dff;
+  color:#fff;
+  padding-bottom:4px;
+  z-index: 10;
+  border-radius: 50px;
+  width: 34px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+
 }
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
@@ -2286,7 +2307,7 @@ nav.footer-nav ul li a {
   .partners-section .choicecash-for-business {
     width:100%;
   }
-  .cbpc {
+  .cbpc, .rates-table {
     overflow:scroll;
   }
 }

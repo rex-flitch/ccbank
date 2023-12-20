@@ -104,6 +104,13 @@ export default function SiteHeader() {
         setIsExpanded(false);
     };
 
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // For smooth scrolling
+      });
+    };
+
   const { loading, error, data } = useQuery(CCSettings)
 
   if (loading) return <p>Loading...</p>
@@ -116,6 +123,10 @@ export default function SiteHeader() {
       <a href="#main-nav" className="skip">Skip to main navigation</a>
       <a href="#main" className="skip">Skip to main content</a>
       <a href="#footer" className="skip">Skip to footer</a>
+      <div className="scroll-to-top" onClick={scrollToTop}>
+        {/* Replace with your icon */}
+        <span>↑</span>
+      </div>
       <div className="top-header">
         <ul className="container">
           <li><Link to="/about"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment"/>Solar Loan Payment</Link></li>
