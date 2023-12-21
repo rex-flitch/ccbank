@@ -59,7 +59,7 @@ const NEWSINFO = gql`
     }
 `
 export default function News() {
-  const [displayCount, setDisplayCount] = useState(1);
+  const [displayCount, setDisplayCount] = useState(6);
   /// ----------------------- CHANGE THE useState(1) TO 6 TO DISPLAY 6 INSTEAD OF 1 ------------------
   const { loading, error, data } = useQuery(NEWSINFO)
   console.log(data)
@@ -103,7 +103,7 @@ export default function News() {
                 ))}
             </div>
             {displayCount < data.ccBanksNews.data.length && (
-              <div className='container width-150'><button className='btn-green center' onClick={() => setDisplayCount(displayCount + 1)}>Show More</button></div>
+              <div className='container width-150'><button className='btn-green center' onClick={() => setDisplayCount(displayCount + 3)}>Show More</button></div>
               // ---------------------  CHANGE THE 1 TO 6 IS SHOW 6 MORE ABOVE ^- setDisplayCount(displayCount + 1)
             )}
         </div>

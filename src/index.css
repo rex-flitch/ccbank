@@ -1073,6 +1073,7 @@ option {
   flex-direction: column;
   width:32%;
   position: relative;
+  margin-bottom:30px;
 }
 .cc-news-overlay {
   position: absolute;
@@ -1106,6 +1107,9 @@ option {
 }
 .cc-news-page-inner:hover img {
   opacity: 0;
+}
+.cc-news-page-inner:hover .cc-news-page-info h4 {
+  color: #03873D;
 }
 .news-story img {
   float:left;

@@ -112,9 +112,13 @@ export default function MobileMenu() {
                         <h4>{subnav.attributes.CategoryTitle}</h4>
                         <hr className='green'></hr>
                         <ul>
-                        {subnav.attributes.mega_menu_links.data.map((links) => (
+                          {subnav.attributes.mega_menu_links.data.map((links) => (
                           links.attributes.main_navigations.data[0].attributes.Title === nav.attributes.Title && (
-                            <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}  onClick={() => setIsOpen(!isOpen)}>{links.attributes.LinkTitle}</Link></li>
+                            links.attributes.LinkTitle === "Leadership Team" ? (
+                              <li key={links.id}><Link reloadDocument to={{pathname: links.attributes.LinkURL, hash: "#team"}}>{links.attributes.LinkTitle}</Link></li>
+                            ) : (
+                              <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
+                            )
                           )))}
                         </ul>
                       </div>
