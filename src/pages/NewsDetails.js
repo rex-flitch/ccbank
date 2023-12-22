@@ -38,10 +38,16 @@ export default function NewsDetails() {
     
     return (
         <main className='wrapper news-items mg-top-50' id='main' tabindex="-1">
+            <div className='breadcrumbs container max-800 mg-auto'><Link to="/">Home</Link> <span>|</span> <Link to="/news">News</Link> <span>|</span> News Story</div>
             <div className='container max-800 mg-auto'>
                 <h1>{data.ccBanksNews.data[0].attributes.Title}</h1>
                 <h5>{data.ccBanksNews.data[0].attributes.Date}</h5>
-                <div className='news-story'><img src={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.url} alt={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.alternativeText} />{parse(data.ccBanksNews.data[0].attributes.MainStory)}</div>
+                <div className='news-story'>
+                    {data.ccBanksNews.data[0].attributes.Media.data.length > 0 &&
+                        <img src={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.url} alt={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.alternativeText} />
+                    }
+                    {parse(data.ccBanksNews.data[0].attributes.MainStory)}
+                </div>
             </div>
         </main>
     )

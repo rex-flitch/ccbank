@@ -2033,6 +2033,12 @@ nav.footer-nav ul li a {
   font-size: 36px;
 
 }
+.breadcrumbs {
+  font-size:14px;
+}
+.breadcrumbs span {
+  padding:0 6px;
+}
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
     background-position:50% 17%;
