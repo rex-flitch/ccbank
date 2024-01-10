@@ -131,7 +131,7 @@ export default function Calc() {
                     </div>
                 ))}
             </div>
-            <div className='max-800 mg-top-20 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ReputableAffiliationsDescriptionBottom)}</div>
+            <div className='max-800 mg-top-20 mg-bottom-50 mg-auto'>{parse(data.constructionAndLotLoan.data.attributes.ReputableAffiliationsDescriptionBottom)}</div>
                     </>
                 )}
             </div>

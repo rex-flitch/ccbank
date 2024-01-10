@@ -119,7 +119,7 @@ export default function SBALoans() {
               </div>
           </div>
       </div>
-      <div className='sbaloans-intro container mg-top-50'>
+      <div className='sbaloans-intro container mg-top-50 mg-bottom-50'>
         <div className='sba-text'>
             <h2>{data.sbaLoan.data.attributes.SBALoansIntro.Title}</h2>
             <hr className='green'></hr>
@@ -140,7 +140,7 @@ export default function SBALoans() {
             ))}
         </div>
       </div>
-      <div className='sbateam mg-top-50'>
+      <div className='sbateam mg-top-50 mg-bottom-50'>
         <div className='loan-officers-inner container'>
             <h2 className='center'>{data.sbaLoan.data.attributes.SBALendingTeamTitle}</h2>
             <hr className='green center'></hr>
