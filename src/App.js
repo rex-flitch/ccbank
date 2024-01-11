@@ -45,6 +45,7 @@ import Xact from './pages/Xact'
 import Partners from './pages/Partners'
 import OnlineAccountOpening from './pages/OnlineAccountOpening'
 import FinancialLibrary from './pages/FinancialLibrary'
+import Resources from './pages/Resources'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -116,6 +117,7 @@ function App() {
               <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
               <Route path="/financial-library" element={<FinancialLibrary />}/>
               <Route path="/ccbank-partners" element={<Partners />}/>
+              <Route path="/resources" element={<Resources />}/>
             </Routes>
             <SiteFooter />
           </div>
