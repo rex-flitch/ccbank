@@ -303,7 +303,7 @@ export default function Homepage() {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             autoPlay={true}
-            autoPlaySpeed={6000}
+            autoPlaySpeed={3000}
             keyBoardControl={true}
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
