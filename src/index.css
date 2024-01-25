@@ -1984,6 +1984,10 @@ nav.footer-nav ul li a {
 .footer-middle-line span.footer-last {
   border-right:0;
 }
+.footer-middle-line span.footer-last img {
+  width:20px;
+  padding-right:8px;
+}
 .footer-middle-line span.grey {
   color:#808285;
   border:0;

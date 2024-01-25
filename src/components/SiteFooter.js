@@ -60,7 +60,7 @@ export default function SiteFooter() {
         <div className='footer-middle-line'>
             <span>Routing &amp; Transit Number: {data.ccBankSettings.data[0].attributes.RouterNumber}</span>
             <span>NMLS Number: {data.ccBankSettings.data[0].attributes.NMLSnumber}</span>
-            <span className='footer-last'>EQUAL HOUSING LENDER | MEMBER FDIC</span>
+            <span className='footer-last'><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1706204381/house_icon_d68a6d70d1.svg" alt="House Icon" />EQUAL HOUSING LENDER | MEMBER FDIC</span>
         </div>
         <div className='footer-bottom-line'>
             <ul>
