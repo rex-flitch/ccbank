@@ -2325,6 +2325,9 @@ nav.footer-nav ul li a {
   .cbpc, .rates-table {
     overflow:scroll;
   }
+  .footer-middle-line span.footer-last img {
+    width:25px;
+  }
 }
 @media (max-width: 500px) {
   .team-flex .team-flex-item {
