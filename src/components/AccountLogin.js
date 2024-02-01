@@ -52,9 +52,9 @@ export default function AccountLogin() {
                     </div>
                 </div>
 
-                <div className="accordion-item credit-card">
+                {/* <div className="accordion-item credit-card">
                     <div className='accordion-title cclogin'><a href="https://www.mycardstatement.com/#/">Credit Card Login</a></div>
-                </div>
+                </div> */}
 
             </div>
         </div>
