@@ -108,6 +108,12 @@ h4 {
 .center {
   text-align: center!important;
 }
+.right {
+  text-align: right!important;
+}
+.left {
+  text-align: left!important;
+}
 hr {
   width:80px;
 }
@@ -2042,6 +2048,12 @@ nav.footer-nav ul li a {
 }
 .breadcrumbs span {
   padding:0 6px;
+}
+.flexbox {
+  display:flex;
+}
+.flexbox > div {
+  width:50%;
 }
 @media (min-width:992px) {
   #loanoff-hero-id-14 {

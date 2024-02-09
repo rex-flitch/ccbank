@@ -47,6 +47,7 @@ import OnlineAccountOpening from './pages/OnlineAccountOpening'
 import FinancialLibrary from './pages/FinancialLibrary'
 import Resources from './pages/Resources'
 import SelfDirectedIRA from './pages/SelfDirectedIRA'
+import Zelle from './pages/Zelle'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -120,6 +121,7 @@ function App() {
               <Route path="/ccbank-partners" element={<Partners />}/>
               <Route path="/resources" element={<Resources />}/>
               <Route path="/self-directed-ira" element={<SelfDirectedIRA />}/>
+              <Route path="/zelle" element={<Zelle />}/>
             </Routes>
             <SiteFooter />
           </div>

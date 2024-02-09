@@ -116,8 +116,8 @@ contact us in person, on the phone, or online.</p>
         </div>
       </div>
       <HolidayHours />
-      <h4 className='center green mg-0 mg-top-50'>Routing Number</h4>
-            <p className='center mg-0'>{data.ccBankSettings.data[0].attributes.RouterNumber}</p>
+      {/* <h4 className='center green mg-0 mg-top-50'>Routing Number</h4>
+            <p className='center mg-0'>{data.ccBankSettings.data[0].attributes.RouterNumber}</p> */}
     </main>
   )
 }
