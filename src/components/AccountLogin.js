@@ -22,7 +22,7 @@ export default function AccountLogin() {
         <div className="accordion-area">
             <div className="accordion-wrapper">
 
-                <div className="accordion-item personal-banking">
+                <div className={`accordion-item personal-banking ${isActive1 ? 'active' : 'inactive'}`}>
                     <div className="accordion-title" role="button" tabindex="0" onClick={() => toggleClass(1)}>Personal Banking</div>
                     <div className={`accordion-body ${isActive1 ? 'active' : 'inactive'}`}>
                         <form className="login-fields" action="https://cibng.ibanking-services.com/EamWeb/Remote/RemoteLoginAPI.aspx? FIORG=18U&orgId=18U_124302927&FIFID=124302927&brand=18U_124302927&appId=ceb" method="POST"> 
@@ -39,7 +39,7 @@ export default function AccountLogin() {
                     </div>
                 </div>
 
-                <div className="accordion-item commercial-banking">
+                <div className={`accordion-item commercial-banking ${isActive2 ? 'active' : 'inactive'}`}>
                     <div className="accordion-title" role="button" tabindex="0" onClick={() => toggleClass(2)}>Business Banking</div>
                     <div className={`accordion-body ${isActive2 ? 'active' : 'inactive'}`}>
                         <form className="login-fields" action="https://ccbankutah.ebanking-services.com/EamWeb/Remote/RemoteLoginApi.aspx?appID=beb&brand=ccbankutah" method="POST"> 

@@ -1830,10 +1830,10 @@ details[open] summary:after {
   border-bottom:1px solid #fff;
   cursor: pointer;
 }
-.commercial-banking .accordion-title {
+/* .commercial-banking .accordion-title {
   background-color:#fff;
   color:#222222;
-}
+} */
 .credit-card .accordion-title {
   background-color:#fff;
   color:#222222;
@@ -1873,6 +1873,10 @@ form.login-fields {
 }
 .accordion-body.active {
   height: 250px;
+}
+.inactive .accordion-title {
+  background-color:#DEDEDE;
+  color:#666666;
 }
 .cid-messg {
   font-size:14px;
