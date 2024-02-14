@@ -271,7 +271,24 @@ export default function Homepage() {
           </button>
         );
       };
-
+      const CustomSliderDot = ({ onMove, index, onClick, active }) => {
+        // Assuming `data` is available in this scope, and each item has an image URL
+        const imageUrl = data.homepage.data.attributes.HomepageHero[index].BackgroundImage.data[0].attributes.url;
+      
+        return (
+          <li
+            className={active ? 'active' : 'inactive'}
+            style={{ background: `url(${imageUrl}) center center / cover no-repeat`, margin: '0 10px 10px 0' }}
+          >
+            <button onClick={() => onClick()} style={{ background: 'none', border: '1px solid #fff',
+                    width: '75px',
+                    height: '100%',
+                    cursor: 'pointer',  }}>
+              {/* You can add an image element or keep it as a background of the button */}
+            </button>
+          </li>
+        );
+      };
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -298,7 +315,7 @@ export default function Homepage() {
             <Carousel 
             swipeable={true}
             draggable={true}
-            showDots={false}
+            showDots={true}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
@@ -307,9 +324,10 @@ export default function Homepage() {
             keyBoardControl={true}
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
+            dotListClass="custom-home-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             className='hero-slider'
+            customDot={<CustomSliderDot />}
             >
                 {data.homepage.data.attributes.HomepageHero.map((hero) => (
                 <div key={hero.id} className='hero' id={`hero-id-${hero.id}`} style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>

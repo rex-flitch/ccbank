@@ -668,6 +668,9 @@ hr.center {
 .react-multiple-carousel__arrow--right {
   right: calc(1% + 1px)!important;
 }
+.custom-home-dot-list-style .inactive {
+  opacity: .4;
+}
 .grad-overlay {
   background: rgb(0,0,0);
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.8) 50%, rgba(255,255,255,0) 100%);
@@ -2372,5 +2375,8 @@ nav.footer-nav ul li a {
   }
   .details-image {
     width:100%;
+  }
+  .custom-home-dot-list-style {
+    display:none;
   }
 }
