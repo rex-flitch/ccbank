@@ -85,7 +85,7 @@ export default function SBALoans() {
     if (isScriptLoaded) {
       setTimeout(() => {
         if (window.Chimney?.calculators?.createCalc) {
-          window.Chimney.calculators.createCalc('calculators', '793f8707-fa07-4f89-899f-75fc786d3401');
+          window.Chimney.calculators.createCalc('calculators', '992bb347-c05f-4ea6-aa25-aaa0352409e2');
         }
       }, 1000); // Adjust the delay as necessary
     }

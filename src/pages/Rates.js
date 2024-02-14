@@ -328,7 +328,7 @@ const Rates = ({ shouldReload }) => {
             ))}
             {resetcounter()}
         </table>
-        <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div>
+        {/* <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div> */}
         <table>
             <tr>
                 <th className='orange-header' colSpan='4'>CERTIFICATE OF DEPOSIT</th>
@@ -348,24 +348,30 @@ const Rates = ({ shouldReload }) => {
             </tr>
             ))}
             {resetcounter()}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[9].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-            </tr>
-            {data.typeOfRates.data[9].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                {addcounter()}
-            </tr>
-            ))}
-            {resetcounter()}
+            {
+            data.typeOfRates.data[9] && (
+              <>
+                <tr>
+                  <th colSpan='2'>{data.typeOfRates.data[9].attributes.RateType}</th>
+                  <th className='center'>INTEREST RATE</th>
+                  <th className='center'>APY</th>
+                </tr>
+                {data.typeOfRates.data[9].attributes.rates.data.map((rate, index) => (
+                  <tr key={rate.id}>
+                    <td>{index === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className='center'>{rate.attributes.InterestRate}</td>
+                    <td className='center'>{rate.attributes.APY}</td>
+                    {addcounter()}
+                  </tr>
+                ))}
+                {resetcounter()}
+              </>
+            )
+          }
             
         </table>
-        <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div>
+        {/* <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div> */}
       </div>
         </>
       )}
