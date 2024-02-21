@@ -53,7 +53,7 @@ export default function SiteFooter() {
                 <li><Link to="/locations">Locations</Link></li>
                 <li><Link to="/rates">Rates</Link></li>
                 <li><Link to="/site-map">Site Map</Link></li>
-                <li><Link to="/privacy">Privacy</Link></li>
+                <li><Link to="/privacy-policy">Privacy</Link></li>
             </ul>
             </nav>
         </div>

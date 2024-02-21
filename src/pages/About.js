@@ -76,8 +76,12 @@ export default function About() {
                 <div className='inner-hero'>
                     <h1>{data.about.data.attributes.AboutHero.Title}</h1>
                     <hr className='orange'></hr>
-                    <p>{data.about.data.attributes.AboutHero.Description}</p>
-                    <div className='btn-green'><a href="/">{data.about.data.attributes.AboutHero.ButtonTitle}</a></div>
+                    {data.about.data.attributes.AboutHero.Description !== null &&
+                      <p>{data.about.data.attributes.AboutHero.Description}</p>
+                    }
+                    {data.about.data.attributes.AboutHero.ButtonTitle !== null &&
+                      <div className='btn-green'><Link to={data.about.data.attributes.AboutHero.ButtonURL}>{data.about.data.attributes.AboutHero.ButtonTitle}</Link></div>
+                    }
                 </div>
               </div>
           </div>
