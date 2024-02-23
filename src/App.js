@@ -48,6 +48,8 @@ import FinancialLibrary from './pages/FinancialLibrary'
 import Resources from './pages/Resources'
 import SelfDirectedIRA from './pages/SelfDirectedIRA'
 import Zelle from './pages/Zelle'
+import BusinessManagerConnectAccount from './pages/BusinessManagerConnectAccount'
+import PersonalLoans from './pages/PersonalLoans'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -122,6 +124,8 @@ function App() {
               <Route path="/resources" element={<Resources />}/>
               <Route path="/self-directed-ira" element={<SelfDirectedIRA />}/>
               <Route path="/zelle" element={<Zelle />}/>
+              <Route path="/business-manager-connect-account" element={<BusinessManagerConnectAccount />}/>
+              <Route path="/personal-loans" element={<PersonalLoans />}/>
             </Routes>
             <SiteFooter />
           </div>

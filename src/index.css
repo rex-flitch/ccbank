@@ -46,6 +46,9 @@ h2 {
   font-family: 'Fjalla One', sans-serif;
   margin:15px 0;
 }
+h2.large {
+  font-size:50px;
+}
 h3 {
   color:#222222;
   font-family: 'Fjalla One', sans-serif;
@@ -223,6 +226,9 @@ hr.center {
 .pd-tb-50 {
   padding:50px 0;
 }
+.pd-50 {
+  padding:50px;
+}
 .mg-top-20 {
   margin-top:20px!important;
 }
@@ -257,6 +263,13 @@ hr.center {
 }
 .width-150 {
   width:150px;
+}
+.width-50 {
+  width:50%;
+}
+.z-index-1 {
+  z-index:1;
+  position: relative;
 }
 .bg-bottom {
   background-position: 0 bottom;
@@ -947,6 +960,9 @@ option {
   display:flex;
   gap:50px;
   margin-top:30px;
+}
+.relative {
+  position: relative;
 }
 .overlay {
   background-color: rgba(0, 0, 0, .65);
@@ -1734,6 +1750,18 @@ details[open] summary:after {
   margin:10px 0 0;
   font-size:19px;
 }
+.bmca h3 {
+  margin:20px 0 0;
+}
+.bmca h2 {
+  margin:0;
+}
+.bmca h5 {
+  margin-bottom:20px;
+}
+.bmca h4 {
+  margin-bottom:20px;
+}
 .partners-section .box-item {
   width:28%;
   align-items: center;
@@ -2061,6 +2089,9 @@ nav.footer-nav ul li a {
 }
 .flexbox > div {
   width:50%;
+}
+.maximize {
+  align-items: center;
 }
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
