@@ -171,7 +171,7 @@ export default function PersonalLoans() {
       <div className='member-slider container mg-top-80'>
         <h2 className='center mg-top-50'>{data.personalLoan.data.attributes.LoanExperts}</h2>
         <hr className="green center mg-bottom-20"></hr>
-        <p className='max-800 mg-auto center'>{parse(data.personalLoan.data.attributes.LoanExpertsDesc)}</p>
+        <div className='max-800 mg-auto center'>{parse(data.personalLoan.data.attributes.LoanExpertsDesc)}</div>
         <Carousel 
         swipeable={true}
         draggable={true}
@@ -187,7 +187,7 @@ export default function PersonalLoans() {
         className='mg-top-50'
         >
         {data.commercialAndIndustrialCAndILoan.data.attributes.NationalExpertsTeam.map((members) => (
-          <div className='slider-member'>
+          <div key={members.id} className='slider-member'>
             <div className='link-overlay'><Link to={`/team/${members.slug}`}></Link></div>
             <div className='slider-image'><img src={members.TeamMemberImage.data.attributes.url} alt={members.TeamMemberImage.data.attributes.alternativeText} /></div>
             <h4 className='green'>{members.TeamMemberName}</h4>
@@ -195,10 +195,6 @@ export default function PersonalLoans() {
         ))}
         </Carousel>
       </div>
-        </>
-      )}
-      {/* <div className='calculators' id="calculators">
-      </div> */}
       <div className='mg-top-80 relative' style={{backgroundImage: `url(${data.personalLoan.data.attributes.Overdraft.BackgroundImage.data.attributes.url})`}}>
         <div className='overlay'></div>
         <div className='max-800 mg-auto pd-tb-50 z-index-1'>
@@ -207,6 +203,11 @@ export default function PersonalLoans() {
             <div className='white mg-top-20'>{parse(data.personalLoan.data.attributes.Overdraft.Description)}</div>
         </div>
       </div>
+        </>
+      )}
+      {/* <div className='calculators' id="calculators">
+      </div> */}
+      
     </main>
   )
 }
