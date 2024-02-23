@@ -1739,6 +1739,10 @@ details[open] summary:after {
   align-items: center;
   background-color:#fff;
 }
+.feedback-item {
+  box-sizing: border-box;
+  height:100%;
+}
 .flex-row .box-item {
   align-items:flex-start;
 }
