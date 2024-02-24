@@ -106,7 +106,7 @@ export default function FinTech() {
             </div>
         </div>
       </div>
-      <div className='member-slider container mg-top-80'>
+      <div className='member-slider container mg-top-80 feedback'>
         <h2 className='center mg-top-50'>{data.finTechPartnershipsFaq.data.attributes.Feedback}</h2>
         <hr className="green center mg-bottom-20"></hr>
         <Carousel 

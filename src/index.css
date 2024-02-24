@@ -1694,6 +1694,9 @@ details[open] summary:after {
   object-fit: cover;
   object-position: top;
 }
+.feedback ul {
+  padding:20px 0;
+}
 /* Background-left-text */
 .background-left-text {
   min-height:600px;
