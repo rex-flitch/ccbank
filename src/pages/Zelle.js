@@ -10,6 +10,7 @@ const GETZELLE = gql`
               id
               attributes {
                 Hero {
+                  id
                   Title
                   ButtonURL
                   ButtonTitle
@@ -57,12 +58,12 @@ export default function Zelle() {
   return (
     <main className='wrapper opp-loans' id='main' tabindex="-1">
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${data.zelle.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' id={`zelle-hero-id-${data.zelle.data.attributes.Hero.id}`} style={{backgroundImage: `url(${data.zelle.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />
                 <div className='inner-hero'>
-                    <h1>{data.zelle.data.attributes.Hero.Title}</h1>
+                    <h1>{parse(data.zelle.data.attributes.Hero.Title)}</h1>
                     <hr className='orange'></hr>
                     {data.zelle.data.attributes.Hero.Description !== null &&
                       <p>{parse(data.zelle.data.attributes.Hero.Description)}</p>
@@ -75,13 +76,13 @@ export default function Zelle() {
           </div>
       </div>
       <div className='container mg-top-80 mg-bottom-50'>
-        <div className='max-800 mg-auto'>{parse(data.zelle.data.attributes.IntroParagraph)}</div>
+        <div className='max-800 mg-auto sup'>{parse(data.zelle.data.attributes.IntroParagraph)}</div>
       </div>
         <div className='box-cta container mg-top-50 mg-bottom-50'>
             {data.zelle.data.attributes.CTABoxes.map((box) => (
                 <div key='box.id' className='box-item'>
                     <h4 className='green center'>{box.MainTitle}</h4>
-                    <p className='center'>{box.SuperTitle}</p>
+                    <p className='center'>{parse(box.SuperTitle)}</p>
                 </div>
             ))}
         </div>
@@ -96,7 +97,7 @@ export default function Zelle() {
                 <div className='left'><a href="https://play.google.com/store/apps/details?id=com.mfoundry.mb.android.mb_18u&hl=en_US"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1696618137/android_6c0eb5e92a.webp" alt="Android App" /></a></div>
             </div>
         </div>
-        <div className='container mg-top-100'>
+        <div className='container mg-top-100 sup'>
             {parse(data.zelle.data.attributes.MainContent)}
         </div>
     </main>

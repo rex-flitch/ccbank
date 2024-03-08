@@ -117,6 +117,18 @@ h4 {
 .left {
   text-align: left!important;
 }
+sup {
+  font-size:10px;
+}
+.sup i strong {
+  font-size:10px;
+  vertical-align: super;
+  font-weight:normal;
+}
+.title-sup {
+  font-size:16px;
+  vertical-align: super;
+}
 hr {
   width:80px;
 }
@@ -2099,6 +2111,9 @@ nav.footer-nav ul li a {
 }
 .maximize {
   align-items: center;
+}
+#zelle-hero-id-51 {
+  background-position:50% 15%;
 }
 @media (min-width:992px) {
   #loanoff-hero-id-14 {

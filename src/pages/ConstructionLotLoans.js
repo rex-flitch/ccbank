@@ -143,7 +143,9 @@ export default function Calc() {
                         <h2>{data.constructionAndLotLoan.data.attributes.LotLoans.Title}</h2>
                         <hr className='green'></hr>
                         <div>{parse(data.constructionAndLotLoan.data.attributes.LotLoans.Text)}</div>
-                        <div className='btn-green'><Link to={data.constructionAndLotLoan.data.attributes.LotLoans.ButtonURL}>{data.constructionAndLotLoan.data.attributes.LotLoans.ButtonTitle}</Link></div>
+                        {data.constructionAndLotLoan.data.attributes.LotLoans.ButtonTitle !== null &&
+                          <div className='btn-green'><Link to={data.constructionAndLotLoan.data.attributes.LotLoans.ButtonURL}>{data.constructionAndLotLoan.data.attributes.LotLoans.ButtonTitle}</Link></div>
+                        }
                         <ul className='green'>
                             <li>Up to 75% financing</li>
                             <li>Option to set up automatic payments</li>
