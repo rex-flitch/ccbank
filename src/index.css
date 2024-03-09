@@ -2115,6 +2115,13 @@ nav.footer-nav ul li a {
 #zelle-hero-id-51 {
   background-position:50% 15%;
 }
+.app-icons .right {
+  margin-right:10px;
+}
+.app-icons img {
+  height:43px;
+  width:auto;
+}
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
     background-position:50% 17%;

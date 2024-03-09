@@ -92,7 +92,7 @@ export default function Zelle() {
                 <source src={data.zelle.data.attributes.ZelleVideo.Video.data.attributes.url} type="video/mp4" />
             </video>
             <div className='mg-top-50'>{data.zelle.data.attributes.ZelleVideo.Description}</div>
-            <div className='flexbox mg-top-20'>
+            <div className='flexbox app-icons mg-top-20'>
                 <div className='right'><a href="https://apps.apple.com/us/app/ccbankutah/id1511763497"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1696618158/apple_ba04a3b94a.webp" alt="Apply App" /></a></div>
                 <div className='left'><a href="https://play.google.com/store/apps/details?id=com.mfoundry.mb.android.mb_18u&hl=en_US"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1696618137/android_6c0eb5e92a.webp" alt="Android App" /></a></div>
             </div>

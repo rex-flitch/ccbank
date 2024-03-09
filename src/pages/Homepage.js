@@ -373,7 +373,9 @@ export default function Homepage() {
                             <h3 className='orange'>{look.Title}</h3>
                             <hr className='green'></hr>
                             <p>{parse(look.Description)}</p>
-                            <div className='btn-green mg-top-50'><Link to={look.ButtonURL}>{look.ButtonTitle}</Link></div>
+                            {look.ButtonTitle !== null &&
+                                <div className='btn-green mg-top-50'><Link to={look.ButtonURL}>{look.ButtonTitle}</Link></div>
+                            }
                         </div>
                         <div className='look-image'>
                             <img src={look.Image.data.attributes.url} alt={look.Image.data.attributes.alternativeText}/>
