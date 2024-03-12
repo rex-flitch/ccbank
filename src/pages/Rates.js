@@ -167,13 +167,15 @@ const Rates = ({ shouldReload }) => {
                 <h2>{data.ratepage.data.attributes.RatesCTA.Title}</h2>
                 <hr className='orange' />
                 <div>{parse(data.ratepage.data.attributes.RatesCTA.Description)}</div>
-                <div className='btn-white'><Link to={data.ratepage.data.attributes.RatesCTA.ButtonURL}>{data.ratepage.data.attributes.RatesCTA.ButtonTitle}</Link></div>
+                {data.ratepage.data.attributes.RatesCTA.ButtonTitle !== null &&
+                  <div className='btn-white'><Link to={data.ratepage.data.attributes.RatesCTA.ButtonURL}>{data.ratepage.data.attributes.RatesCTA.ButtonTitle}</Link></div>
+                }
             </div>
             <div className='rates-cta-item'>
                 <div className='rates-cta-box'>
                     <div className='rates-cta-type'>{data.ratepage.data.attributes.RatesCTA.GreenAreaText}</div>
                     <div className='rates-cta-info'>
-                        <h2>{data.ratepage.data.attributes.RatesCTA.type_of_rate.data.attributes.rates.data[2].attributes.APY}</h2>
+                        <h2>{data.ratepage.data.attributes.RatesCTA.type_of_rate.data.attributes.rates.data[1].attributes.APY}</h2>
                         <h4>{data.ratepage.data.attributes.RatesCTA.BelowRateText}</h4>
                         <hr className='green center' />
                         <p>{data.ratepage.data.attributes.RatesCTA.BottomAreaText}</p>
