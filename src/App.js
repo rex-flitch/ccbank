@@ -51,6 +51,7 @@ import Zelle from './pages/Zelle'
 import BusinessManagerConnectAccount from './pages/BusinessManagerConnectAccount'
 import PersonalLoans from './pages/PersonalLoans'
 import FinTechPartnershipsFAQ from './pages/FinTechPartnershipsFAQ'
+import Services from './pages/Services'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import TagManager from 'react-gtm-module'
@@ -125,6 +126,7 @@ function App() {
               <Route path="/resources" element={<Resources />}/>
               <Route path="/self-directed-ira" element={<SelfDirectedIRA />}/>
               <Route path="/zelle" element={<Zelle />}/>
+              <Route path="/services" element={<Services />}/>
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
               <Route path="/business-manager-connect-account" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>

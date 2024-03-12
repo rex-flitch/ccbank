@@ -1247,6 +1247,13 @@ option {
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
+.location-icon {
+  text-align: center;
+  margin-top:40px;
+}
+.location-icon img {
+  height:65px;
+}
 .location-info {
   padding:15px 20px;
   display:flex;
