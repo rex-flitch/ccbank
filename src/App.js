@@ -54,6 +54,8 @@ import FinTechPartnershipsFAQ from './pages/FinTechPartnershipsFAQ'
 import Services from './pages/Services'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
+import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
+import ConfirmationModal from './components/ConfirmationModal';
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
@@ -74,6 +76,8 @@ const client = new ApolloClient({
 })
 
 function App() {
+  const { showModal, handleConfirm, setShowModal } = useExternalLinkInterceptor()
+  // Other state and logic for handling the external link interception.
   return (
       <Router>
         <ApolloProvider client={client}>
@@ -132,6 +136,11 @@ function App() {
               <Route path="/personal-loans" element={<PersonalLoans />}/>
             </Routes>
             <SiteFooter />
+            <ConfirmationModal 
+              isOpen={showModal} 
+              onConfirm={handleConfirm} 
+              onCancel={() => setShowModal(false)}
+            />
           </div>
         </ApolloProvider>
       </Router>

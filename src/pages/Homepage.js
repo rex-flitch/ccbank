@@ -413,7 +413,7 @@ export default function Homepage() {
                         <div className='rates-cta-box'>
                             <div className='rates-cta-type'>{data.homepage.data.attributes.HomepageRates.GreenAreaText}</div>
                             <div className='rates-cta-info'>
-                                <h2>{data.homepage.data.attributes.HomepageRates.type_of_rate.data.attributes.rates.data[2].attributes.APY}</h2>
+                                <h2>{data.homepage.data.attributes.HomepageRates.type_of_rate.data.attributes.rates.data[1].attributes.APY}</h2>
                                 <h4>{data.homepage.data.attributes.HomepageRates.BelowRateText}</h4>
                                 <hr className='green center' />
                                 <p>{data.homepage.data.attributes.HomepageRates.BottomAreaText}</p>
