@@ -52,6 +52,7 @@ import BusinessManagerConnectAccount from './pages/BusinessManagerConnectAccount
 import PersonalLoans from './pages/PersonalLoans'
 import FinTechPartnershipsFAQ from './pages/FinTechPartnershipsFAQ'
 import Services from './pages/Services'
+import SiteMap from './pages/SiteMap'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -134,6 +135,7 @@ function App() {
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
               <Route path="/business-manager-connect-account" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>
+              <Route path="/site-map" element={<SiteMap />}/>
             </Routes>
             <SiteFooter />
             <ConfirmationModal 
