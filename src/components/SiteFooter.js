@@ -69,6 +69,18 @@ export default function SiteFooter() {
                 <li><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618158/apple_ba04a3b94a.webp"} alt="Apply App"></img></li>
                 <li><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618137/android_6c0eb5e92a.webp"} alt="Android App"></img></li>
             </ul>
+            <div className='footer-app-links'>
+              <div>
+              <h4>Personal Banking:</h4>
+              <Link to="https://apps.apple.com/us/app/ccbankutah/id1511763497">IOS Banking App</Link><br />
+              <Link to="https://play.google.com/store/apps/details?id=com.mfoundry.mb.android.mb_18u">Android Banking App</Link>
+              </div>
+              <div>
+              <h4>Business Banking:</h4>
+              <Link to="https://apps.apple.com/us/app/ccbank-for-business/id1511762156">IOS Banking App</Link><br />
+              <Link to="https://play.google.com/store/apps/details?id=com.mfoundry.mb.android.mb_beb101490">Android Banking App</Link>
+              </div>
+            </div>
         </div>
       </div>
       <div className='footer-copy'>

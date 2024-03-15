@@ -393,7 +393,9 @@ export default function Homepage() {
                                 <div className='title'><h2>{cta.Title}</h2></div>
                                 <hr className='green'></hr>
                                 <div className='desciption'><p>{cta.Description}</p></div>
-                                <div className='btn-ghost-green'><Link to={cta.ButtonURL}>Read more</Link></div>
+                                {cta.ButtonTitle !== null &&
+                                    <div className='btn-ghost-green'><Link to={cta.ButtonURL}>{cta.ButtonTitle}</Link></div>
+                                }
                             </div>
                         </div>
                     ))}
