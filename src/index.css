@@ -125,9 +125,16 @@ sup {
   vertical-align: super;
   font-weight:normal;
 }
+.sup h2 i strong {
+  position:relative;
+  top:-10px;
+  font-style:normal;
+}
 .title-sup {
   font-size:16px;
   vertical-align: super;
+  position: relative;
+  top:-17px;
 }
 hr {
   width:80px;
@@ -682,6 +689,7 @@ hr.center {
 }
 .hero-banner h1, .hero-banner p {
   color:#fff;
+  position:relative;
 }
 .hero-slider li {
   padding-left:0;
@@ -1071,6 +1079,7 @@ option {
 }
 .img-cta-team-item p {
   font-weight:500;
+  margin:0;
 }
 /* CC Bank News Preview */
 .cc-news-preview {
@@ -1318,9 +1327,11 @@ option {
   border-bottom:4px solid #de7205;
   padding-bottom:50px;
   position:relative;
+  line-height: 1.6;
 }
 .location-team-item p {
   margin:0;
+  margin-top:-2px;
 }
 .location-team-item h3 {
   margin-bottom:0;

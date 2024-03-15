@@ -57,7 +57,9 @@ export default function TeamMemberDetails() {
                     <div className='details-info-inner'>
                         <h4 className='green'>{ data.ccBankAllTeamMembers.data[0].attributes.Name }</h4>
                         <p>{ data.ccBankAllTeamMembers.data[0].attributes.Position }<br />
-                        NMLS { data.ccBankAllTeamMembers.data[0].attributes.NMLSNumber }<br />
+                        {data.ccBankAllTeamMembers.data[0].attributes.NMLSNumber !== null &&
+                          <span>NMLS { data.ccBankAllTeamMembers.data[0].attributes.NMLSNumber }<br /></span>
+                        }
                         <Link to={`tel:${onlyNumbers}`}>{ data.ccBankAllTeamMembers.data[0].attributes.Phone }</Link><br />
                         { data.ccBankAllTeamMembers.data[0].attributes.Email }</p>
                     </div>

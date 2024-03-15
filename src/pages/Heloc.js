@@ -114,7 +114,7 @@ export default function Heloc() {
       </div>
       <div className='loan-officers mg-top-50'>
         <div className='loan-officers-inner container'>
-            <h2 className='center'>Loan Officers</h2>
+            <h2 className='center'>Consumer Loan Officers</h2>
             <hr className='green center'></hr>
             <div className='team-container container'>
                 {data.heloc.data.attributes.LoanOfficer.map((team) => (
