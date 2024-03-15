@@ -283,7 +283,7 @@ export default function Homepage() {
             <button onClick={() => onClick()} style={{ background: 'none', border: '1px solid #fff',
                     width: '75px',
                     height: '100%',
-                    cursor: 'pointer',  }}>
+                    cursor: 'pointer',  }}><span>Slide</span>
               {/* You can add an image element or keep it as a background of the button */}
             </button>
           </li>

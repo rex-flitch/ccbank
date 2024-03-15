@@ -1897,6 +1897,7 @@ details[open] summary:after {
   text-align: center;
   border-bottom:1px solid #fff;
   cursor: pointer;
+  font-weight:700;
 }
 /* .commercial-banking .accordion-title {
   background-color:#fff;
@@ -1944,7 +1945,7 @@ form.login-fields {
 }
 .inactive .accordion-title {
   background-color:#DEDEDE;
-  color:#666666;
+  color:#000;
 }
 .cid-messg {
   font-size:14px;
@@ -2196,6 +2197,9 @@ nav.footer-nav ul li a {
   background-color: #DEDEDE;
   padding:2px;
   border-radius: 5px 5px 0 0;
+}
+button span {
+  display:none;
 }
 @media (min-width:992px) {
   #loanoff-hero-id-14 {

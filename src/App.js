@@ -29,6 +29,7 @@ import EppTermsConditions from './pages/EppTermsConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import OnlinePrivacyPolicy from './pages/OnlinePrivacyPolicy'
 import SecurityStatements from './pages/SecurityStatements'
+import AchDebitAuthorization from './pages/AchDebitAuthorization'
 import BusinessChecking from './pages/BusinessChecking'
 import PersonalBanking from './pages/PersonalBanking'
 import PersonalBankingLanding from './pages/PersonalBankingLanding'
@@ -53,6 +54,13 @@ import PersonalLoans from './pages/PersonalLoans'
 import FinTechPartnershipsFAQ from './pages/FinTechPartnershipsFAQ'
 import Services from './pages/Services'
 import SiteMap from './pages/SiteMap'
+import CookiePolicy from './pages/CookiePolicy'
+import TextMessageSmsTermsOfUse from './pages/TextMessageSmsTermsOfUse'
+import AccessAgreement from './pages/AccessAgreement'
+import AccessBusinessAgreement from './pages/AccessBusinessAgreement'
+import ExternalFundsDisclosure from './pages/ExternalFundsDisclosure'
+import LoanPaymentDisclosure from './pages/LoanPaymentDisclosure'
+import OutOfBand from './pages/OutOfBand'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -109,6 +117,7 @@ function App() {
               <Route path="/biller-solutions/authorization-storage-of-bank-information" element={<AuthorizationStorage />}/>
               <Route path="/biller-solutions/authorization-cc-payments" element={<AuthorizationStorageDC />}/>
               <Route path="/biller-solutions/epp-terms-and-conditions" element={<EppTermsConditions />}/>
+              <Route path="/biller-solutions/ach-debit-authorization" element={<AchDebitAuthorization />}/>
               <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
               <Route path="/online-privacy-policy" element={<OnlinePrivacyPolicy />}/>
               <Route path="/biller-solutions/security-statements" element={<SecurityStatements />}/>
@@ -136,6 +145,13 @@ function App() {
               <Route path="/money-market" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>
               <Route path="/site-map" element={<SiteMap />}/>
+              <Route path="/cookie-policy" element={<CookiePolicy />}/>
+              <Route path="/text-message-sms-terms-of-use" element={<TextMessageSmsTermsOfUse />}/>
+              <Route path="/access-business-agreement" element={<AccessBusinessAgreement />}/>
+              <Route path="/access-agreement" element={<AccessAgreement />}/>
+              <Route path="/external-funds-disclosure" element={<ExternalFundsDisclosure />}/>
+              <Route path="/loan-payment-disclosure" element={<LoanPaymentDisclosure />}/>
+              <Route path="/out-of-band-what-you-need-to-know" element={<OutOfBand />}/>
             </Routes>
             <SiteFooter />
             <ConfirmationModal 
