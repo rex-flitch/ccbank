@@ -100,7 +100,7 @@ export default function LocationDetails() {
                     }
                     {data.ccBankLocations.data[0].attributes.DriveThroughHours !== null &&
                     <div className='hours-item'>
-                        <h2 className='center orange'>Drive Through Hours</h2>
+                        <h2 className='center orange'>Drive Thru Hours</h2>
                         <hr className='center green' />
                         <p className='center'>{parse(data.ccBankLocations.data[0].attributes.DriveThroughHours)}</p>
                     </div>

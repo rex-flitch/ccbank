@@ -107,15 +107,19 @@ export default function BusinessManagerConnectAccount() {
                     <h3 >EARN</h3>
                     <h2 className='large'>{rate.MainTitle}</h2>
                     <h5>Annual Percentage Yield (APY)</h5>
-                    <h4>{rate.SuperTitle}</h4>
+                    <hr className='orange'></hr>
+                    <h4 className='mg-top-20'>{rate.SuperTitle}</h4>
                 </div>
             ))}
         </div>
       </div>
       <div className='container mg-top-100 mg-bottom-50'>
+        <h2>How does a money market sweep account work?</h2>
+        <hr className='orange mg-bottom-50'></hr>
         {parse(data.businessManagerConnectAccount.data.attributes.Content)}
-        <div className='btn-green center mg-top-50'><Link to='https://ccb.cloud.processmaker.net/webentry/12/business_account'>OPEN YOUR ACCOUNT</Link></div>
-        <h3 className='mg-top-50 green'>CONNECT WITH US DIRECTLY:</h3>
+        {/* <div className='btn-green center mg-top-50'><Link to='https://ccb.cloud.processmaker.net/webentry/12/business_account'>OPEN YOUR ACCOUNT</Link></div> */}
+        <h3 className='mg-top-50 green'>Connect with us Directly:</h3>
+        <hr className='orange'></hr>
         <div className='team-container container'>
             {data.businessManagerConnectAccount.data.attributes.TeamMember.map((team) => (
                 <div key='team.id' className='location-team-item'>

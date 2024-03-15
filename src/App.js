@@ -133,7 +133,7 @@ function App() {
               <Route path="/zelle" element={<Zelle />}/>
               <Route path="/services" element={<Services />}/>
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
-              <Route path="/business-manager-connect-account" element={<BusinessManagerConnectAccount />}/>
+              <Route path="/money-market" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>
               <Route path="/site-map" element={<SiteMap />}/>
             </Routes>

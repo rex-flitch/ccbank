@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 // import parse from 'html-react-parser'
@@ -35,6 +35,13 @@ const SITEMAP = gql`
 export default function SiteMap() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { loading, error, data } = useQuery(SITEMAP)
+  const [sortedSitemap, setSortedSitemap] = useState([]);
+  useEffect(() => {
+    if (data) {
+      const sortedData = [...data.siteMap.data.attributes.Sitemap].sort((a, b) => a.LinkTitle.localeCompare(b.LinkTitle));
+      setSortedSitemap(sortedData);
+    }
+  }, [data]);
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
@@ -62,7 +69,8 @@ export default function SiteMap() {
       </div>
       <div className='bg-grey pd-tb-50'>
         <div className='container'>
-        {data.siteMap.data.attributes.Sitemap.map((sitemap) => (
+        {/* <p>Count: {sortedSitemap.length}</p> */}
+        {sortedSitemap.map((sitemap) => (
             <div key={sitemap.id} className='sitemap'>
                 <Link to={sitemap.LinkURL}>{sitemap.LinkTitle}</Link>
             </div>

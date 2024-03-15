@@ -140,7 +140,9 @@ export default function AboutOverview() {
                         <div className='title'><h2>{altcta.Title}</h2></div>
                         <hr className='orange'></hr>
                         <div className='desciption'><p>{altcta.Description}</p></div>
-                        <div className='btn-ghost-green'><Link to={altcta.ButtonURL}>{altcta.ButtonTitle}</Link></div>
+                        {altcta.ButtonTitle !== null &&
+                          <div className='btn-ghost-green'><Link to={altcta.ButtonURL}>{altcta.ButtonTitle}</Link></div>
+                        }
                     </div>
                     {altcta.ImagePlacement === 'Right' &&
                         <div className={altcta.ImageBackgroundColor === 'Orange' ? 'alt-cta-image right alt-cta-orange' : 'alt-cta-image right alt-cta-green'}><img src={altcta.Image.data.attributes.url} alt={altcta.Image.data.attributes.alternativeText}/></div>
