@@ -125,7 +125,7 @@ export default function PersonalBankingLanding() {
             <div className='img-cta-container container'>
                 {data.personalBankingLanding.data.attributes.PBTeam.map((team) => (
                     <div key='team.id' className='img-cta-team-item'>
-                        <div className='link-overlay'><Link to={`/team/${team.slug}`}></Link></div>
+                        <div className='link-overlay'><Link to={`/team/${team.slug}`}><span>Team link</span></Link></div>
                         {team.TeamMemberImage.data && 
                             <div className='img-cta-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberImage.data.attributes.alternativeText} /></div>
                         }
