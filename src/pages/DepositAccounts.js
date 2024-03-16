@@ -54,6 +54,13 @@ const GETDEPOSITACCOUNT = gql`
               }
             }
           }
+          ratepage {
+            data {
+              attributes {
+                RatesEffective
+              }
+            }
+          }
     }
 `
 export default function DepositAccounts() {
@@ -116,7 +123,7 @@ export default function DepositAccounts() {
             <div className='container bg-white cbpc'>
                 <table>
                     <caption>Checking, Money Market, and Savings Accounts<br />
-                        <span>Rates Effective 8/23/2023</span>
+                        <span>Rates Effective {data.ratepage.data.attributes.RatesEffective}</span>
                     </caption>
                     <tr>
                         <th className='center'>Account</th>
@@ -158,7 +165,7 @@ export default function DepositAccounts() {
             <div className='container bg-white cbpc'>
                 <table>
                     <caption>CD Accounts<br />
-                        <span>Rates Effective 8/23/2023</span>
+                        <span>Rates Effective {data.ratepage.data.attributes.RatesEffective}</span>
                     </caption>
                     <tr>
                         <th className='center'>Account</th>
@@ -194,7 +201,7 @@ export default function DepositAccounts() {
 
             </div>
       </div>
-      <div className='cta-wrapper col-2'>
+      <div id='checking' className='cta-wrapper col-2'>
             <div className='cta-box container mg-top-50'>
                 {data.depositAccount.data.attributes.TextCTA.map((cta) => (
                     <div key={cta.id} className='cta'>

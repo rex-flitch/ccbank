@@ -129,10 +129,10 @@ function App() {
               <Route path="/ccbank-partners/ccconnect" element={<CcConnect />}/>
               <Route path="/ccbank-partners/ccflow" element={<CcFlow />}/>
               <Route path="/ccbank-partners/choice-cash" element={<ChoiceCash />}/>
-              <Route path="/ccbank-partners/lendly" element={<Lendly />}/>
+              <Route path="/ccbank-partners/integracredit" element={<Lendly />}/>
               <Route path="/ccbank-partners/rise" element={<Rise />}/>
               <Route path="/ccbank-partners/mdg" element={<Mdg />}/>
-              <Route path="/ccbank-partners/today" element={<Today />}/>
+              <Route path="/ccbank-partners/braviant" element={<Today />}/>
               <Route path="/ccbank-partners/xact" element={<Xact />}/>
               <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
               <Route path="/financial-library" element={<FinancialLibrary />}/>
