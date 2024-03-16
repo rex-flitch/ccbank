@@ -8,7 +8,7 @@ const Accordion = ({ summary, details }) => {
 
   return (
     <div className="accordion-item" style={styles.accordionItem}>
-      <div tabindex="0"
+      <div tabindex="0" role="button"
         className="accordion-summary"
         onClick={toggleOpen}
         style={{ ...styles.accordionSummary, cursor: 'pointer' }}
