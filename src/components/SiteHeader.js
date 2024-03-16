@@ -123,7 +123,7 @@ export default function SiteHeader() {
       <a href="#main-nav" className="skip">Skip to main navigation</a>
       <a href="#main" className="skip">Skip to main content</a>
       <a href="#footer" className="skip">Skip to footer</a>
-      <div className="scroll-to-top" role="button" onClick={scrollToTop}>
+      <div className="scroll-to-top" role="button" tabindex="0" onClick={scrollToTop}>
         {/* Replace with your icon */}
         <span>↑</span>
       </div>
