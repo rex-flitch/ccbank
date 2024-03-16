@@ -80,7 +80,7 @@ export default function PersonalBanking() {
             <div className='cta-box container mg-top-50'>
                 {data.personalBanking.data.attributes.ImageCTA.map((cta) => (
                     <div key={cta.id} className='cta'>
-                        <div className='cta-image' style={{backgroundImage: `url(${cta.Image.data.attributes.url})`}}></div>
+                        <div className='cta-image' style={{backgroundImage: `url(${cta.Image.data.attributes.url})`}} role="img"></div>
                         <div className='cta-info'>
                             <div className='title'><h2>{cta.Title}</h2></div>
                             <hr className='green'></hr>

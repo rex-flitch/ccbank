@@ -91,7 +91,7 @@ export default function News() {
             <div className='cc-news-page-box container'>
                 {data.ccBanksNews.data.slice(0, displayCount).map((news) => (
                     <div key={news.id} className='cc-news-page-inner'>
-                        <div className='cc-news-overlay'><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}></Link></div>
+                        <div className='cc-news-overlay'><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}><span>News Story</span></Link></div>
                         <div className='cc-news-page-image'>
                         {news.attributes.Media.data.length > 0 &&
                           <img src={news.attributes.Media.data[0].attributes.url} alt={news.attributes.Media.data[0].attributes.alternativeText} />
