@@ -68,7 +68,7 @@ export default function LocationDetails() {
                 <hr className='center green' />
                 <p className='center'>{data.ccBankLocations.data[0].attributes.Address} {data.ccBankLocations.data[0].attributes.City}, {data.ccBankLocations.data[0].attributes.State} {data.ccBankLocations.data[0].attributes.Zip}</p>
                 <p className='center'><Link to={`tel:${data.ccBankLocations.data[0].attributes.Telephone}`}>{data.ccBankLocations.data[0].attributes.Telephone}</Link></p>
-                <div className='btn-green center mg-bottom-50'><Link to={data.ccBankLocations.data[0].attributes.Map} target="_blank" rel="noopener noreferrer">Map</Link></div>
+                <div className='btn-green center mg-bottom-50'><Link to={data.ccBankLocations.data[0].attributes.Map} target="_blank" rel="noopener noreferrer" aria-label="New Window">Map</Link></div>
             </div>
             <div className='location-team'>
                 <h2 className='center'>Team</h2>
