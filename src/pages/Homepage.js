@@ -449,7 +449,7 @@ export default function Homepage() {
             <div className='quote container'>
                 <div className='quote-inner'>
                     {parse(data.homepage.data.attributes.Quote)}
-                    <div className='quote-youtube'><Link to={data.homepage.data.attributes.QuoteYouTubeLink} target='_blank' rel='noopener noreferrer'><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1702595891/youtube_icon_web_1fa1f6445f.png" alt="YouTube Icon"/></Link></div>
+                    <div className='quote-youtube'><Link to={data.homepage.data.attributes.QuoteYouTubeLink} target='_blank' rel='noopener noreferrer' aria-label="New Window"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1702595891/youtube_icon_web_1fa1f6445f.png" alt="YouTube Icon"/></Link></div>
                 </div>
             </div>
             {/* <div className='icon-cta'>

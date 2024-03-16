@@ -43,10 +43,10 @@ export default function SiteFooter() {
         <div className='footer-top-line'>
             <div className='footer-logo-area'><Link to="/"><img src={data.ccBankSettings.data[0].attributes.FooterLogo.data.attributes.url} alt='CC Bank Logo'/></Link></div>
             <div className='footer-social'>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.FacebookURL} target="_blank" rel="noopener noreferrer"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618023/facebook_icon_a5c278f767.svg"} alt="CCBank Facebook"></img></Link></div>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.TwitterURL} target="_blank" rel="noopener noreferrer"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618115/twitter_icon_90bc68229d.svg"} alt="CCBank Twitter"></img></Link></div>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.LinkedInURL} target="_blank" rel="noopener noreferrer"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618102/linkedin_icon_9157cad4a8.svg"} alt="CCBank LinkedIn"></img></Link></div>
-                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.YouTubeURL} target="_blank" rel="noopener noreferrer"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1710525067/youtube_icon_219f76a0a1.svg"} alt="CCBank YouTube"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.FacebookURL} target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618023/facebook_icon_a5c278f767.svg"} alt="CCBank Facebook"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.TwitterURL} target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618115/twitter_icon_90bc68229d.svg"} alt="CCBank Twitter"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.LinkedInURL} target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1696618102/linkedin_icon_9157cad4a8.svg"} alt="CCBank LinkedIn"></img></Link></div>
+                <div className='social-item'><Link to={data.ccBankSettings.data[0].attributes.YouTubeURL} target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src={"https://res.cloudinary.com/dk6kie30d/image/upload/v1710525067/youtube_icon_219f76a0a1.svg"} alt="CCBank YouTube"></img></Link></div>
             </div>
             <nav className="footer-nav">
             <ul>
