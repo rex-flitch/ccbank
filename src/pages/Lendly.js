@@ -81,7 +81,7 @@ export default function Lendly() {
         <div className='qa-container'>
         {data.lendly.data.attributes.QA.map((item) => (
           <details className='qa-item'>
-            <summary className='question'>{item.Question}</summary>
+            <summary className='question' tabindex="0">{item.Question}</summary>
             <div className='answer'>{parse(item.Answer)}</div>
           </details>
           ))}

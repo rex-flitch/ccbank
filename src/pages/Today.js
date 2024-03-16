@@ -81,7 +81,7 @@ export default function Today() {
         <div className='qa-container'>
         {data.today.data.attributes.QA.map((item) => (
           <details className='qa-item'>
-            <summary className='question'>{item.Question}</summary>
+            <summary className='question' tabindex='0'>{item.Question}</summary>
             <div className='answer'>{parse(item.Answer)}</div>
           </details>
           ))}

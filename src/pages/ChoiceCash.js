@@ -81,7 +81,7 @@ export default function ChoiceCash() {
         <div className='qa-container'>
         {data.choiceCash.data.attributes.QA.map((item) => (
           <details className='qa-item'>
-            <summary className='question'>{item.Question}</summary>
+            <summary className='question' tabindex='0'>{item.Question}</summary>
             <div className='answer'>{parse(item.Answer)}</div>
           </details>
           ))}
