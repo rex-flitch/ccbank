@@ -210,7 +210,7 @@ const Rates = ({ shouldReload }) => {
         <h2 className='rates center'>Rates</h2>
         <hr className='green center' />
         <p className='center'>Rates Effective: {data.ratepage.data.attributes.RatesEffective}</p>
-        <table className='mg-top-50'>
+        <table className='mg-top-50' role='presentation'>
             <tr>
                 <th className='orange-header' colSpan='5'>DEMAND DEPOSIT PRODUCTS</th>
             </tr>
@@ -350,7 +350,7 @@ const Rates = ({ shouldReload }) => {
             {resetcounter()}
         </table>
         {/* <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div> */}
-        <table>
+        <table role='presentation'>
             <tr>
                 <th className='orange-header' colSpan='5'>CERTIFICATE OF DEPOSIT</th>
             </tr>

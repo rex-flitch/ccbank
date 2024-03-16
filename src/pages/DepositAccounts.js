@@ -121,7 +121,7 @@ export default function DepositAccounts() {
       </div>
       <div className='cc-bank-table bg-dark-grey'>
             <div className='container bg-white cbpc'>
-                <table>
+                <table role='presentation'>
                     <caption>Checking, Money Market, and Savings Accounts<br />
                         <span>Rates Effective {data.ratepage.data.attributes.RatesEffective}</span>
                     </caption>
@@ -163,7 +163,7 @@ export default function DepositAccounts() {
       </div>
       <div className='cc-bank-table bg-dark-grey'>
             <div className='container bg-white cbpc'>
-                <table>
+                <table role='presentation'>
                     <caption>CD Accounts<br />
                         <span>Rates Effective {data.ratepage.data.attributes.RatesEffective}</span>
                     </caption>
