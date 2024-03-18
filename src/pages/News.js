@@ -46,7 +46,7 @@ const NEWSINFO = gql`
                 }
             }
         }
-        ccBankVideoLibraries {
+        ccBankVideoLibraries(sort:"id:desc") {
           data {
             id
             attributes {
