@@ -98,18 +98,17 @@ export default function Locations() {
       <div className="locations-section container">
         <h2 className='center'>Locations</h2>
         <hr className='green center'></hr>
-        <p className='center'>As a valued customer, your feedback is very important to CCBank, so we make it easy for you to
-contact us in person, on the phone, or online.</p>
+        <p className='center'>From St. George to Sandy, our six branch offices are conveniently located to serve your financial needs. While we love when you visit us online, we'd welcome your visit in person at our branch office.</p>
         <div className='location-flex'>
             {data.ccBankLocations.data.map((locate, index) => (
             <div key={locate.id} className='location-item'>
                 <div className='location-image'><img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.Image.data.attributes.alternativeText}/></div>
                 <div className='location-info'>
                     <h4 className='green'>{locate.attributes.City}</h4>
-                    <div className='address'><p>{locate.attributes.Address} {locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>
+                    <div className='address'><p>{locate.attributes.Address}<br />{locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>
                     <div className='telephone'><p>{locate.attributes.Telephone}</p></div>
                     <div className='atm'><p>{locate.attributes.HasATM === true ? 'ATM Available' : 'ATM Not Available'}</p></div>
-                    <div className='btn-green'><Link to={`/locations/${locate.attributes.slug}`}>HOURS & DIRECTIONS</Link></div>
+                    <div className='btn-green mg-top-20'><Link to={`/locations/${locate.attributes.slug}`}>HOURS & DIRECTIONS</Link></div>
                 </div>
             </div>
             ))}

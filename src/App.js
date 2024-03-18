@@ -61,6 +61,7 @@ import AccessBusinessAgreement from './pages/AccessBusinessAgreement'
 import ExternalFundsDisclosure from './pages/ExternalFundsDisclosure'
 import LoanPaymentDisclosure from './pages/LoanPaymentDisclosure'
 import OutOfBand from './pages/OutOfBand'
+import AccountLogin from './pages/AccountLogin'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -152,6 +153,7 @@ function App() {
               <Route path="/external-funds-disclosure" element={<ExternalFundsDisclosure />}/>
               <Route path="/loan-payment-disclosure" element={<LoanPaymentDisclosure />}/>
               <Route path="/out-of-band-what-you-need-to-know" element={<OutOfBand />}/>
+              <Route path="/account-login" element={<AccountLogin />}/>
             </Routes>
             <SiteFooter />
             <ConfirmationModal 

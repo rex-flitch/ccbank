@@ -2524,4 +2524,8 @@ button span {
   .custom-home-dot-list-style {
     display:none;
   }
+  .hero-banner h1 {
+    font-size:30px;
+    line-height:40px;
+  }
 }

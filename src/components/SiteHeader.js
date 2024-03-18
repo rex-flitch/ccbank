@@ -136,7 +136,7 @@ export default function SiteHeader() {
         </ul>
       </div>
       <div className='top-header-mobile'>
-        <div className='mobile-account-login'><Link to="/">ACCOUNT LOGIN</Link></div>
+        <div className='mobile-account-login'><Link to="/account-login">ACCOUNT LOGIN</Link></div>
         <div className='mobile-top-right'><Link to="/locations"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698101186/locations_icon_772a372fd8.png" alt="Branch Locations Icon" /></Link></div>
       </div>
       <div className='main-header container'>

@@ -560,7 +560,7 @@ export default function Homepage() {
                                             <p><strong>Lobby Hours</strong><br />{locate2.attributes.LobbyHours}</p>
                                         }
                                         {locate2.attributes.DriveThroughHours !== null &&
-                                            <p><strong>Drive-Through Hours</strong><br />{parse(locate2.attributes.DriveThroughHours)}</p>
+                                            <p><strong>Drive-Thru Hours</strong><br />{parse(locate2.attributes.DriveThroughHours)}</p>
                                         }
                                         </div>
                                     </div>

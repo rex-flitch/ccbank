@@ -190,7 +190,7 @@ export default function PersonalLoans() {
         >
         {data.commercialAndIndustrialCAndILoan.data.attributes.NationalExpertsTeam.map((members) => (
           <div key={members.id} className='slider-member'>
-            <div className='link-overlay'><Link to={`/team/${members.slug}`}></Link></div>
+            <div className='link-overlay'><Link to={`/team/${members.slug}`}><span>Profile Link</span></Link></div>
             <div className='slider-image'><img src={members.TeamMemberImage.data.attributes.url} alt={members.TeamMemberImage.data.attributes.alternativeText} /></div>
             <h4 className='green'>{members.TeamMemberName}</h4>
           </div>
