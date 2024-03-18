@@ -160,6 +160,22 @@ hr.white {
 hr.center {
   margin:0 auto;
 }
+button.btn-green-alt {
+  background-color:#03873d;
+  color:#fff;
+  padding:6px 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  border:#03873d 1px solid;
+  transition: .5s;
+  font-size:18px;
+  font-weight:600;
+}
+button.btn-green-alt:hover {
+  background-color:#fff;
+  color:#03873d;
+  
+}
 .btn-green a {
   background-color:#03873d;
   color:#fff;
