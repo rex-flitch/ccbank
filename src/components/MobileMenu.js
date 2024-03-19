@@ -130,7 +130,7 @@ export default function MobileMenu() {
                 {addcounter()}
               </li>
             ))}
-            <li className='top-level-li'><Link className='top-level-link' to="/about" onClick={() => setIsOpen(!isOpen)}>Solar Loan Payment</Link></li>
+            <li className='top-level-li'><Link className='top-level-link' to="https://secure4.billerweb.com/cap/inetSrv" onClick={() => setIsOpen(!isOpen)}>Solar Loan Payment</Link></li>
             <li className='top-level-li'><Link className='top-level-link' to="/careers" onClick={() => setIsOpen(!isOpen)}>Careers</Link></li>
             <li className='top-level-li'><Link className='top-level-link' to="/locations" onClick={() => setIsOpen(!isOpen)}>Branch Locations</Link></li>
             <li className='top-level-li'><Link className='top-level-link' to="/contact" onClick={() => setIsOpen(!isOpen)}>Contact</Link></li>

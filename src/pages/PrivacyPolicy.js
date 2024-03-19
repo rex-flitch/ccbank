@@ -62,6 +62,7 @@ export default function PrivacyPolicy() {
         <h2 className='center orange'>{data.privacyPolicy.data.attributes.Title}</h2>
         <hr className='green center'></hr>
         <div>{parse(data.privacyPolicy.data.attributes.MainContent)}</div>
+        <div className='btn-green mg-top-50 center'><Link to='https://res.cloudinary.com/dk6kie30d/image/upload/v1710881473/Privacy_Disclosure_5_7e63105b39.pdf'>PRIVACY NOTICE (PDF)</Link></div>
       </div>
     </main>
   )
