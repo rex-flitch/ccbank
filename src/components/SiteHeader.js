@@ -121,6 +121,7 @@ export default function SiteHeader() {
 
   return (
     <div className="site-header">
+
       <a href="#main-nav" className="skip">Skip to main navigation</a>
       <a href="#main" className="skip">Skip to main content</a>
       <a href="#footer" className="skip">Skip to footer</a>
