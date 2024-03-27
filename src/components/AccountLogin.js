@@ -35,7 +35,7 @@ export default function AccountLogin() {
                             <li className="pw-reset-link"><a href="https://cibng.ibanking-services.com/EamWeb/Remote/RemoteLoginApi.aspx?orgId=18U_124302927&FIFID=124302927&brand=18U_124302927&appId=CeB&FIORG=18U&startPage=ForgotUserId" target="_blank" rel="noreferrer" className="reset-link" aria-label='New Window'>Forgot  ID/Password?</a> </li>
                             </ul>
                         </div>
-                        <div className='account-button'><Link to='https://cibng.ibanking-services.com/cib/themes/cib_enroll/enroll/enroll.jsp?FIORG=18U&FIFID=124302927' target="_blank" rel="noopener noreferrer" aria-label='New Window'>Enroll in Personal Banking</Link></div>
+                        <div className='account-button'><Link to='https://b124302927.flex.online-banking-services.com/cuFlexEnrollment/#!/selfEnrollment/home' target="_blank" rel="noopener noreferrer" aria-label='New Window'>Enroll in Personal Banking</Link></div>
                     </div>
                 </div>
 
