@@ -62,6 +62,7 @@ import ExternalFundsDisclosure from './pages/ExternalFundsDisclosure'
 import LoanPaymentDisclosure from './pages/LoanPaymentDisclosure'
 import OutOfBand from './pages/OutOfBand'
 import AccountLogin from './pages/AccountLogin'
+import Lendio from './pages/Lendio'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -145,6 +146,7 @@ function App() {
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
               <Route path="/money-market" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>
+              <Route path="/lendio" element={<Lendio />}/>
               <Route path="/site-map" element={<SiteMap />}/>
               <Route path="/cookie-policy" element={<CookiePolicy />}/>
               <Route path="/text-message-sms-terms-of-use" element={<TextMessageSmsTermsOfUse />}/>
