@@ -94,7 +94,7 @@ export default function Lendio() {
             {data.lendio.data.attributes.BoxInfo.map((box) => (
                 <div key='box.id' className='box-item'>
                     <h4 className='green left'>{box.MainTitle}</h4>
-                    <p>{box.SuperTitle}</p>
+                    <div>{parse(box.SuperTitle)}</div>
                 </div>
             ))}
         </div>
