@@ -1,34 +1,41 @@
 import React from 'react';
 
 function Lightbox({ isOpen, videoId, onClose }) {
-  if (!isOpen) return null;
+    if (!isOpen) return null;
 
-  return (
-    <div style={{
-      position: 'fixed', 
-      top: 0, 
-      left: 0, 
-      right: 0, 
-      bottom: 0, 
-      backgroundColor: 'rgba(0, 0, 0, 0.8)', 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      zIndex: 1000 // Ensures it's above other content
-    }} onClick={onClose}>
+    const maxWidth = 1400; // Maximum width of the video
+    const aspectRatio = 16 / 9; // Aspect ratio of YouTube videos
+  
+    // Calculate height based on the maximum width and the aspect ratio
+    const height = maxWidth / aspectRatio;
+  
+    return (
       <div style={{
-        position: 'relative',
-        width: '80%',
-        height: '80%'
-      }} onClick={e => e.stopPropagation()}> {/* Stops the click from propagating to the overlay */}
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          title="Embedded youtube"
-          style={{ width: '100%', height: '100%' }}
-        />
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        bottom: 0, 
+        backgroundColor: 'rgba(0, 0, 0, 0.8)', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        zIndex: 1000 // Ensures it's above other content
+      }} onClick={onClose}>
+        <div style={{
+          position: 'relative',
+          width: '100%', 
+          maxWidth: `${maxWidth}px`, // Max width for the video
+          height: `${height}px`, // Height calculated based on aspect ratio
+        }} onClick={e => e.stopPropagation()}>
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title="Embedded youtube"
+            style={{ width: '100%', height: '100%' }}
+          />
         <button
           onClick={onClose}
           style={{
