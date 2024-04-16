@@ -6,6 +6,7 @@ import parse from 'html-react-parser'
 import AccountLogin from '../components/AccountLogin'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import Lightbox from '../components/Lightbox'
 
 const HOMEPAGEINFO = gql`
     query getCtas {
@@ -245,6 +246,11 @@ export default function Homepage() {
     const handleLinkClick = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+    const [isOpen, setIsOpen] = useState(false);
+    const videoId = 'dzq0ARCN7qw'; // Replace YOUR_VIDEO_ID with the actual YouTube video ID
+
+    const openLightbox = () => setIsOpen(true);
+    const closeLightbox = () => setIsOpen(false);
     const { loading, error, data } = useQuery(HOMEPAGEINFO)
 
     if (loading) return <p>Loading...</p>
@@ -343,6 +349,12 @@ export default function Homepage() {
                             {hero.ButtonTitle !== null &&
                                 <div className='btn-green'><Link to={hero.ButtonURL}>{hero.ButtonTitle}</Link></div>
                             }
+                            {hero.id === '66' &&
+                                <div>
+                                    <div className='btn-green'><Link onClick={openLightbox}>Open Video</Link></div>
+                                    
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -384,6 +396,7 @@ export default function Homepage() {
                 ))}
                 </Carousel>
             </div>
+            <Lightbox isOpen={isOpen} videoId={videoId} onClose={closeLightbox} />
             <div className='cta-wrapper home'>
                 <div className='cta-box container'>
                     {data.homepage.data.attributes.HomepageCTA.map((cta) => (
