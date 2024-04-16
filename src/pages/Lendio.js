@@ -87,14 +87,33 @@ export default function Lendio() {
       <div className='container mg-top-80 mg-bottom-50'>
         <h2 className='center orange'>{data.lendio.data.attributes.Title}</h2>
         <hr className='green center'></hr>
+        <p>{data.lendio.data.attributes.Description}</p>
       </div>
-      <div className='partners-section container mg-top-50 mg-bottom-50'>
-        <div className='box-cta flex-wrap'>
-        {data.lendio.data.attributes.BoxInfo.map((box) => (
-          <div key={box.id} className={`box-item ${box.attributes.sku}`}>
-            <div><Link to={box.attributes.LinkURL}><img src={box.attributes.Logo.data.attributes.url} alt={box.attributes.Logo.data.attributes.alternativeText} /></Link></div>
-          </div>
-        ))}
+      <div className='container mg-top-50 mg-bottom-50'>
+        <div className='box-cta mg-auto'>
+            {data.lendio.data.attributes.BoxInfo.map((box) => (
+                <div key='box.id' className='box-item'>
+                    <h4 className='green left'>{box.MainTitle}</h4>
+                    <p>{box.SuperTitle}</p>
+                </div>
+            ))}
+        </div>
+      </div>
+      <div className='grey-box'>
+        <div className='team-container container'>
+            {data.lendio.data.attributes.TeamMembers.map((team) => (
+                <div key='team.id' className='location-team-item'>
+                    <div className='link-overlay'><Link to={`/team/${team.slug}`}></Link></div>
+                    <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberImage.data.attributes.alternativeText} /></div>
+                    <h3 className='green uppercase'>{team.TeamMemberName}</h3>
+                    <p>{parse(team.TeamMemberPosition)}</p>
+                    {team.NMLS && 
+                        <p>NMLS: {team.NMLS}</p>
+                    }
+                    <p>{team.TeamMemberPhone}</p>
+                    <p>{team.TeamMemberEmail}</p>
+                </div>
+            ))}
         </div>
       </div>
     </main>
