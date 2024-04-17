@@ -351,7 +351,7 @@ export default function Homepage() {
                             }
                             {hero.id === '69' &&
                                 <div className='hero-mobile'>
-                                    <div className='btn-green'><Link onClick={openLightbox}>Open Video</Link></div>
+                                    <div className='btn-green'><a href='#warrior'>Open Video</a></div>
                                     
                                 </div>
                             }
