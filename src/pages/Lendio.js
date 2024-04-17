@@ -27,6 +27,9 @@ const LENDIOQUERY = gql`
                 }
                 Title
                 Description
+                Step1
+                Step2
+                Step3
                 BoxInfo {
                   id
                   MainTitle
@@ -83,6 +86,24 @@ export default function Lendio() {
                 </div>
               </div>
           </div>
+      </div>
+      <div className='container mg-top-80 mg-bottom-50'>
+        <div className='steps'>
+          <div className='step'>
+            <span>1.</span>
+            <div>{parse(data.lendio.data.attributes.Step1)}</div>
+          </div>
+          <div className="line-with-circles"><div className='line'></div></div>
+          <div className='step'>
+            <span>2.</span>
+            <div>{parse(data.lendio.data.attributes.Step2)}</div>
+          </div>
+          <div className="line-with-circles"><div className='line'></div></div>
+          <div className='step'>
+            <span>3.</span>
+            <div>{parse(data.lendio.data.attributes.Step3)}</div>
+          </div>
+        </div>
       </div>
       <div className='container mg-top-80 mg-bottom-50'>
         <h2 className='center orange'>{data.lendio.data.attributes.Title}</h2>

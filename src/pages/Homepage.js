@@ -349,13 +349,18 @@ export default function Homepage() {
                             {hero.ButtonTitle !== null &&
                                 <div className='btn-green'><Link to={hero.ButtonURL}>{hero.ButtonTitle}</Link></div>
                             }
-                            {hero.id === '66' &&
-                                <div>
+                            {hero.id === '69' &&
+                                <div className='hero-mobile'>
                                     <div className='btn-green'><Link onClick={openLightbox}>Open Video</Link></div>
                                     
                                 </div>
                             }
                         </div>
+                        {hero.id === '69' &&
+                        <div className='hero-image'>
+                            <a href='#warrior'><img src='https://res.cloudinary.com/dk6kie30d/image/upload/v1713365856/Screen_Shot_2024_04_16_at_4_54_32_PM_4152f0a70f.png' alt='CCBank and Utah Warrior Youtube Screenshot' /></a>
+                        </div>
+                        }
                     </div>
                 </div>
                 ))}
@@ -396,7 +401,7 @@ export default function Homepage() {
                 ))}
                 </Carousel>
             </div>
-            <Lightbox isOpen={isOpen} videoId={videoId} onClose={closeLightbox} />
+            {/* <Lightbox isOpen={isOpen} videoId={videoId} onClose={closeLightbox} /> */}
             <div className='cta-wrapper home'>
                 <div className='cta-box container'>
                     {data.homepage.data.attributes.HomepageCTA.map((cta) => (
@@ -517,6 +522,26 @@ export default function Homepage() {
                             <iframe className="youtube" src={data.homepage.data.attributes.HomepageVideo[0].YouTubeSRC} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         }
                         
+                    </div>
+                </div>
+            </div>
+            <div className='video-wrapper' id='warrior'>
+                <div className='video-box container'>
+                    <div className='video-player'>
+                        {data.homepage.data.attributes.HomepageVideo[2].Video.data !== null &&
+                            <video controls>
+                                <source src={data.homepage.data.attributes.HomepageVideo[2].Video.data.attributes.url} type="video/mp4"/>
+                            </video>
+                        }
+                        {data.homepage.data.attributes.HomepageVideo[2].YouTubeSRC !== null &&
+                            <iframe className="youtube" src={data.homepage.data.attributes.HomepageVideo[2].YouTubeSRC} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        }
+                        
+                    </div>
+                    <div className='video-info'>
+                        <h2>{data.homepage.data.attributes.HomepageVideo[2].Title}</h2>
+                        <hr className='green'></hr>
+                        <p>{data.homepage.data.attributes.HomepageVideo[2].Description}</p>
                     </div>
                 </div>
             </div>

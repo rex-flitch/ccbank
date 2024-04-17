@@ -711,6 +711,15 @@ button.btn-green-alt:hover {
   padding-left:0;
   list-style-image:none;
 }
+.hero-image img {
+  width:100%;
+  max-width:500px;
+  display: flex;
+  align-items: center;
+}
+.hero-mobile {
+  display:none;
+}
 .react-multiple-carousel__arrow--left {
   left: calc(1% + 1px)!important;
 }
@@ -2223,6 +2232,68 @@ nav.footer-nav ul li a {
 button span {
   display:none;
 }
+.steps {
+  display:flex;
+  width:100%;
+  gap:20px;
+}
+.step {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding:30px;
+  width:100%;
+  box-shadow: 0 0 12px rgba(34, 34, 34, .15);
+  display:flex;
+  align-items: center;
+}
+.step span {
+  font-size:50px;
+  color:#03873D;
+  font-weight:bold;
+  padding-right:20px;
+}
+.line-with-circles {
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align the items vertically */
+  position: relative; /* Needed for absolute positioning of pseudo-elements */
+  width:350px;
+}
+
+.line-with-circles::before,
+.line-with-circles::after {
+  content: ""; /* Required for pseudo-elements */
+  border: 2px solid #03873D;; /* Outline of the circle */
+  border-radius: 50%; /* Make the shape a circle */
+  width: 10px; /* Diameter of the circle */
+  height: 10px; /* Diameter of the circle */
+  position: absolute; /* Position absolutely within the div */
+}
+
+.line-with-circles::before {
+  left: 0; /* Align to the left */
+}
+
+.line-with-circles::after {
+  right: 0; /* Align to the right */
+}
+
+.line-with-circles::after,
+.line-with-circles::before {
+  background-color: transparent; /* Ensure the circle is only an outline with no fill */
+}
+
+.line-with-circles::after {
+  /* Add more specific styling if needed */
+}
+
+.line {
+  flex-grow: 1; /* Allow the line to take up available space */
+  height: 2px; /* Thickness of the line */
+  background-color: #03873D;; /* Color of the line */
+  margin: 0 12px; /* Space between circles and the line */
+}
+
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
     background-position:50% 17%;
@@ -2231,12 +2302,23 @@ button span {
     background-position:50% 10%;
   }
 }
+@media (max-width:1400px) {
+  .hero-image img {
+    max-width:350px;
+  }
+}
 @media (max-width:1200px) {
   .footer-social img {
     margin:0 10px;
   }
   nav.footer-nav ul li {
     padding: 0 15px;
+  }
+  .hero-mobile {
+    display:block;
+  }
+  .hero-image {
+    display:none;
   }
 }
 @media (max-width:992px) {
@@ -2332,6 +2414,9 @@ button span {
   .footer-social {
     padding:0;
     margin:20px 0;
+  }
+  .line-with-circles {
+    display:none;
   }
 }
 @media (max-width: 768px) {
@@ -2520,6 +2605,9 @@ button span {
   }
   .footer-middle-line span.footer-last img {
     width:25px;
+  }
+  .steps {
+    flex-direction: column;
   }
 }
 @media (max-width: 500px) {
