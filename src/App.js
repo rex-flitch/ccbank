@@ -63,6 +63,7 @@ import LoanPaymentDisclosure from './pages/LoanPaymentDisclosure'
 import OutOfBand from './pages/OutOfBand'
 import AccountLogin from './pages/AccountLogin'
 import Lendio from './pages/Lendio'
+import Events from './pages/Events'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -142,6 +143,7 @@ function App() {
               <Route path="/resources" element={<Resources />}/>
               <Route path="/self-directed-ira" element={<SelfDirectedIRA />}/>
               <Route path="/zelle" element={<Zelle />}/>
+              <Route path="/events" element={<Events />}/>
               <Route path="/services" element={<Services />}/>
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
               <Route path="/money-market" element={<BusinessManagerConnectAccount />}/>
