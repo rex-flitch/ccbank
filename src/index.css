@@ -701,7 +701,10 @@ button.btn-green-alt:hover {
   position: relative;
 }
 .hero-banner #hero-id-8 {
-  background-position: 73% 50%;
+  background-position:50% 10%;
+}
+#lendio-hero-id-67 {
+  background-position:50% 10%;
 }
 .hero-banner h1 {
   line-height: 63px;
@@ -2297,9 +2300,6 @@ button span {
   background-color: #03873D;; /* Color of the line */
   margin: 0 12px; /* Space between circles and the line */
 }
-#lendio-hero-id-67 {
-  background-position:50% 10%;
-}
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
     background-position:50% 17%;
@@ -2599,6 +2599,9 @@ button span {
     background-position:75% 50%;
   }
   #lendio-hero-id-67 {
+    background-position:75% 10%;
+  }
+  .hero-banner #hero-id-8 {
     background-position:75% 10%;
   }
   .partners-section .box-item {
