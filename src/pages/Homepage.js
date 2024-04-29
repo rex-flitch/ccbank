@@ -257,7 +257,7 @@ export default function Homepage() {
     if (error) return <p>Error :(</p>
     
     const CustomDot = ({ index, onClick, active }) => {
-        const dotText = ['PERSONAL CHECKING', 'SAVINGS & CDS', 'INTELLIGENT LENDING','HOME EQUITY LINE OF CREDIT','BUSINESS CHECKING'][index]; // Define your custom dot texts
+        const dotText = ['PERSONAL CHECKING','BUSINESS CHECKING', 'INTELLIGENT LENDING', 'SAVINGS & CDS','HOME EQUITY LINE OF CREDIT'][index]; // Define your custom dot texts
       
         return (
           <button
