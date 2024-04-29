@@ -77,6 +77,9 @@ h4 {
   font-size:14;
   padding-bottom:30px;
 }
+.small-text {
+  font-size:12px;
+}
 .h-green h3 {
   color:#03873d;
 }
@@ -2294,7 +2297,9 @@ button span {
   background-color: #03873D;; /* Color of the line */
   margin: 0 12px; /* Space between circles and the line */
 }
-
+#lendio-hero-id-67 {
+  background-position:50% 10%;
+}
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
     background-position:50% 17%;

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 import AccountLogin from '../components/AccountLogin'
 
 const LENDIOQUERY = gql`
@@ -57,6 +59,24 @@ const LENDIOQUERY = gql`
               }
             }
           }
+          businessBanking {
+            data {
+              attributes {
+                OurBankingTeam {
+                  TeamMemberImage {
+                    data {
+                      attributes {
+                        url,
+                        alternativeText
+                      }
+                    }
+                  }
+                  TeamMemberName,
+                  slug
+                }
+              }
+            }
+          }
     }
 `
 export default function Lendio() {
@@ -66,11 +86,29 @@ export default function Lendio() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
 
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5,
+      slidesToSlide: 1 // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 1 // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2,
+      slidesToSlide: 1 // optional, default to 1.
+    }
+  };
+
   console.log(data)
   return (
-    <main className='wrapper partners' id='main' tabindex="-1">
+    <main className='wrapper partners' id='main' tabIndex="-1">
       <div className='hero-banner'>
-          <div className='hero' style={{backgroundImage: `url(${data.lendio.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
+          <div className='hero' id={`lendio-hero-id-${data.lendio.data.attributes.Hero.id}`} style={{backgroundImage: `url(${data.lendio.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
                 <AccountLogin />
@@ -81,7 +119,7 @@ export default function Lendio() {
                       <p>{parse(data.lendio.data.attributes.Hero.Description)}</p>
                     }
                     {data.lendio.data.attributes.Hero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to=''>{data.lendio.data.attributes.Hero.ButtonTitle}</Link></div>
+                      <div className='btn-green'><Link to={data.lendio.data.attributes.Hero.ButtonURL}>{data.lendio.data.attributes.Hero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
@@ -104,6 +142,7 @@ export default function Lendio() {
             <div>{parse(data.lendio.data.attributes.Step3)}</div>
           </div>
         </div>
+        <div className='small-text'>{parse(data.lendio.data.attributes.Additional)}</div>
       </div>
       <div className='container mg-top-80 mg-bottom-50'>
         <h2 className='center orange'>{data.lendio.data.attributes.Title}</h2>
@@ -113,28 +152,42 @@ export default function Lendio() {
       <div className='container mg-top-50 mg-bottom-50'>
         <div className='box-cta mg-auto'>
             {data.lendio.data.attributes.BoxInfo.map((box) => (
-                <div key='box.id' className='box-item'>
+                <div key={box.id} className='box-item'>
                     <h4 className='green left'>{box.MainTitle}</h4>
                     <div>{parse(box.SuperTitle)}</div>
                 </div>
             ))}
         </div>
       </div>
+      {data.lendio.data.attributes.Hero.ButtonTitle !== null &&
+        <div className='container center mg-bottom-50'>
+          <div className='btn-green'><Link to={data.lendio.data.attributes.Hero.ButtonURL}>{data.lendio.data.attributes.Hero.ButtonTitle}</Link></div>
+        </div>
+      }
       <div className='grey-box'>
-        <div className='team-container container'>
-            {data.lendio.data.attributes.TeamMembers.map((team) => (
-                <div key='team.id' className='location-team-item'>
-                    <div className='link-overlay'><Link to={`/team/${team.slug}`}></Link></div>
-                    <div className='location-team-image'><img src={team.TeamMemberImage.data.attributes.url} alt={team.TeamMemberImage.data.attributes.alternativeText} /></div>
-                    <h3 className='green uppercase'>{team.TeamMemberName}</h3>
-                    <p>{parse(team.TeamMemberPosition)}</p>
-                    {team.NMLS && 
-                        <p>NMLS: {team.NMLS}</p>
-                    }
-                    <p>{team.TeamMemberPhone}</p>
-                    <p>{team.TeamMemberEmail}</p>
-                </div>
-            ))}
+        <div className='member-slider container'>
+          <Carousel 
+          swipeable={true}
+          draggable={true}
+          showDots={false}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          keyBoardControl={true}
+          containerClass="carousel-container"
+          // removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          className='mg-top-50'
+          >
+          {data.businessBanking.data.attributes.OurBankingTeam.map((members) => (
+            <div className='slider-member'>
+              <div className='link-overlay'><Link to={`/team/${members.slug}`}></Link></div>
+              <div className='slider-image'><img src={members.TeamMemberImage.data.attributes.url} alt={members.TeamMemberImage.data.attributes.alternativeText} /></div>
+              <h4 className='green'>{members.TeamMemberName}</h4>
+            </div>
+          ))}
+          </Carousel>
         </div>
       </div>
     </main>
