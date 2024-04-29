@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
@@ -81,6 +81,27 @@ const LENDIOQUERY = gql`
 `
 export default function Lendio() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
+  const [iframeHeight, setIframeHeight] = useState('1000px'); // Default height
+
+    const updateHeightBasedOnWidth = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 540) {
+        setIframeHeight('1600px'); // Smaller devices
+        } else if (screenWidth > 1000) {
+        setIframeHeight('1300px'); // Larger devices
+        } else {
+        setIframeHeight('1300px'); // Default for others
+        }
+    };
+
+    useEffect(() => {
+        updateHeightBasedOnWidth();
+        window.addEventListener('resize', updateHeightBasedOnWidth);
+
+        return () => {
+        window.removeEventListener('resize', updateHeightBasedOnWidth);
+        };
+    }, []);
   const { loading, error, data } = useQuery(LENDIOQUERY)
 
   if (loading) return <p>Loading...</p>
@@ -103,6 +124,7 @@ export default function Lendio() {
       slidesToSlide: 1 // optional, default to 1.
     }
   };
+  
 
   console.log(data)
   return (
@@ -189,6 +211,17 @@ export default function Lendio() {
           ))}
           </Carousel>
         </div>
+      </div>
+      <div className='container mg-top-80 mg-bottom-50'>
+          <h2 className='center orange'>Contact Us</h2>
+          <hr className='green center'></hr>
+          <iframe
+          src="https://form.jotform.com/241137093047149"
+          title="JotForm"
+          width="100%"
+          style={{ height: iframeHeight }}
+          frameBorder="0"
+          />
       </div>
     </main>
   )
