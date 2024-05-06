@@ -90,16 +90,16 @@ const LOCATIONSPAGE = gql`
 `
 export default function Locations() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const [iframeHeight, setIframeHeight] = useState('1000px'); // Default height
+  const [iframeHeight, setIframeHeight] = useState('600px'); // Default height
 
     const updateHeightBasedOnWidth = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth <= 540) {
-        setIframeHeight('1300px'); // Smaller devices
+        setIframeHeight('800px'); // Smaller devices
         } else if (screenWidth > 1000) {
-        setIframeHeight('1000px'); // Larger devices
+        setIframeHeight('600px'); // Larger devices
         } else {
-        setIframeHeight('1000px'); // Default for others
+        setIframeHeight('600px'); // Default for others
         }
     };
 
@@ -142,7 +142,7 @@ export default function Locations() {
                 <hr className='green center'></hr>
                 <p className='center'>1909 W. State Street, Pleasant Grove, UT 84062</p>
                 <iframe
-                src="https://form.jotform.com/jsform/241206751601042"
+                src={data.contact.data.attributes.JotForm}
                 title="JotForm"
                 width="100%"
                 style={{ height: iframeHeight }}
@@ -158,11 +158,18 @@ export default function Locations() {
             <div key={locate.id} className='location-item'>
                 <div className='location-image'><img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.Image.data.attributes.alternativeText}/></div>
                 <div className='location-info'>
-                    <h4 className='green'>{locate.attributes.City}</h4>
+                    {locate.attributes.Address !== '1835 W. State Street' &&
+                      <h4 className='green'>{locate.attributes.City}</h4>
+                    }
+                    {locate.attributes.Address === '1835 W. State Street' &&
+                      <h4 className='green'>CCBank Corporate Office</h4>
+                    }
                     <div className='address'><p>{locate.attributes.Address}<br />{locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>
                     <div className='telephone'><p>{locate.attributes.Telephone}</p></div>
                     <div className='atm'><p>{locate.attributes.HasATM === true ? 'ATM Available' : 'ATM Not Available'}</p></div>
-                    <div className='btn-green mg-top-20'><Link to={`/locations/${locate.attributes.slug}`}>HOURS & DIRECTIONS</Link></div>
+                    {locate.attributes.Address !== '1835 W. State Street' &&
+                      <div className='btn-green mg-top-20'><Link to={`/locations/${locate.attributes.slug}`}>HOURS & DIRECTIONS</Link></div>
+                    }
                 </div>
             </div>
             ))}
