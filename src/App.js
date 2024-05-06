@@ -64,6 +64,7 @@ import OutOfBand from './pages/OutOfBand'
 import AccountLogin from './pages/AccountLogin'
 import Lendio from './pages/Lendio'
 import Events from './pages/Events'
+import ContactUs from './pages/ContactUs'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -135,7 +136,7 @@ function App() {
               <Route path="/ccbank-partners/integracredit" element={<Lendly />}/>
               <Route path="/ccbank-partners/rise" element={<Rise />}/>
               <Route path="/ccbank-partners/mdg" element={<Mdg />}/>
-              <Route path="/ccbank-partners/braviant" element={<Today />}/>
+              <Route path="/ccbank-partners/balance-credit" element={<Today />}/>
               <Route path="/ccbank-partners/xact" element={<Xact />}/>
               <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
               <Route path="/financial-library" element={<FinancialLibrary />}/>
@@ -157,6 +158,7 @@ function App() {
               <Route path="/external-funds-disclosure" element={<ExternalFundsDisclosure />}/>
               <Route path="/loan-payment-disclosure" element={<LoanPaymentDisclosure />}/>
               <Route path="/out-of-band-what-you-need-to-know" element={<OutOfBand />}/>
+              <Route path="/contact" element={<ContactUs />}/>
               <Route path="/account-login" element={<AccountLogin />}/>
             </Routes>
             <SiteFooter />
