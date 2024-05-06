@@ -566,7 +566,13 @@ export default function Homepage() {
                                 // </div>
                                 <div role="button" tabindex="0" key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
                                     <div className='left-links'>
-                                        <div>{locate.attributes.City}</div>
+                                        
+                                        {locate.attributes.Address !== '1835 W. State Street' &&
+                                            <div>{locate.attributes.City}</div>
+                                        }
+                                        {locate.attributes.Address === '1835 W. State Street' &&
+                                            <div>CCBank Corporate Office</div>
+                                        }
                                     </div>
                                 </div>
                             ))}
@@ -588,12 +594,7 @@ export default function Homepage() {
                                     </div>
                                     <div className='hours-info'>
                                         <div className='location-address'>
-                                            {locate2.attributes.Address !== '1835 W. State Street' &&
-                                                <p><strong>{locate2.attributes.City}</strong></p>
-                                            }
-                                            {locate2.attributes.Address === '1835 W. State Street' &&
-                                                <p><strong>CCBank Corporate Office</strong></p>
-                                            }
+                                            <p><strong>{locate2.attributes.City}</strong></p>
                                             <p>{locate2.attributes.Address}<br />
                                             {locate2.attributes.City}, {locate2.attributes.State} {locate2.attributes.Zip}</p>
                                             {locate2.attributes.Telephone !== null &&
