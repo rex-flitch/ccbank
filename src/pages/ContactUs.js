@@ -141,6 +141,10 @@ export default function Locations() {
                 <h2 className='center orange'>Contact Us</h2>
                 <hr className='green center'></hr>
                 <p className='center'>1909 W. State Street, Pleasant Grove, UT 84062</p>
+                <div className='flexbox center max-800 mg-auto mg-top-50'>
+                    <div><strong>Phone:</strong><br />801-763-5066</div>
+                    <div><strong>Email:</strong><br />customerservice@ccbank.com</div>
+                </div>
                 <iframe
                 src={data.contact.data.attributes.JotForm}
                 title="JotForm"
