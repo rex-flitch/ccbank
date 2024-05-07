@@ -213,7 +213,7 @@ const HOMEPAGEINFO = gql`
                 }
             }
         }
-        ccBankLocations {
+        ccBankLocations(sort:"City") {
             data {
               attributes {
                 City,
@@ -566,13 +566,7 @@ export default function Homepage() {
                                 // </div>
                                 <div role="button" tabindex="0" key={locate.id} onClick={() => handleLinkClick(index)} className={activeIndex === index ? 'locations-info-titles active' : 'locations-info-titles'}>
                                     <div className='left-links'>
-                                        
-                                        {locate.attributes.Address !== '1835 W. State Street' &&
-                                            <div>{locate.attributes.City}</div>
-                                        }
-                                        {locate.attributes.Address === '1835 W. State Street' &&
-                                            <div>CCBank Corporate Office</div>
-                                        }
+                                        <div>{locate.attributes.City}</div>
                                     </div>
                                 </div>
                             ))}
@@ -596,7 +590,13 @@ export default function Homepage() {
                                         <div className='location-address'>
                                             <p><strong>{locate2.attributes.City}</strong></p>
                                             <p>{locate2.attributes.Address}<br />
-                                            {locate2.attributes.City}, {locate2.attributes.State} {locate2.attributes.Zip}</p>
+                                            {locate2.attributes.City === 'Corporate Office' &&
+                                                <span>Pleasant Grove, </span>
+                                            } 
+                                            {locate2.attributes.City !== 'Corporate Office' &&
+                                                <span>{locate2.attributes.City}, </span>
+                                            }
+                                            {locate2.attributes.State} {locate2.attributes.Zip}</p>
                                             {locate2.attributes.Telephone !== null &&
                                                 <p>{locate2.attributes.Telephone}</p>
                                             }
