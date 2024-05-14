@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 // import parse from 'html-react-parser'
-import HolidayHours from '../components/HolidayHours'
+// import HolidayHours from '../components/HolidayHours'
 import AccountLogin from '../components/AccountLogin'
 
 const LOCATIONSPAGE = gql`
@@ -162,13 +162,17 @@ export default function Locations() {
             <div key={locate.id} className='location-item'>
                 <div className='location-image'><img src={locate.attributes.Image.data.attributes.url} alt={locate.attributes.Image.data.attributes.alternativeText}/></div>
                 <div className='location-info'>
-                    {locate.attributes.Address !== '1835 W. State Street' &&
-                      <h4 className='green'>{locate.attributes.City}</h4>
+
+                    <h4 className='green'>{locate.attributes.City}</h4>
+
+                    <div className='address'><p>{locate.attributes.Address}<br />
+                    {locate.attributes.City !== 'Corporate Office' &&
+                      <span>{locate.attributes.City}, </span>
                     }
-                    {locate.attributes.Address === '1835 W. State Street' &&
-                      <h4 className='green'>CCBank Corporate Office</h4>
+                    {locate.attributes.City === 'Corporate Office' &&
+                      <span>Pleasant Grove, </span>
                     }
-                    <div className='address'><p>{locate.attributes.Address}<br />{locate.attributes.City}, {locate.attributes.State} {locate.attributes.Zip}</p></div>
+                    {locate.attributes.State} {locate.attributes.Zip}</p></div>
                     <div className='telephone'><p>{locate.attributes.Telephone}</p></div>
                     <div className='atm'><p>{locate.attributes.HasATM === true ? 'ATM Available' : 'ATM Not Available'}</p></div>
                     {locate.attributes.Address !== '1835 W. State Street' &&

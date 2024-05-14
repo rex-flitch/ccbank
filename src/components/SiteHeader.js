@@ -160,7 +160,7 @@ export default function SiteHeader() {
           <li><Link to="https://secure4.billerweb.com/cap/inetSrv" target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment Icon"/>Solar Loan Payment</Link></li>
           <li><Link to="/careers"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698101083/careers_icon_b81ac6f9b1.png" alt="Careers Icon" />Careers</Link></li>
           <li><Link to="/locations"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698101186/locations_icon_772a372fd8.png" alt="Branch Locations Icon" />Branch Locations</Link></li>
-          <li><Link to="/locations"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698267025/phone_icon_e6f6950c1e.png" alt="Contact Icon" />Contact</Link></li>
+          <li><Link to="/contact"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698267025/phone_icon_e6f6950c1e.png" alt="Contact Icon" />Contact</Link></li>
         </ul>
       </div>
       <div className='top-header-mobile'>

@@ -51,7 +51,7 @@ export default function SiteFooter() {
             </div>
             <nav className="footer-nav">
             <ul>
-                <li><Link to="/locations">Contact</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/locations">Locations</Link></li>
                 <li><Link to="/rates">Rates</Link></li>
                 <li><Link to="/site-map">Site Map</Link></li>
