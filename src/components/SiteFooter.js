@@ -81,6 +81,9 @@ export default function SiteFooter() {
               <Link to="https://apps.apple.com/us/app/ccbank-for-business/id1511762156">IOS Banking App</Link><br />
               <Link to="https://play.google.com/store/apps/details?id=com.mfoundry.mb.android.mb_beb101490">Android Banking App</Link>
               </div>
+              <div>
+                <Link to='/news/best-of-utah-valley-2024'><img className='footer-ribbon' src='https://res.cloudinary.com/dk6kie30d/image/upload/v1715976676/Best_Of_Utah_Valley_2024_b45b74879b.png' alt='Best of Utah Valley 2024 Ribbon' /></Link>
+              </div>
             </div>
         </div>
       </div>

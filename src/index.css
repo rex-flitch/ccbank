@@ -2300,6 +2300,9 @@ button span {
   background-color: #03873D;; /* Color of the line */
   margin: 0 12px; /* Space between circles and the line */
 }
+.footer-ribbon {
+  max-width:100px;
+}
 @media (min-width:992px) {
   #loanoff-hero-id-14 {
     background-position:50% 17%;
