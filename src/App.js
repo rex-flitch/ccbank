@@ -65,6 +65,7 @@ import AccountLogin from './pages/AccountLogin'
 import Lendio from './pages/Lendio'
 import Events from './pages/Events'
 import ContactUs from './pages/ContactUs'
+import ParadeOfHomes from './pages/ParadeOfHomes'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -159,6 +160,7 @@ function App() {
               <Route path="/loan-payment-disclosure" element={<LoanPaymentDisclosure />}/>
               <Route path="/out-of-band-what-you-need-to-know" element={<OutOfBand />}/>
               <Route path="/contact" element={<ContactUs />}/>
+              <Route path="/paradeofhomes" element={<ParadeOfHomes />}/>
               <Route path="/account-login" element={<AccountLogin />}/>
             </Routes>
             <SiteFooter />
