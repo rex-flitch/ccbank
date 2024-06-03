@@ -72,7 +72,7 @@ import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
 import ConfirmationModal from './components/ConfirmationModal';
 import TagManager from 'react-gtm-module'
 
-const tagManagerArgs = {
+const tagManagerArgs = { 
   gtmId: 'GTM-WWQ497TF'
 }
 TagManager.initialize(tagManagerArgs);
@@ -131,8 +131,8 @@ function App() {
               <Route path="/personal-banking" element={<PersonalBankingLanding />}/>
               <Route path="/deposit-accounts" element={<DepositAccounts />}/>
               <Route path="/ccbank-partners/opploans" element={<OppLoans />}/>
-              <Route path="/ccbank-partners/ccconnect" element={<CcConnect />}/>
-              <Route path="/ccbank-partners/ccflow" element={<CcFlow />}/>
+              <Route path="/ccconnect" element={<CcConnect />}/>
+              <Route path="/ccflow" element={<CcFlow />}/>
               <Route path="/ccbank-partners/choice-cash" element={<ChoiceCash />}/>
               <Route path="/ccbank-partners/integracredit" element={<Lendly />}/>
               <Route path="/ccbank-partners/rise" element={<Rise />}/>
