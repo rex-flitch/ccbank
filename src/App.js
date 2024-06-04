@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
@@ -92,7 +93,28 @@ const client = new ApolloClient({
 function App() {
   const { showModal, handleConfirm, setShowModal } = useExternalLinkInterceptor()
   const subdomain = window.location.hostname.split('.')[0]; // get the subdomain
-  console.log(subdomain);
+  useEffect(() => {
+    const handleLinkClick = (event) => {
+      const target = event.target;
+
+      // Check if the clicked element is a link
+      if (target.tagName === 'A' && target.href) {
+        // Check if the link is relative
+        const url = new URL(target.href);
+        if (url.hostname === window.location.hostname && url.pathname !== window.location.pathname) {
+          event.preventDefault();
+          window.location.href = `https://ccbank.com${url.pathname}${url.search}${url.hash}`;
+        }
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleLinkClick);
+    };
+  }, []);
   // Other state and logic for handling the external link interception.
   return (
       <Router>
