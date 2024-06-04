@@ -91,6 +91,8 @@ const client = new ApolloClient({
 
 function App() {
   const { showModal, handleConfirm, setShowModal } = useExternalLinkInterceptor()
+  const subdomain = window.location.hostname.split('.')[0]; // get the subdomain
+  console.log(subdomain);
   // Other state and logic for handling the external link interception.
   return (
       <Router>
@@ -98,6 +100,11 @@ function App() {
           <div className="App">
             <SiteHeader />
             <Routes>
+              {subdomain === 'ccconnect' ? (
+                <Route path="/" element={<CcConnect />}/>
+              ) : (
+                <Route exact path="/" element={<Homepage />}/>
+              )}
               <Route exact path="/" element={<Homepage />}/>
               <Route path="/about" element={<About slug="about"/>}/>
               <Route path="/about-overview" element={<AboutOverview />}/>
