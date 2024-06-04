@@ -43,7 +43,13 @@ const GETCCCONNET = gql`
 `
 export default function CcConnect() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const { loading, error, data } = useQuery(GETCCCONNET)
+  const { loading, error, data } = useQuery(GETCCCONNET, {
+    context: {
+      headers: {
+        'Access-Control-Allow-Origin': 'https://ccbank.com'
+      }
+    }
+  });
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
