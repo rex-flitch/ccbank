@@ -93,6 +93,25 @@ const client = new ApolloClient({
 function App() {
   const { showModal, handleConfirm, setShowModal } = useExternalLinkInterceptor()
   const subdomain = window.location.hostname.split('.')[0]; // get the subdomain
+  const renderComponentBasedOnSubdomain = () => {
+    switch (subdomain) {
+      case 'ccconnect':
+        return <Route path="/" element={<CcConnect />} />;
+      case 'ccflow':
+        return <Route path="/" element={<CcFlow />} />;
+      case 'choicecash':
+        return <Route path="/" element={<ChoiceCash />} />;
+      case 'opploans':
+        return <Route path="/" element={<OppLoans />} />;
+      case 'rise':
+        return <Route path="/" element={<Rise />} />;
+      case 'xact':
+        return <Route path="/" element={<Xact />} />;
+      default:
+        return <Route exact path="/" element={<Homepage />}/>;
+    }
+  };
+
   useEffect(() => {
     const handleLinkClick = (event) => {
       const target = event.target;
@@ -122,11 +141,7 @@ function App() {
           <div className="App">
             <SiteHeader />
             <Routes>
-              {subdomain === 'ccconnect' ? (
-                <Route path="/" element={<CcConnect />}/>
-              ) : (
-                <Route exact path="/" element={<Homepage />}/>
-              )}
+              {renderComponentBasedOnSubdomain()}
               <Route exact path="/" element={<Homepage />}/>
               <Route path="/about" element={<About slug="about"/>}/>
               <Route path="/about-overview" element={<AboutOverview />}/>
@@ -159,15 +174,15 @@ function App() {
               <Route path="/personal-banking-solutions" element={<PersonalBanking />}/>
               <Route path="/personal-banking" element={<PersonalBankingLanding />}/>
               <Route path="/deposit-accounts" element={<DepositAccounts />}/>
-              <Route path="/ccbank-partners/opploans" element={<OppLoans />}/>
+              <Route path="/opploans" element={<OppLoans />}/>
               <Route path="/ccconnect" element={<CcConnect />}/>
               <Route path="/ccflow" element={<CcFlow />}/>
-              <Route path="/ccbank-partners/choice-cash" element={<ChoiceCash />}/>
-              <Route path="/ccbank-partners/integracredit" element={<Lendly />}/>
-              <Route path="/ccbank-partners/rise" element={<Rise />}/>
-              <Route path="/ccbank-partners/mdg" element={<Mdg />}/>
-              <Route path="/ccbank-partners/balance-credit" element={<Today />}/>
-              <Route path="/ccbank-partners/xact" element={<Xact />}/>
+              <Route path="/choice-cash" element={<ChoiceCash />}/>
+              <Route path="/integracredit" element={<Lendly />}/>
+              <Route path="/rise" element={<Rise />}/>
+              <Route path="/mdg" element={<Mdg />}/>
+              <Route path="/balance-credit" element={<Today />}/>
+              <Route path="/xact" element={<Xact />}/>
               <Route path="/online-account-opening" element={<OnlineAccountOpening />}/>
               <Route path="/financial-library" element={<FinancialLibrary />}/>
               <Route path="/ccbank-partners" element={<Partners />}/>
