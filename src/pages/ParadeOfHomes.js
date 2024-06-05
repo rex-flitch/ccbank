@@ -34,16 +34,16 @@ const PARADEOFHOMEPAGE = gql`
 `
 export default function ParadeOfHomes() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
-  const [iframeHeight, setIframeHeight] = useState('600px'); // Default height
+  const [iframeHeight, setIframeHeight] = useState('1400px'); // Default height
 
     const updateHeightBasedOnWidth = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth <= 540) {
-        setIframeHeight('800px'); // Smaller devices
+        setIframeHeight('1600px'); // Smaller devices
         } else if (screenWidth > 1000) {
-        setIframeHeight('600px'); // Larger devices
+        setIframeHeight('1400px'); // Larger devices
         } else {
-        setIframeHeight('600px'); // Default for others
+        setIframeHeight('1400px'); // Default for others
         }
     };
 
