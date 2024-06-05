@@ -55,7 +55,7 @@ export default function CcConnect() {
           <div className='hero' style={{backgroundImage: `url(${data.ccConnect.data.attributes.CCConnectHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
-                <AccountLogin />
+                {/* <AccountLogin /> */}
                 <div className='inner-hero'>
                     <h1>{data.ccConnect.data.attributes.CCConnectHero.Title}</h1>
                     <hr className='orange'></hr>

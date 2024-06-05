@@ -55,7 +55,7 @@ export default function Rise() {
           <div className='hero' style={{backgroundImage: `url(${data.rise.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
-                <AccountLogin />
+                {/* <AccountLogin /> */}
                 <div className='inner-hero'>
                     <h1>{data.rise.data.attributes.Hero.Title}</h1>
                     <hr className='orange'></hr>

@@ -55,7 +55,7 @@ export default function OppLoans() {
           <div className='hero' style={{backgroundImage: `url(${data.oppLoan.data.attributes.OppLoansHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
-                <AccountLogin />
+                {/* <AccountLogin /> */}
                 <div className='inner-hero'>
                     <h1>{data.oppLoan.data.attributes.OppLoansHero.Title}</h1>
                     <hr className='orange'></hr>

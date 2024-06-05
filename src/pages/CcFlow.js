@@ -55,7 +55,7 @@ export default function CcFlow() {
           <div className='hero' style={{backgroundImage: `url(${data.ccFlow.data.attributes.CCFlowHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
               <div className='inner-container'>
-                <AccountLogin />
+                {/* <AccountLogin /> */}
                 <div className='inner-hero'>
                     <h1>{data.ccFlow.data.attributes.CCFlowHero.Title}</h1>
                     <hr className='orange'></hr>
