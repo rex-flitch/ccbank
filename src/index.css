@@ -2093,6 +2093,7 @@ nav.footer-nav ul {
 nav.footer-nav ul li {
   padding:0 15px;
   border-right: 1px solid #de7205;
+  border-radius:0;
 }
 nav.footer-nav ul li.footer-last {
   border-right:0;
