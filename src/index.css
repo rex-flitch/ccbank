@@ -1140,7 +1140,7 @@ option {
 .cc-news-homepage-inner {
   display: flex;
   box-shadow:0 0 15px rgba(0, 0, 0, .15);
-  min-height:450px;
+  min-height:380px;
   margin:20px 10px;
 }
 .cc-news-preview-box li {

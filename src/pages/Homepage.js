@@ -635,7 +635,7 @@ export default function Homepage() {
                     </div>
                 </div>
             </div>
-            <div className='cc-news-preview'>
+            <div className='cc-news-preview mg-bottom-50'>
                 <h2 className='center'>News</h2>
                 <hr className='green center'></hr>
                 <div className='cc-news-preview-box'>
@@ -658,7 +658,7 @@ export default function Homepage() {
                         <div className='cc-news-image' role='img' aria-label={news.attributes.Media.data[0].attributes.alternativeText}style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
                         <div className='cc-news-info'>
                             <h4 className="orange fjalla"><Link to={`/news/${news.attributes.slug}`}>{news.attributes.Title}</Link></h4>
-                            <p>{news.attributes.ShortStory.substring(0, 200)}...</p>
+                            <p>{news.attributes.ShortStory.substring(0, 150)}...</p>
                             <div><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}>Read more</Link></div>
                         </div>
                     </div>
