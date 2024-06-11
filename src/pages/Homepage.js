@@ -312,6 +312,23 @@ export default function Homepage() {
           slidesToSlide: 1 // optional, default to 1.
         }
       };
+      const responsivenews = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1624 },
+          items: 3,
+          slidesToSlide: 1 // optional, default to 1.
+        },
+        tablet: {
+          breakpoint: { max: 1624, min: 992 },
+          items: 2,
+          slidesToSlide: 1 // optional, default to 1.
+        },
+        mobile: {
+          breakpoint: { max: 992, min: 0 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        }
+      };
 
     console.log(data)
     return (
@@ -620,8 +637,36 @@ export default function Homepage() {
             </div>
             <div className='cc-news-preview'>
                 <h2 className='center'>News</h2>
-                <hr className='green center mg-bottom-50'></hr>
-                <div className='cc-news-preview-box container'>
+                <hr className='green center'></hr>
+                <div className='cc-news-preview-box'>
+                <Carousel 
+                swipeable={true}
+                draggable={true}
+                showDots={false}
+                responsive={responsivenews}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                keyBoardControl={true}
+                containerClass="carousel-container"
+                // removeArrowOnDeviceType={["tablet", "mobile"]}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+                className='mg-top-50'
+                >
+                {data.ccBanksNews.data.slice(0, 3).map((news) => (
+                    <div key={news.id} className='cc-news-homepage-inner'>
+                        <div className='cc-news-image' role='img' aria-label={news.attributes.Media.data[0].attributes.alternativeText}style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
+                        <div className='cc-news-info'>
+                            <h4 className="orange fjalla"><Link to={`/news/${news.attributes.slug}`}>{news.attributes.Title}</Link></h4>
+                            <p>{news.attributes.ShortStory.substring(0, 200)}...</p>
+                            <div><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}>Read more</Link></div>
+                        </div>
+                    </div>
+                ))}
+                </Carousel>
+                <div className='center'><div className='btn-ghost-green'><Link to='/news'>SEE ALL</Link></div></div>
+                </div>
+                {/* <div className='cc-news-preview-box container'>
                     {data.ccBanksNews.data.slice(0, 3).map((news) => (
                         <div key={news.id} className='cc-news-preview-inner'>
                             <div className='cc-news-image' role='img' aria-label={news.attributes.Media.data[0].attributes.alternativeText}style={{backgroundImage: `url(${news.attributes.Media.data[0].attributes.url})`}}></div>
@@ -632,7 +677,7 @@ export default function Homepage() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </main>
     )
