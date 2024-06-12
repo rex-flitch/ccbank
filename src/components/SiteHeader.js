@@ -150,10 +150,9 @@ export default function SiteHeader() {
       <a href="#main" className="skip">Skip to main content</a>
       <a href="#footer" className="skip">Skip to footer</a>
       <div id='ZN_e37aqzn09qqtSjc'></div>
-      <div className="scroll-to-top" role="button" tabindex="0" onClick={scrollToTop}>
-        {/* Replace with your icon */}
+      {/* <div className="scroll-to-top" role="button" tabindex="0" onClick={scrollToTop}>
         <span>↑</span>
-      </div>
+      </div> */}
       <CookieConsentBanner />
       <div className="top-header">
         <ul className="container">
