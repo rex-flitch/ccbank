@@ -64,10 +64,10 @@ export default function CraBinder() {
           </div>
       </div>
       <div className='container mg-top-50 mg-bottom-50'>
-        <h2>Bank Information</h2>
-        <hr className='green'></hr>
-        <div className='mg-top-20 mg-bottom-20'>{parse(data.craBinder.data.attributes.AdditionalInformation)}</div>
-        <hr className='green'></hr>
+        <h2 className='center'>Bank Information</h2>
+        <hr className='green center'></hr>
+        <div className='mg-top-20 mg-bottom-20 center'>{parse(data.craBinder.data.attributes.AdditionalInformation)}</div>
+        <hr className='green center'></hr>
         <div className='mg-top-50'>{data.craBinder.data.attributes.PDFLinks.map((pdflink) => (
             <div key={pdflink.id}>
                 <ul>
