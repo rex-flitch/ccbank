@@ -39,6 +39,9 @@ p, li {
 .wrapper li::marker {
   font-size:1.4rem;
 }
+.numbers li {
+  list-style-image: none;
+}
 h1 {
   color:#222222;
   font-family: 'Fjalla One', sans-serif;
