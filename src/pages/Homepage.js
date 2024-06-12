@@ -6,7 +6,8 @@ import parse from 'html-react-parser'
 import AccountLogin from '../components/AccountLogin'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import Lightbox from '../components/Lightbox'
+// import Lightbox from '../components/Lightbox'
+import useWindowWidth from '../hooks/useWindowWidth'
 
 const HOMEPAGEINFO = gql`
     query getCtas {
@@ -252,6 +253,8 @@ export default function Homepage() {
     const openLightbox = () => setIsOpen(true);
     const closeLightbox = () => setIsOpen(false);
     const { loading, error, data } = useQuery(HOMEPAGEINFO)
+    const windowWidth = useWindowWidth();
+      const isMobile = windowWidth <= 1200;
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>
@@ -312,21 +315,28 @@ export default function Homepage() {
           slidesToSlide: 1 // optional, default to 1.
         }
       };
+      
       const responsivenews = {
         desktop: {
           breakpoint: { max: 3000, min: 1624 },
-          items: 3,
-          slidesToSlide: 1 // optional, default to 1.
+          items: 1,
+          slidesToSlide: 1,
+          partialVisibilityGutter: 20,
+          partialVisible: true
         },
         tablet: {
           breakpoint: { max: 1624, min: 992 },
-          items: 2,
-          slidesToSlide: 1 // optional, default to 1.
+          items: 1,
+          slidesToSlide: 1, // optional, default to 1.
+          partialVisibilityGutter: 10,
+          partialVisible: true
         },
         mobile: {
           breakpoint: { max: 992, min: 0 },
           items: 1,
-          slidesToSlide: 1 // optional, default to 1.
+          slidesToSlide: 1, // optional, default to 1.
+          centerMode: false,
+          partialVisible: false
         }
       };
 
@@ -644,6 +654,7 @@ export default function Homepage() {
                 draggable={true}
                 showDots={false}
                 responsive={responsivenews}
+                centerMode={!isMobile}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
                 keyBoardControl={true}
@@ -652,6 +663,7 @@ export default function Homepage() {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
                 className='mg-top-50'
+                // partialVisbile={true}
                 >
                 {data.ccBanksNews.data.slice(0, 3).map((news) => (
                     <div key={news.id} className='cc-news-homepage-inner'>
