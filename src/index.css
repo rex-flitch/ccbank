@@ -42,6 +42,13 @@ p, li {
 .numbers li {
   list-style-image: none;
 }
+.numbers li::marker {
+  font-size:1rem;
+  color:#03873d;
+}
+.numbers a {
+  text-decoration: underline;
+}
 h1 {
   color:#222222;
   font-family: 'Fjalla One', sans-serif;
@@ -2768,5 +2775,8 @@ button span {
   }
   .footer-copy p {
     flex-direction: column;
+  }
+  .numbers.mg-left-50 {
+    margin-left:0!important;
   }
 }
