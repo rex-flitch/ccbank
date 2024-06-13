@@ -2228,6 +2228,11 @@ nav.footer-nav ul li a {
   color:#777777;
   margin:0;
   font-size:14px;
+  display:flex;
+  justify-content: center;
+}
+.footer-copy span {
+  padding-left:10px;
 }
 .scroll-to-top {
   position: fixed;
@@ -2760,5 +2765,8 @@ button span {
     padding:4px 10px;
     font-size:14px;
     margin-bottom:8px;
+  }
+  .footer-copy p {
+    flex-direction: column;
   }
 }

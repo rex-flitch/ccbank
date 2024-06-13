@@ -96,7 +96,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className='footer-copy'>
-        <p>Copyright &copy; 2024-2025 CCBank. All Rights Reserved</p>
+        <p><span>Copyright &copy; 2024-2025 CCBank.</span> <span>All Rights Reserved</span></p>
       </div>
     </footer>
   )
