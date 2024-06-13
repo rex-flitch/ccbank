@@ -2218,8 +2218,9 @@ nav.footer-nav ul li a {
   padding:10px;
 }
 .footer-copy p {
-  color:#888888;
+  color:#777777;
   margin:0;
+  font-size:14px;
 }
 .scroll-to-top {
   position: fixed;
