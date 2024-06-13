@@ -2126,6 +2126,7 @@ nav.footer-nav ul li a {
   background-color:transparent;
   border:1px solid #fff;
   border-radius:0;
+  color:#fff;
 }
 .signup-section {
   display: flex;
