@@ -289,6 +289,9 @@ button.btn-green-alt:hover {
 .mg-top-100 {
   margin-top:100px!important;
 }
+.mg-left-50 {
+  margin-left:50px!important;
+}
 .mg-bottom-50 {
   margin-bottom:50px!important;
 }
@@ -330,6 +333,9 @@ button.btn-green-alt:hover {
 }
 .max-600 {
   max-width:800px!important;
+}
+.max-500 {
+  max-width:500px!important;
 }
 .max-400 {
   max-width:400px!important;
