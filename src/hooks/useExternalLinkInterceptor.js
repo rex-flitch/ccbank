@@ -18,6 +18,14 @@ const useExternalLinkInterceptor = () => {
       }
 
       if (target && target.hostname && target.hostname !== window.location.hostname) {
+        // Exception URL
+        const exceptionUrl = "https://ccbank.lendio.com/bp/intelligent-lending";
+
+        if (target.href === exceptionUrl) {
+          // Allow default action for the exception URL
+          return;
+        }
+
         event.preventDefault();
         setCurrentUrl(target.href);
         setShowModal(true);
