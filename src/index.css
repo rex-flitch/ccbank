@@ -530,6 +530,24 @@ button.btn-green-alt:hover {
   background-color:#fff!important;
   color:#03873D;
 } 
+.btn-white-nav a {
+  color:#000!important;
+  background-color:#fff!important;
+  padding:6px 10px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: .5s;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid #fff!important;
+  margin-top:40px;
+  text-align:center;
+}
+.btn-white-nav a:hover {
+  background-color:#03873D!important;
+  color:#fff!important;
+} 
 .mobile-menu ul {
   flex-direction: column;;
 }

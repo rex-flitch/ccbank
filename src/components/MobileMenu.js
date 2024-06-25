@@ -104,6 +104,12 @@ export default function MobileMenu() {
                             <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}  onClick={() => setIsOpen(!isOpen)}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
+                        {nav.attributes.Title === 'Business' &&
+                          <div className='btn-white-nav'><Link to="https://ccb.cloud.processmaker.net/webentry/12/business_account" target="_blank" rel="noopener noreferrer">Open Account</Link></div>
+                        }
+                        {nav.attributes.Title === 'Personal' &&
+                          <div className='btn-white-nav'><Link to="https://ccb.cloud.processmaker.net/webentry/22/customer_request" target="_blank" rel="noopener noreferrer">Open Account</Link></div>
+                        }
                       </div>
                     )
                   } else {

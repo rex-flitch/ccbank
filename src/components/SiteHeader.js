@@ -200,7 +200,12 @@ export default function SiteHeader() {
                             <li key={links.id}><Link reloadDocument to={links.attributes.LinkURL}>{links.attributes.LinkTitle}</Link></li>
                           )))}
                         </ul>
-                        {/* <div className='btn-white'><Link to="https://ccbankutah.ebanking-services.com/Nubi/Trace/Enroll.aspx" target="_blank" rel="noopener noreferrer">Open Account</Link></div> */}
+                        {nav.attributes.Title === 'Business' &&
+                          <div className='btn-white'><Link to="https://ccb.cloud.processmaker.net/webentry/12/business_account" target="_blank" rel="noopener noreferrer">Open Account</Link></div>
+                        }
+                        {nav.attributes.Title === 'Personal' &&
+                          <div className='btn-white'><Link to="https://ccb.cloud.processmaker.net/webentry/22/customer_request" target="_blank" rel="noopener noreferrer">Open Account</Link></div>
+                        }
                       </div>
                     )
                   } else {
