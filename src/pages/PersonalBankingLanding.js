@@ -98,7 +98,7 @@ export default function PersonalBankingLanding() {
                       <p>{data.personalBankingLanding.data.attributes.Hero.Description}</p>
                     }
                     {data.personalBankingLanding.data.attributes.Hero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to=''>{data.personalBankingLanding.data.attributes.Hero.ButtonTitle}</Link></div>
+                      <div className='btn-green mg-top-50'><Link to={data.personalBankingLanding.data.attributes.Hero.ButtonURL}>{data.personalBankingLanding.data.attributes.Hero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
