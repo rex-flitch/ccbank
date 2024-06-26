@@ -671,7 +671,7 @@ export default function Homepage() {
                         <div className='cc-news-info'>
                             <h4 className="orange fjalla"><Link to={`/news/${news.attributes.slug}`}>{news.attributes.Title}</Link></h4>
                             <p>{news.attributes.ShortStory.substring(0, 150)}...</p>
-                            <div><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}>Read more</Link></div>
+                            <div className='btn-ghost-green'><Link className='bold uppercase' to={`/news/${news.attributes.slug}`}>Read more</Link></div>
                         </div>
                     </div>
                 ))}
