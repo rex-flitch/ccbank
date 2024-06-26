@@ -756,6 +756,7 @@ button.btn-green-alt:hover {
 }
 .hero-banner h1 {
   line-height: 63px;
+  margin-top:0;
 }
 .hero-banner h1, .hero-banner p {
   color:#fff;
