@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import MobileMenu from './MobileMenu'
 import CookieConsentBanner from './CookieConsentBanner'
+import Carousel from 'react-multi-carousel'
 import parse from 'html-react-parser'
 
 const CCSettings = gql`
@@ -26,6 +27,7 @@ query getHomepage {
   }
   announcementBars {
     data {
+      id
       attributes {
         Announcement
       }
@@ -150,6 +152,23 @@ export default function SiteHeader() {
   if (error) return <p>Error :(</p>
   
   //console.log(data)
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
+    }
+  };
 
   return (
     <div className="site-header">
@@ -162,11 +181,34 @@ export default function SiteHeader() {
         <span>↑</span>
       </div> */}
       <CookieConsentBanner />
-      {/* {data.announcementBars.data.length > 0 &&
-      <div className='announcements-bar'>
-        <div className='accouncement'>{parse(data.announcementBars.data[0].attributes.Announcement)}</div>
-      </div>
-      } */}
+      {data.announcementBars.data.length > 1 &&
+      <Carousel 
+            swipeable={true}
+            draggable={true}
+            showDots={false}
+            arrows={false}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={7000}
+            keyBoardControl={true}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            >
+              {data.announcementBars.data.map((announcement) => (
+                <div key={announcement.id} className='announcements-bar'>
+                  <div className='accouncement'>{parse(announcement.attributes.Announcement)}</div>
+                </div>
+              ))}
+            
+      </Carousel>
+      }
+      {data.announcementBars.data.length === 1 &&
+        <div className='announcements-bar'>
+          <div className='accouncement'>{parse(data.announcementBars.data[0].attributes.Announcement)}</div>
+        </div>
+        }
       <div className="top-header">
         <ul className="container">
           <li><Link to="https://secure4.billerweb.com/cap/inetSrv" target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment Icon"/>Solar Loan Payment</Link></li>
