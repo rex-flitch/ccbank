@@ -162,11 +162,11 @@ export default function SiteHeader() {
         <span>↑</span>
       </div> */}
       <CookieConsentBanner />
-      {data.announcementBars.data.length > 0 &&
+      {/* {data.announcementBars.data.length > 0 &&
       <div className='announcements-bar'>
         <div className='accouncement'>{parse(data.announcementBars.data[0].attributes.Announcement)}</div>
       </div>
-      }
+      } */}
       <div className="top-header">
         <ul className="container">
           <li><Link to="https://secure4.billerweb.com/cap/inetSrv" target="_blank" rel="noopener noreferrer" aria-label="New Window"><img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1698100903/solar_loan_payment_21222ecbfe.png" alt="Solar Loan Payment Icon"/>Solar Loan Payment</Link></li>
