@@ -381,6 +381,10 @@ button.btn-green-alt:hover {
   padding:10px 20px;
   font-size:15px;
 }
+.accouncement a {
+  color:#fff;
+  text-decoration: underline;
+}
 .top-header {
   background-color:#222222;
   color:#fff;
