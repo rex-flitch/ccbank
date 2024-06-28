@@ -52,6 +52,7 @@ const HOMEPAGEINFO = gql`
                         Description,
                         ButtonURL,
                         ButtonTitle,
+                        Active,
                         BackgroundImage {
                             data {
                                 attributes {
@@ -343,6 +344,7 @@ export default function Homepage() {
     console.log(data)
     return (
         <main className='wrapper' id='main' tabindex="-1">
+            {data.homepage.data.attributes.HomepageHero.some((hero) => hero.Active) && (
             <div className='hero-banner banner-slider'>
             <AccountLogin />
             <Carousel 
@@ -362,7 +364,8 @@ export default function Homepage() {
             className='hero-slider'
             customDot={<CustomSliderDot />}
             >
-                {data.homepage.data.attributes.HomepageHero.map((hero) => (
+                {data.homepage.data.attributes.HomepageHero.map((hero) => 
+                    hero.Active && (
                 <div key={hero.id} className='hero' id={`hero-id-${hero.id}`} style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
@@ -393,6 +396,7 @@ export default function Homepage() {
                 ))}
                 </Carousel>
             </div>
+            )}
             <div className='looking-for container'>
                 <Carousel 
                 swipeable={true}
