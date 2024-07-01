@@ -152,7 +152,7 @@ const Rates = ({ shouldReload }) => {
                       <p>{data.ratepage.data.attributes.RatesHero.Description}</p>
                     }
                     {data.ratepage.data.attributes.RatesHero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to={data.ratepage.data.attributes.RatesHero.ButtonURL}>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
+                      <div className='btn-green mg-top-50'><Link to={data.ratepage.data.attributes.RatesHero.ButtonURL}>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
