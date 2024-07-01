@@ -31,6 +31,8 @@ const GETDEPOSITACCOUNT = gql`
                 TextCTA {
                   Title
                   Description
+                  ButtonTitle
+                  ButtonURL
                 }
               }
             }
@@ -108,12 +110,28 @@ export default function DepositAccounts() {
                       <p>{data.depositAccount.data.attributes.DepositHero.Description}</p>
                     }
                     {data.depositAccount.data.attributes.DepositHero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to=''>{data.depositAccount.data.attributes.DepositHero.ButtonTitle}</Link></div>
+                      <div className='btn-green'><Link to={data.depositAccount.data.attributes.DepositHero.ButtonURL}>{data.depositAccount.data.attributes.DepositHero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
           </div>
       </div>
+      <div id='checking' className='cta-wrapper col-2'>
+            <div className='cta-box container mg-top-50'>
+                {data.depositAccount.data.attributes.TextCTA.map((cta) => (
+                    <div key={cta.id} className='cta'>
+                        <div className='cta-info'>
+                            <div className='title'><h2>{cta.Title}</h2></div>
+                            <hr className='green'></hr>
+                            <div className='desciption'><p>{parse(cta.Description)}</p></div>
+                            {cta.ButtonTitle !== null &&
+                              <div className='btn-green mg-top-50'><Link to={cta.ButtonURL}>{cta.ButtonTitle}</Link></div>
+                            }
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
       <div className='container mg-top-80 mg-bottom-50'>
         <h2 className='center orange'>{data.depositAccount.data.attributes.MoneyMarketTitle}</h2>
         <hr className='green center'></hr>
@@ -201,19 +219,7 @@ export default function DepositAccounts() {
 
             </div>
       </div>
-      <div id='checking' className='cta-wrapper col-2'>
-            <div className='cta-box container mg-top-50'>
-                {data.depositAccount.data.attributes.TextCTA.map((cta) => (
-                    <div key={cta.id} className='cta'>
-                        <div className='cta-info'>
-                            <div className='title'><h2>{cta.Title}</h2></div>
-                            <hr className='green'></hr>
-                            <div className='desciption'><p>{parse(cta.Description)}</p></div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+      
     </main>
   )
 }
