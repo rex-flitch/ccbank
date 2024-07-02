@@ -805,6 +805,11 @@ button.btn-green-alt:hover {
   flex-direction: column;
   justify-content: center;
 }
+@media (min-width: 1700px) {
+  .hero-banner .inner-hero {
+    max-width:600px;
+  }
+}
 /* .banner-slider .inner-hero {
   margin:0 0 0 350px;
 } */
