@@ -151,8 +151,12 @@ const Rates = ({ shouldReload }) => {
                     {data.ratepage.data.attributes.RatesHero.Description !== null &&
                       <p>{data.ratepage.data.attributes.RatesHero.Description}</p>
                     }
+                    
                     {data.ratepage.data.attributes.RatesHero.ButtonTitle !== null &&
-                      <div className='btn-green mg-top-50'><Link to={data.ratepage.data.attributes.RatesHero.ButtonURL}>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
+                      <div>
+                        <div className='btn-green mg-top-50'><Link to='https://ccb.cloud.processmaker.net/webentry/22/customer_request'>OPEN PERSONAL ACCOUNT</Link></div>
+                        <div className='btn-green mg-top-20'><Link to={data.ratepage.data.attributes.RatesHero.ButtonURL}>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
+                      </div>
                     }
                 </div>
               </div>
