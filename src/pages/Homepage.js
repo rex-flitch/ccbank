@@ -281,24 +281,31 @@ export default function Homepage() {
           </button>
         );
       };
+      const activeHomepageHero = data.homepage.data.attributes.HomepageHero.filter(hero => hero.Active);
       const CustomSliderDot = ({ onMove, index, onClick, active }) => {
-        // Assuming `data` is available in this scope, and each item has an image URL
-        const imageUrl = data.homepage.data.attributes.HomepageHero[index].BackgroundImage.data[0].attributes.url;
-      
+        const hero = activeHomepageHero[index];
+        const imageUrl = hero.BackgroundImage.data[0].attributes.url;
+
         return (
-          <li
-            className={active ? 'active' : 'inactive'}
-            style={{ background: `url(${imageUrl}) center center / cover no-repeat`, margin: '0 10px 10px 0' }}
-          >
-            <button onClick={() => onClick()} style={{ background: 'none', border: '1px solid #fff',
-                    width: '75px',
-                    height: '100%',
-                    cursor: 'pointer',  }}><span>Slide</span>
-              {/* You can add an image element or keep it as a background of the button */}
-            </button>
-          </li>
+            <li
+                className={active ? 'active' : 'inactive'}
+                style={{ background: `url(${imageUrl}) center center / cover no-repeat`, margin: '0 10px 10px 0' }}
+            >
+                <button
+                    onClick={() => onClick()}
+                    style={{
+                        background: 'none',
+                        border: '1px solid #fff',
+                        width: '75px',
+                        height: '100%',
+                        cursor: 'pointer',
+                    }}
+                >
+                    <span>Slide</span>
+                </button>
+            </li>
         );
-      };
+    };
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
