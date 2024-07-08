@@ -52,6 +52,8 @@ const HOMEPAGEINFO = gql`
                         Description,
                         ButtonURL,
                         ButtonTitle,
+                        SecondButtonTitle,
+                        SecondButtonURL,
                         Active,
                         BackgroundImage {
                             data {
@@ -383,8 +385,12 @@ export default function Homepage() {
                             {hero.Description !== null &&
                                 <p>{hero.Description}</p>
                             }
+                            <div className='homepage-hero-buttons'>
                             {hero.ButtonTitle !== null &&
                                 <div className='btn-green'><Link to={hero.ButtonURL}>{hero.ButtonTitle}</Link></div>
+                            }
+                            {hero.SecondButtonTitle !== null &&
+                                <div className='btn-green'><Link to={hero.SecondButtonURL}>{hero.SecondButtonTitle}</Link></div>
                             }
                             {hero.id === '69' &&
                                 <div className='hero-mobile'>
@@ -392,6 +398,7 @@ export default function Homepage() {
                                     
                                 </div>
                             }
+                            </div>
                         </div>
                         {hero.id === '69' &&
                         <div className='hero-image'>

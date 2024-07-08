@@ -777,6 +777,11 @@ button.btn-green-alt:hover {
   align-items: center;
   box-shadow: 0px 0px 15px #000;
 }
+.homepage-hero-buttons {
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+}
 .hero-mobile {
   display:none;
 }

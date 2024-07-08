@@ -144,7 +144,7 @@ export default function Merchant() {
       <div className='background-left-text mg-top-50' style={{backgroundImage: `url(${data.merchantService.data.attributes.EachTransaction.BackgroundImage.data.attributes.url})`}}>
           <div className='grad-overlay'></div>
           <div className='background-left-text-text container'>
-            <h3 className='max-400 white'>{data.merchantService.data.attributes.EachTransaction.Title}</h3>
+            <h3 className='max-800 white'>{data.merchantService.data.attributes.EachTransaction.Title}</h3>
             <hr className="orange"></hr>
             <p className='max-800 white mg-top-20'>{parse(data.merchantService.data.attributes.EachTransaction.Text)}</p>
           </div>
