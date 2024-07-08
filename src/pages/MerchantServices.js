@@ -146,7 +146,7 @@ export default function Merchant() {
           <div className='background-left-text-text container'>
             <h3 className='max-400 white'>{data.merchantService.data.attributes.EachTransaction.Title}</h3>
             <hr className="orange"></hr>
-            <p className='max-400 white mg-top-20'>{parse(data.merchantService.data.attributes.EachTransaction.Text)}</p>
+            <p className='max-800 white mg-top-20'>{parse(data.merchantService.data.attributes.EachTransaction.Text)}</p>
           </div>
       </div>
     </main>
