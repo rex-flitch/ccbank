@@ -72,8 +72,9 @@ import ShmOptOut from './pages/ShmOptOut'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
-import ConfirmationModal from './components/ConfirmationModal';
+import ConfirmationModal from './components/ConfirmationModal'
 import TagManager from 'react-gtm-module'
+import PasswordProtected from './components/PasswordProtected'
 
 const tagManagerArgs = { 
   gtmId: 'GTM-WWQ497TF'
@@ -196,7 +197,7 @@ function App() {
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
               <Route path="/money-market" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>
-              <Route path="/lendio" element={<Lendio />}/>
+              <Route path="/lendio" element={<PasswordProtected><Lendio /></PasswordProtected>}/>
               <Route path="/site-map" element={<SiteMap />}/>
               <Route path="/cookie-policy" element={<CookiePolicy />}/>
               <Route path="/text-message-sms-terms-of-use" element={<TextMessageSmsTermsOfUse />}/>
