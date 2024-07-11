@@ -779,7 +779,6 @@ button.btn-green-alt:hover {
 }
 .homepage-hero-buttons {
   display:flex;
-  flex-direction: column;
   gap:10px;
 }
 .hero-mobile {
