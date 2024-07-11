@@ -387,7 +387,13 @@ export default function Homepage() {
                             }
                             <div className='homepage-hero-buttons'>
                             {hero.ButtonTitle !== null &&
-                                <div className='btn-green'><Link to={hero.ButtonURL}>{hero.ButtonTitle}</Link></div>
+                                <div className='btn-green'>
+                                    {hero.ButtonURL === "https://ccbank.lendio.com/bp/intelligent-lending" ? (
+                                        <a href={hero.ButtonURL} target="_blank" rel="noopener noreferrer">{hero.ButtonTitle}</a>
+                                    ) : (
+                                        <Link to={hero.ButtonURL}>{hero.ButtonTitle}</Link>
+                                    )}
+                                </div>
                             }
                             {hero.SecondButtonTitle !== null &&
                                 <div className='btn-green'><Link to={hero.SecondButtonURL}>{hero.SecondButtonTitle}</Link></div>
