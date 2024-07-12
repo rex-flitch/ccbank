@@ -1993,6 +1993,11 @@ details[open] summary:after {
   align-items: center;
 }
 /* Login Hero Box */
+.login-wrapper {
+  position: relative;
+  max-width: 1500px;
+  margin:0 auto;
+}
 .login-containter {
   z-index: 2;
   width:300px;
