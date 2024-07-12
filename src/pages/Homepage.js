@@ -355,7 +355,7 @@ export default function Homepage() {
         <main className='wrapper' id='main' tabindex="-1">
             {data.homepage.data.attributes.HomepageHero.some((hero) => hero.Active) && (
             <div className='hero-banner banner-slider'>
-            <AccountLogin />
+            <div className='login-wrapper'><AccountLogin /></div>
             <Carousel 
             swipeable={true}
             draggable={true}

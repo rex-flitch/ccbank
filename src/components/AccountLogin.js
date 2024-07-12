@@ -18,7 +18,7 @@ export default function AccountLogin() {
   };
 
   return (
-    <div className='login-wrapper'>
+    // <div className='login-wrapper'>
     <div className='login-containter'>
         <div className="accordion-area">
             <div className="accordion-wrapper">
@@ -60,6 +60,6 @@ export default function AccountLogin() {
             </div>
         </div>
     </div>
-    </div>
+    // </div>
   )
 }
