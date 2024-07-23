@@ -2829,4 +2829,7 @@ button span {
   .numbers.mg-left-50 {
     margin-left:0!important;
   }
+  .news-items h1 {
+    font-size:30px;
+  }
 }

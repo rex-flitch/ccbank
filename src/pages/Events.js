@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AccountLogin from '../components/AccountLogin';
+// import AccountLogin from '../components/AccountLogin';
 
 function Events() {
     const [iframeHeight, setIframeHeight] = useState('1000px'); // Default height
@@ -26,7 +26,7 @@ function Events() {
 
     return (
         <main className='wrapper opp-loans' id='main' tabIndex="-1">
-            <div className='hero-banner'>
+            {/* <div className='hero-banner'>
                 <div className='hero' style={{backgroundImage: `url(https://res.cloudinary.com/dk6kie30d/image/upload/v1700256560/Aspen_Grove_on_Timp_1_909c322275.jpg)`}}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
@@ -37,9 +37,9 @@ function Events() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className='container mg-top-80 mg-bottom-50'>
-                <h2 className='center orange'>Events</h2>
+                <h2 className='center orange'>Enter for a chance to win!</h2>
                 <hr className='green center'></hr>
                 <iframe
                 src="https://form.jotform.com/241026755487058"
