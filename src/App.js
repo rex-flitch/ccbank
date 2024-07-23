@@ -69,6 +69,7 @@ import ContactUs from './pages/ContactUs'
 import ParadeOfHomes from './pages/ParadeOfHomes'
 import CraBinder from './pages/CraBinder'
 import ShmOptOut from './pages/ShmOptOut'
+import Mortgage from './pages/Mortgage'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
@@ -211,6 +212,7 @@ function App() {
               <Route path="/paradeofhomes" element={<ParadeOfHomes />}/>
               <Route path="/account-login" element={<AccountLogin />}/>
               <Route path="/shm-opt-out" element={<ShmOptOut />}/>
+              <Route path="/mortgage" element={<Mortgage />}/>
             </Routes>
             <SiteFooter />
             <ConfirmationModal 

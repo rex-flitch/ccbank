@@ -87,7 +87,7 @@ export default function BusinessManagerConnectAccount() {
                       <p>{data.businessManagerConnectAccount.data.attributes.Hero.Description}</p>
                     }
                     {data.businessManagerConnectAccount.data.attributes.Hero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to=''>{data.businessManagerConnectAccount.data.attributes.Hero.ButtonTitle}</Link></div>
+                      <div className='btn-green'><Link to={data.businessManagerConnectAccount.data.attributes.Hero.ButtonURL}>{data.businessManagerConnectAccount.data.attributes.Hero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
