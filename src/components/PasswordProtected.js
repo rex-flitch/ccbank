@@ -17,11 +17,12 @@ const PasswordProtected = ({ children }) => {
   };
 
   return (
-    <div className='container mg-top-50 mg-bottom-50'>
-        <h2>Enter the password to view this page</h2>
+    <div>
       {accessGranted ? (
         children
       ) : (
+        <div className='container mg-top-50 mg-bottom-50'>
+        <h2>Enter the password to view this page</h2>
         <form onSubmit={handlePasswordSubmit}>
           <input
             type="password"
@@ -31,6 +32,7 @@ const PasswordProtected = ({ children }) => {
           />
           <button type="submit">Submit</button>
         </form>
+        </div>
       )}
     </div>
   );
