@@ -212,7 +212,7 @@ function App() {
               <Route path="/paradeofhomes" element={<ParadeOfHomes />}/>
               <Route path="/account-login" element={<AccountLogin />}/>
               <Route path="/shm-opt-out" element={<ShmOptOut />}/>
-              <Route path="/mortgage" element={<Mortgage />}/>
+              <Route path="/mortgage" element={<PasswordProtected><Mortgage /></PasswordProtected>}/>
             </Routes>
             <SiteFooter />
             <ConfirmationModal 
