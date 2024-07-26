@@ -53,6 +53,8 @@ const RATESPAGE = gql`
                   Description,
                   ButtonURL,
                   ButtonTitle,
+                  SecondButtonTitle,
+                  SecondButtonURL,
                   BackgroundImage {
                     data {
                       attributes {
@@ -153,9 +155,11 @@ const Rates = ({ shouldReload }) => {
                     }
                     
                     {data.ratepage.data.attributes.RatesHero.ButtonTitle !== null &&
-                      <div>
-                        <div className='btn-green mg-top-50'><Link to='https://ccb.cloud.processmaker.net/webentry/22/customer_request'>OPEN PERSONAL ACCOUNT</Link></div>
-                        <div className='btn-green mg-top-20'><Link to={data.ratepage.data.attributes.RatesHero.ButtonURL}>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
+                      <div className='homepage-hero-buttons'>
+                        <div className='btn-green'><Link to={data.ratepage.data.attributes.RatesHero.ButtonURL}>{data.ratepage.data.attributes.RatesHero.ButtonTitle}</Link></div>
+                        {data.ratepage.data.attributes.RatesHero.SecondButtonTitle !== null &&
+                            <div className='btn-green'><Link to={data.ratepage.data.attributes.RatesHero.SecondButtonURL}>{data.ratepage.data.attributes.RatesHero.SecondButtonTitle}</Link></div>
+                        }
                       </div>
                     }
                 </div>
