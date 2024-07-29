@@ -90,8 +90,17 @@ const RATESPAGE = gql`
 `
 const Rates = ({ shouldReload }) => {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+    setCurrentDate(formattedDate);
+
     const script = document.createElement('script');
     script.src = 'https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89';
     script.onload = () => setIsScriptLoaded(true);
@@ -218,7 +227,7 @@ const Rates = ({ shouldReload }) => {
         <div className='rates-table container'>
         <h2 className='rates center'>Rates</h2>
         <hr className='green center' />
-        <p className='center'>Rates Effective: {data.ratepage.data.attributes.RatesEffective}</p>
+        <p className='center'>Rates Effective:  {currentDate}</p>
         <table className='mg-top-50' role='presentation'>
             <tr>
                 <th className='orange-header' colSpan='5'>DEMAND DEPOSIT PRODUCTS</th>

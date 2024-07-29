@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
 import AccountLogin from '../components/AccountLogin'
+
 const GETDEPOSITACCOUNT = gql`
     query depositAccountquery {
         depositAccount {
@@ -65,8 +66,19 @@ const GETDEPOSITACCOUNT = gql`
           }
     }
 `
+
 export default function DepositAccounts() {
+  const [currentDate, setCurrentDate] = useState('');
+
   useEffect(() => {
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+    setCurrentDate(formattedDate);
+
     const hash = window.location.hash;
 
     const scrollToElement = () => {
@@ -82,8 +94,8 @@ export default function DepositAccounts() {
     if (hash) {
         scrollToElement();
     }
-}, []);
-  //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
+  }, []);
+  
   const { loading, error, data } = useQuery(GETDEPOSITACCOUNT)
 
   if (loading) return <p>Loading...</p>
@@ -95,9 +107,9 @@ export default function DepositAccounts() {
   const CDfilteredItems = data.typeOfRates.data.filter(
     rates => ["9", "10", "11"].includes(rates.id)
   )
-  console.log(filteredItems)
+
   return (
-    <main className='wrapper deposit-account' id='main' tabindex="-1">
+    <main className='wrapper deposit-account' id='main' tabIndex="-1">
       <div className='hero-banner'>
           <div className='hero' id={`deposit-acounts-hero-id-${data.depositAccount.data.attributes.DepositHero.id}`} style={{backgroundImage: `url(${data.depositAccount.data.attributes.DepositHero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
@@ -141,7 +153,7 @@ export default function DepositAccounts() {
             <div className='container bg-white cbpc'>
                 <table role='presentation'>
                     <caption>Checking, Money Market, and Savings Accounts<br />
-                        <span>Rates Effective {data.ratepage.data.attributes.RatesEffective}</span>
+                        <span>Rates Effective {currentDate}</span>
                     </caption>
                     <tr>
                         <th className='center'>Account</th>
