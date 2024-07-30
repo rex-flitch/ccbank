@@ -74,6 +74,28 @@ const SBALOANSINFO = gql`
 export default function SBALoans() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
+  const [iframeHeight, setIframeHeight] = useState('930px'); // Default height
+
+    const updateHeightBasedOnWidth = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 540) {
+        setIframeHeight('1130px'); // Smaller devices
+        } else if (screenWidth > 1000) {
+        setIframeHeight('930px'); // Larger devices
+        } else {
+        setIframeHeight('930px'); // Default for others
+        }
+    };
+
+    useEffect(() => {
+        updateHeightBasedOnWidth();
+        window.addEventListener('resize', updateHeightBasedOnWidth);
+
+        return () => {
+        window.removeEventListener('resize', updateHeightBasedOnWidth);
+        };
+    }, []);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://embed.signalintent.com/js/embedded.js?org-guid=4159706a-6c26-49d4-bfac-58d685253c89';
@@ -90,6 +112,23 @@ export default function SBALoans() {
       }, 1000); // Adjust the delay as necessary
     }
   }, [isScriptLoaded]);
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    const scrollToElement = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Wait for a bit and try again
+            setTimeout(scrollToElement, 100);
+        }
+    };
+
+    if (hash) {
+        scrollToElement();
+    }
+}, []);
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const { data } = useQuery(SBALOANSINFO)
 
@@ -124,6 +163,7 @@ export default function SBALoans() {
             <h2>{data.sbaLoan.data.attributes.SBALoansIntro.Title}</h2>
             <hr className='green'></hr>
             <div>{parse(data.sbaLoan.data.attributes.SBALoansIntro.Text)}</div>
+            <div className='btn-green'><a href="#form">Get In Touch</a></div>
         </div>
         <div className='sba-image'><img src={data.sbaLoan.data.attributes.SBALoansIntro.BackgroundImage.data.attributes.url} alt={data.sbaLoan.data.attributes.SBALoansIntro.BackgroundImage.data.attributes.alternativeText} /></div>
       </div>
@@ -168,6 +208,14 @@ export default function SBALoans() {
       )}
       <div className='calculators' id="calculators">
       </div>
+      <div id="form"></div>
+    <iframe
+                src="https://form.jotform.com/242115060380039"
+                title="JotForm"
+                width="100%"
+                style={{ height: iframeHeight }}
+                frameBorder="0"
+                />
     </main>
   )
 }

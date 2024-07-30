@@ -3,6 +3,9 @@
 * {
   font-family:'Montserrat', 'Roboto', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
 
