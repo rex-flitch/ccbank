@@ -13,6 +13,7 @@ const GETNEWSITEM = gql`
                     Date,
                     MainStory,
                     slug,
+                    IncludeFeaturedImageInArticle,
                     Media {
                         data {
                             attributes {
@@ -43,9 +44,10 @@ export default function NewsDetails() {
                 <h1>{data.ccBanksNews.data[0].attributes.Title}</h1>
                 <h5>{data.ccBanksNews.data[0].attributes.Date}</h5>
                 <div className='news-story'>
-                    {data.ccBanksNews.data[0].attributes.Media.data.length > 0 &&
-                        <img src={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.url} alt={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.alternativeText} />
-                    }
+                {data.ccBanksNews.data[0].attributes.Media.data.length > 0 &&
+                data.ccBanksNews.data[0].attributes.IncludeFeaturedImageInArticle !== false &&
+                    <img src={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.url} alt={data.ccBanksNews.data[0].attributes.Media.data[0].attributes.alternativeText} />
+                }
                     {parse(data.ccBanksNews.data[0].attributes.MainStory)}
                 </div>
             </div>
