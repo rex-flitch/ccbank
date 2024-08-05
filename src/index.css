@@ -746,6 +746,9 @@ button.btn-green-alt:hover {
   margin:0 auto;
   width:100%;
 }
+.no-account-section {
+  max-width:1300px;
+}
 .hero-banner .hero {
   min-height:550px;
   background-size:cover;

@@ -75,7 +75,7 @@ export default function Mortgage() {
       <div className='hero-banner'>
           <div className='hero' id={`sba-hero-id-${data.shmMortgage.data.attributes.Hero.id}`} style={{backgroundImage: `url(${data.shmMortgage.data.attributes.Hero.BackgroundImage.data[0].attributes.url})`}}>
               <div className='grad-overlay'></div>
-              <div className='inner-container'>
+              <div className='inner-container no-account-section'>
                 {/* <AccountLogin /> */}
                 <div className='inner-hero'>
                     <h1>{data.shmMortgage.data.attributes.Hero.Title}</h1>
@@ -83,7 +83,7 @@ export default function Mortgage() {
                     {data.shmMortgage.data.attributes.Hero.Description !== null &&
                       <p>{data.shmMortgage.data.attributes.Hero.Description}</p>
                     }
-                    <img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1721777137/SHM_Logos_Wide_Color_White_b0adfbf44a.png" alt="Security Home Mortgage Logo" style={{maxWidth: '244px'}} />
+                    <img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1722887859/SHM_Logo_94887f2332.png" alt="Security Home Mortgage Logo" style={{maxWidth: '244px'}} />
                     {data.shmMortgage.data.attributes.Hero.ButtonTitle !== null &&
                       <div className='btn-green'><Link to=''>{data.shmMortgage.data.attributes.Hero.ButtonTitle}</Link></div>
                     }
