@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import parse from 'html-react-parser'
-import AccountLogin from '../components/AccountLogin'
+// import AccountLogin from '../components/AccountLogin'
 const MORTGAGEQUERY = gql`
     query getMortgage {
         shmMortgage {
