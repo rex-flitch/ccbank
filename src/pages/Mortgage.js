@@ -83,7 +83,7 @@ export default function Mortgage() {
                     {data.shmMortgage.data.attributes.Hero.Description !== null &&
                       <p>{data.shmMortgage.data.attributes.Hero.Description}</p>
                     }
-                    <img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1722887859/SHM_Logo_94887f2332.png" alt="Security Home Mortgage Logo" style={{maxWidth: '244px'}} />
+                    <img src="https://res.cloudinary.com/dk6kie30d/image/upload/v1723475553/SHM_Logo_Color_icon_white_text_df335a234e.svg" alt="Security Home Mortgage Logo" style={{maxWidth: '244px'}} />
                     {data.shmMortgage.data.attributes.Hero.ButtonTitle !== null &&
                       <div className='btn-green'><Link to=''>{data.shmMortgage.data.attributes.Hero.ButtonTitle}</Link></div>
                     }
