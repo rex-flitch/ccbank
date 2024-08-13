@@ -32,6 +32,10 @@ const LENDIOQUERY = gql`
                 Step1
                 Step2
                 Step3
+                QA {
+                  Question
+                  Answer
+                }
                 BoxInfo {
                   id
                   MainTitle
@@ -186,6 +190,18 @@ export default function Lendio() {
           <div className='btn-green'><Link to={data.lendio.data.attributes.Hero.ButtonURL}>{data.lendio.data.attributes.Hero.ButtonTitle}</Link></div>
         </div>
       }
+      <div className='faq container mg-top-80 mg-bottom-50'>
+        <h2 className='center green'>FAQs</h2>
+        <hr className='green center'></hr>
+        <div className='qa-container'>
+        {data.lendio.data.attributes.QA.map((item) => (
+          <details className='qa-item'>
+            <summary className='question'>{item.Question}</summary>
+            <div className='answer'>{parse(item.Answer)}</div>
+          </details>
+          ))}
+        </div>
+      </div>
       <div className='grey-box'>
         <div className='member-slider container'>
           <Carousel 
