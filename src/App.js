@@ -198,7 +198,7 @@ function App() {
               <Route path="/fintech-partnerships-faq" element={<FinTechPartnershipsFAQ />}/>
               <Route path="/money-market" element={<BusinessManagerConnectAccount />}/>
               <Route path="/personal-loans" element={<PersonalLoans />}/>
-              <Route path="/quickloan" element={<PasswordProtected><Lendio /></PasswordProtected>}/>
+              <Route path="/quickloan" element={<Lendio />}/>
               <Route path="/site-map" element={<SiteMap />}/>
               <Route path="/cookie-policy" element={<CookiePolicy />}/>
               <Route path="/text-message-sms-terms-of-use" element={<TextMessageSmsTermsOfUse />}/>
