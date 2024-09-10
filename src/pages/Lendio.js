@@ -250,7 +250,7 @@ export default function Lendio() {
       <div className='container mg-top-80 mg-bottom-50'>
           <h2 className='center orange'>Contact Us</h2>
           <hr className='green center'></hr>
-          <p className='center'>For inquiries/help call 1 (866) 656-2671 or email QuickDecisions@CCBank.com</p>
+          <p className='center'>For inquiries/help call (866) 656-2671 or email QuickDecisions@CCBank.com</p>
           <iframe
           src="https://form.jotform.com/241137093047149"
           title="JotForm"
