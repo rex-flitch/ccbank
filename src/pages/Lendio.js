@@ -86,8 +86,7 @@ const LENDIOQUERY = gql`
 export default function Lendio() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/image-ctas')
   const [iframeHeight, setIframeHeight] = useState('1000px'); // Default height
-  const [openIndex, setOpenIndex] = useState(null); // Keep track of which accordion is open.
-  
+
     const updateHeightBasedOnWidth = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth <= 540) {
@@ -129,9 +128,7 @@ export default function Lendio() {
       slidesToSlide: 1 // optional, default to 1.
     }
   };
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index); // If clicked accordion is already open, close it; otherwise open it.
-  };
+  
 
   console.log(data)
   return (
@@ -197,27 +194,11 @@ export default function Lendio() {
         <h2 className='center green'>FAQs</h2>
         <hr className='green center'></hr>
         <div className='qa-container'>
-          {data.lendio.data.attributes.QA.map((item, index) => (
-            <div
-              key={index}
-              className='qa-item'
-            >
-              <summary
-                className='question'
-                onClick={(e) => {
-                  e.preventDefault(); // Prevent default behavior of <summary>
-                  toggleAccordion(index);
-                }}
-                style={{ cursor: 'pointer' }} // Indicate it's clickable
-              >
-                {item.Question}
-              </summary>
-              {openIndex === index && ( // Only render the answer if this is the open item
-                <div className='answer'>
-                  {parse(item.Answer)}
-                </div>
-              )}
-            </div>
+        {data.lendio.data.attributes.QA.map((item) => (
+          <details className='qa-item'>
+            <summary className='question'>{item.Question}</summary>
+            <div className='answer'>{parse(item.Answer)}</div>
+          </details>
           ))}
         </div>
       </div>
