@@ -163,25 +163,27 @@ export default function DepositAccounts() {
                         <th className='center'>Minimum Opening Deposit</th>
                     </tr>
                     {filteredItems.map((rates) => (
-                    <tr key={rates.id} id={rates.id}>
-                        <td>{rates.attributes.RateType}</td>
-                        <td>
-                            {rates.attributes.rates.data.map((rate) => (
-                                <div key={rate.id}>{rate.attributes.Balances}</div>
-                            ))}
-                        </td>
-                        <td className='center'>
-                            {rates.attributes.rates.data.map((rate) => (
-                                <div key={rate.id}>{rate.attributes.InterestRate}</div>
-                            ))}
-                        </td>
-                        <td className='center'>
-                            {rates.attributes.rates.data.map((rate) => (
-                                <div key={rate.id}>{rate.attributes.APY}</div>
-                            ))}
-                        </td>
-                        <td className='center'>{rates.attributes.MinimumOpening}</td>
-                    </tr>
+                      rates.attributes.rates?.data && rates.attributes.rates.data.length > 0 && (
+                        <tr key={rates.id} id={rates.id}>
+                            <td>{rates.attributes.RateType}</td>
+                            <td>
+                                {rates.attributes.rates.data.map((rate) => (
+                                    <div key={rate.id}>{rate.attributes.Balances}</div>
+                                ))}
+                            </td>
+                            <td className='center'>
+                                {rates.attributes.rates.data.map((rate) => (
+                                    <div key={rate.id}>{rate.attributes.InterestRate}</div>
+                                ))}
+                            </td>
+                            <td className='center'>
+                                {rates.attributes.rates.data.map((rate) => (
+                                    <div key={rate.id}>{rate.attributes.APY}</div>
+                                ))}
+                            </td>
+                            <td className='center'>{rates.attributes.MinimumOpening}</td>
+                        </tr>
+                      )
                     ))}
                 </table>
             </div>
@@ -204,24 +206,26 @@ export default function DepositAccounts() {
                         <th className='center'>Annual Percentage Yield</th>
                     </tr>
                     {CDfilteredItems.map((rates) => (
-                    <tr key={rates.id} id={rates.id}>
-                        <td>{rates.attributes.RateType}</td>
-                        <td>
-                            {rates.attributes.rates.data.map((rate) => (
-                                <div key={rate.id}>{rate.attributes.Balances}</div>
-                            ))}
-                        </td>
-                        <td className='center'>
-                            {rates.attributes.rates.data.map((rate) => (
-                                <div key={rate.id}>{rate.attributes.InterestRate}</div>
-                            ))}
-                        </td>
-                        <td className='center'>
-                            {rates.attributes.rates.data.map((rate) => (
-                                <div key={rate.id}>{rate.attributes.APY}</div>
-                            ))}
-                        </td>
-                    </tr>
+                      rates.attributes.rates?.data && rates.attributes.rates.data.length > 0 && (
+                        <tr key={rates.id} id={rates.id}>
+                            <td>{rates.attributes.RateType}</td>
+                            <td>
+                                {rates.attributes.rates.data.map((rate) => (
+                                    <div key={rate.id}>{rate.attributes.Balances}</div>
+                                ))}
+                            </td>
+                            <td className='center'>
+                                {rates.attributes.rates.data.map((rate) => (
+                                    <div key={rate.id}>{rate.attributes.InterestRate}</div>
+                                ))}
+                            </td>
+                            <td className='center'>
+                                {rates.attributes.rates.data.map((rate) => (
+                                    <div key={rate.id}>{rate.attributes.APY}</div>
+                                ))}
+                            </td>
+                        </tr>
+                      )
                     ))}
                 </table>
             </div>

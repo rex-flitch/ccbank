@@ -247,109 +247,131 @@ const Rates = ({ shouldReload }) => {
                 <td className='center'></td>
             </tr>
             ))}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[1].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[1].attributes.rates.data.map((rate) => (
-            <tr key={rate.id} className={counter}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'></td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[1]?.attributes?.rates?.data && data.typeOfRates.data[1].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[1].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[1].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
-            
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[4].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[4].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'>{counter === 0 ? `${data.typeOfRates.data[4].attributes.MinimumOpening}` : ''}</td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[4]?.attributes?.rates?.data && data.typeOfRates.data[4].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[4].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[4].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[5].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[5].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'>{counter === 0 ? `${data.typeOfRates.data[5].attributes.MinimumOpening}` : ''}</td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[5]?.attributes?.rates?.data && data.typeOfRates.data[5].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[5].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[5].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[6].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[6].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'>{counter === 0 ? `${data.typeOfRates.data[6].attributes.MinimumOpening}` : ''}</td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[6]?.attributes?.rates?.data && data.typeOfRates.data[6].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[6].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[6].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[7].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[7].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'>{counter === 0 ? `${data.typeOfRates.data[7].attributes.MinimumOpening}` : ''}</td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[7]?.attributes?.rates?.data && data.typeOfRates.data[7].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[7].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[7].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[8].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[8].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'>{counter === 0 ? `${data.typeOfRates.data[8].attributes.MinimumOpening}` : ''}</td>
-                {addcounter()}
-            </tr>
-            ))}
-            {resetcounter()}
+            {data.typeOfRates?.data[9]?.attributes?.rates?.data && data.typeOfRates.data[9].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[9].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[9].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
         </table>
         {/* <div className='btn-green center mg-tb-15 '><Link to='/'>Open Account</Link></div> */}
         <table role='presentation'>
@@ -357,39 +379,47 @@ const Rates = ({ shouldReload }) => {
                 <th className='orange-header' colSpan='5'>CERTIFICATE OF DEPOSIT</th>
             </tr>
             
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[2].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[2].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'></td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[2]?.attributes?.rates?.data && data.typeOfRates.data[2].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[2].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[2].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
-            <tr>
-                <th colSpan='2'>{data.typeOfRates.data[3].attributes.RateType}</th>
-                <th className='center'>INTEREST RATE</th>
-                <th className='center'>APY</th>
-                <th className='center'>Minimum Opening Deposit</th>
-            </tr>
-            {data.typeOfRates.data[3].attributes.rates.data.map((rate) => (
-            <tr key={rate.id}>
-                <td>{counter === 0 ? 'Balance' : ''}</td>
-                <td>{rate.attributes.Balances}</td>
-                <td className='center'>{rate.attributes.InterestRate}</td>
-                <td className='center'>{rate.attributes.APY}</td>
-                <td className='center'></td>
-                {addcounter()}
-            </tr>
-            ))}
+            {data.typeOfRates?.data[3]?.attributes?.rates?.data && data.typeOfRates.data[3].attributes.rates.data.length > 0 && (
+              <>
+                <tr>
+                  <th colSpan="2">{data.typeOfRates.data[3].attributes.RateType}</th>
+                  <th className="center">INTEREST RATE</th>
+                  <th className="center">APY</th>
+                  <th className="center">Minimum Opening Deposit</th>
+                </tr>
+                {data.typeOfRates.data[3].attributes.rates.data.map((rate) => (
+                  <tr key={rate.id} className={counter}>
+                    <td>{counter === 0 ? 'Balance' : ''}</td>
+                    <td>{rate.attributes.Balances}</td>
+                    <td className="center">{rate.attributes.InterestRate}</td>
+                    <td className="center">{rate.attributes.APY}</td>
+                    <td className="center"></td>
+                    {addcounter()}
+                  </tr>
+                ))}
+              </>
+            )}
             {resetcounter()}
             {
             data.typeOfRates.data[9] && (
