@@ -375,12 +375,18 @@ export default function Homepage() {
             >
                 {data.homepage.data.attributes.HomepageHero.map((hero) => 
                     hero.Active && (
-                <div key={hero.id} className='hero' id={`hero-id-${hero.id}`} style={{backgroundImage: `url(${hero.BackgroundImage.data[0].attributes.url})`}}>
+                <div key={hero.id} className='hero' id={`hero-id-${hero.id}`} style={{
+                    backgroundImage: hero.BackgroundImage?.data[0]?.attributes?.url
+                      ? `url(${hero.BackgroundImage.data[0].attributes.url})`
+                      : 'none' // Or you can leave this out if no default is needed
+                  }}>
                     <div className='grad-overlay'></div>
                     <div className='inner-container'>
                         <div className='login-container'></div>
                         <div className='inner-hero'>
-                            <h1>{hero.Title}</h1>
+                            {hero.Title !== null &&
+                                <h1>{hero.Title}</h1>
+                            }
                             <hr className='orange'></hr>
                             {hero.Description !== null &&
                                 <p>{hero.Description}</p>
