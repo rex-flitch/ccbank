@@ -7,11 +7,11 @@ function Events() {
     const updateHeightBasedOnWidth = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth <= 540) {
-        setIframeHeight('1500px'); // Smaller devices
+        setIframeHeight('1900px'); // Smaller devices
         } else if (screenWidth > 1000) {
-        setIframeHeight('1200px'); // Larger devices
+        setIframeHeight('1300px'); // Larger devices
         } else {
-        setIframeHeight('1200px'); // Default for others
+        setIframeHeight('1300px'); // Default for others
         }
     };
 
