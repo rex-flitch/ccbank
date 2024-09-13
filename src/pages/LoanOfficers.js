@@ -183,20 +183,66 @@ export default function LoanOfficers() {
       <p className='max-800 mg-top-20 mg-auto'>{parse(data.loanOfficer.data.attributes.LoanOfficersDescription)}</p>
       <div className='loan-officers mg-top-50'>
         <div className='loan-officers-inner container'>
-            <h2 className='center'>{data.loanOfficer.data.attributes.StGeorgeTitle}</h2>
-            <hr className='green center'></hr>
-            {data.loanOfficer.data.attributes.StGeorgeLoanOfficers.map((sgloan) => (
-            <div key='sgloan.id' className='lo-item'>
+          {data.loanOfficer.data.attributes.StGeorgeLoanOfficers.map((sgloan) => (
+            sgloan.TeamMemberName === 'Tyson Griffin' && (
+              <div key={sgloan.id} className='lo-item'>
                 <div className='lo-info'>
-                    <div className='lo-image'><img src={sgloan.TeamMemberImage.data.attributes.url} alt={sgloan.TeamMemberImage.data.attributes.alternativeText} /></div>
-                    <div className='lo-contact'>
-                        <h4 className='green'>{sgloan.TeamMemberName}</h4>
-                        <p>{sgloan.TeamMemberPosition}<br />{sgloan.TeamMemberPhone}<br />{sgloan.TeamMemberEmail}<br />{sgloan.NMLS !== null ? `NMLS ${sgloan.NMLS}` : ''}</p>
-                    </div>
+                  <div className='lo-image'>
+                    <img
+                      src={sgloan.TeamMemberImage.data.attributes.url}
+                      alt={sgloan.TeamMemberImage.data.attributes.alternativeText}
+                    />
+                  </div>
+                  <div className='lo-contact'>
+                    <h4 className='green'>{sgloan.TeamMemberName}</h4>
+                    <p>
+                      {sgloan.TeamMemberPosition}
+                      <br />
+                      {sgloan.TeamMemberPhone}
+                      <br />
+                      {sgloan.TeamMemberEmail}
+                      <br />
+                      {sgloan.NMLS !== null ? `NMLS ${sgloan.NMLS}` : ''}
+                    </p>
+                  </div>
                 </div>
                 <div className='lo-bio'>{parse(sgloan.Bio)}</div>
-            </div>
-            ))}
+              </div>
+            )
+          ))}
+        </div>
+      </div>
+      <div className='loan-officers'>
+        <div className='loan-officers-inner container'>
+          <h2 className='center'>{data.loanOfficer.data.attributes.StGeorgeTitle}</h2>
+          <hr className='green center'></hr>
+          {data.loanOfficer.data.attributes.StGeorgeLoanOfficers.map((sgloan) => (
+            sgloan.TeamMemberName !== 'Tyson Griffin' && (
+              <div key={sgloan.id} className='lo-item'>
+                <div className='lo-info'>
+                  <div className='lo-image'>
+                    <img
+                      src={sgloan.TeamMemberImage.data.attributes.url}
+                      alt={sgloan.TeamMemberImage.data.attributes.alternativeText}
+                    />
+                  </div>
+                  <div className='lo-contact'>
+                    <h4 className='green'>{sgloan.TeamMemberName}</h4>
+                    <p>
+                      {sgloan.TeamMemberPosition}
+                      <br />
+                      {sgloan.TeamMemberPhone}
+                      <br />
+                      {sgloan.TeamMemberEmail}
+                      <br />
+                      {sgloan.NMLS !== null ? `NMLS ${sgloan.NMLS}` : ''}
+                    </p>
+                  </div>
+                </div>
+                <div className='lo-bio'>{parse(sgloan.Bio)}</div>
+              </div>
+            )
+          ))}
         </div>
       </div>
       <div className='loan-officers'>
