@@ -191,7 +191,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={sgloan.TeamMemberImage.data.attributes.url} alt={sgloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{sgloan.TeamMemberName}</h4>
-                        <p>{sgloan.TeamMemberPosition}<br />{sgloan.NMLS !== null ? `NMLS ${sgloan.NMLS}` : ''}<br />{sgloan.TeamMemberPhone}<br />{sgloan.TeamMemberEmail}</p>
+                        <p>{sgloan.TeamMemberPosition}<br />{sgloan.TeamMemberPhone}<br />{sgloan.TeamMemberEmail}<br />{sgloan.NMLS !== null ? `NMLS ${sgloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(sgloan.Bio)}</div>
@@ -209,7 +209,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={slloan.TeamMemberImage.data.attributes.url} alt={slloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{slloan.TeamMemberName}</h4>
-                        <p>{slloan.TeamMemberPosition}<br />{slloan.NMLS !== null ? `NMLS ${slloan.NMLS}` : ''}<br />{slloan.TeamMemberPhone}<br />{slloan.TeamMemberEmail}</p>
+                        <p>{slloan.TeamMemberPosition}<br />{slloan.TeamMemberPhone}<br />{slloan.TeamMemberEmail}<br />{slloan.NMLS !== null ? `NMLS ${slloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(slloan.Bio)}</div>
@@ -227,7 +227,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={provoloan.TeamMemberImage.data.attributes.url} alt={provoloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{provoloan.TeamMemberName}</h4>
-                        <p>{provoloan.TeamMemberPosition}<br />{provoloan.NMLS !== null ? `NMLS ${provoloan.NMLS}` : ''}<br />{provoloan.TeamMemberPhone}<br />{provoloan.TeamMemberEmail}</p>
+                        <p>{provoloan.TeamMemberPosition}<br />{provoloan.TeamMemberPhone}<br />{provoloan.TeamMemberEmail}<br />{provoloan.NMLS !== null ? `NMLS ${provoloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(provoloan.Bio)}</div>
@@ -245,7 +245,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={oremloan.TeamMemberImage.data.attributes.url} alt={oremloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{oremloan.TeamMemberName}</h4>
-                        <p>{oremloan.TeamMemberPosition}<br />{oremloan.NMLS !== null ? `NMLS ${oremloan.NMLS}` : ''}<br />{oremloan.TeamMemberPhone}<br />{oremloan.TeamMemberEmail}</p>
+                        <p>{oremloan.TeamMemberPosition}<br />{oremloan.TeamMemberPhone}<br />{oremloan.TeamMemberEmail}<br />{oremloan.NMLS !== null ? `NMLS ${oremloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(oremloan.Bio)}</div>
@@ -263,7 +263,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={pgloan.TeamMemberImage.data.attributes.url} alt={pgloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{pgloan.TeamMemberName}</h4>
-                        <p>{pgloan.TeamMemberPosition}<br />{pgloan.NMLS !== null ? `NMLS ${pgloan.NMLS}` : ''}<br />{pgloan.TeamMemberPhone}<br />{pgloan.TeamMemberEmail}</p>
+                        <p>{pgloan.TeamMemberPosition}<br />{pgloan.TeamMemberPhone}<br />{pgloan.TeamMemberEmail}<br />{pgloan.NMLS !== null ? `NMLS ${pgloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(pgloan.Bio)}</div>
@@ -281,7 +281,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={sbaloan.TeamMemberImage.data.attributes.url} alt={sbaloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{sbaloan.TeamMemberName}</h4>
-                        <p>{sbaloan.TeamMemberPosition}<br />{sbaloan.NMLS !== null ? `NMLS ${sbaloan.NMLS}` : ''}<br />{sbaloan.TeamMemberPhone}<br />{sbaloan.TeamMemberEmail}</p>
+                        <p>{sbaloan.TeamMemberPosition}<br />{sbaloan.TeamMemberPhone}<br />{sbaloan.TeamMemberEmail}<br />{sbaloan.NMLS !== null ? `NMLS ${sbaloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(sbaloan.Bio)}</div>
@@ -299,7 +299,7 @@ export default function LoanOfficers() {
                     <div className='lo-image'><img src={sandyloan.TeamMemberImage.data.attributes.url} alt={sandyloan.TeamMemberImage.data.attributes.alternativeText} /></div>
                     <div className='lo-contact'>
                         <h4 className='green'>{sandyloan.TeamMemberName}</h4>
-                        <p>{sandyloan.TeamMemberPosition}<br />{sandyloan.NMLS !== null ? `NMLS ${sandyloan.NMLS}` : ''}<br />{sandyloan.TeamMemberPhone}<br />{sandyloan.TeamMemberEmail}</p>
+                        <p>{sandyloan.TeamMemberPosition}<br />{sandyloan.TeamMemberPhone}<br />{sandyloan.TeamMemberEmail}<br />{sandyloan.NMLS !== null ? `NMLS ${sandyloan.NMLS}` : ''}</p>
                     </div>
                 </div>
                 <div className='lo-bio'>{parse(sandyloan.Bio)}</div>
