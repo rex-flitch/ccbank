@@ -425,39 +425,43 @@ export default function Homepage() {
             )}
             <div className='looking-for container'>
                 <Carousel 
-                swipeable={true}
-                draggable={true}
-                showDots={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={false}
-                autoPlaySpeed={6000}
-                keyBoardControl={true}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-                className='hero-slider'
-                customDot={<CustomDot />}
+                    swipeable={true}
+                    draggable={true}
+                    showDots={true}
+                    responsive={responsive}
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    autoPlay={false}
+                    autoPlaySpeed={6000}
+                    keyBoardControl={true}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    dotListClass="custom-dot-list-style"
+                    itemClass="carousel-item-padding-40-px"
+                    className='hero-slider'
+                    customDot={<CustomDot />}
                 >
-                {data.homepage.data.attributes.LookingFor.map((look) => (
-                    <div key={look.id} className='looking-item'>
-                        <div className='look-info'>
-                            <h3 className='orange'>{look.Title}</h3>
-                            <hr className='green'></hr>
-                            <p>{parse(look.Description)}</p>
-                            {look.ButtonTitle !== null &&
-                                <div className='btn-green mg-top-50'><Link to={look.ButtonURL}>{look.ButtonTitle}</Link></div>
-                            }
+                    {data.homepage.data.attributes.LookingFor.map((look) => (
+                        <div key={look.id} className='looking-item'>
+                            <div className='look-info'>
+                                <h3 className='orange'>{look.Title}</h3>
+                                <hr className='green'></hr>
+                                <p>
+                                    {parse(look.Description)}
+                                    {look.id === '4' && ` ${data.homepage.data.attributes.HomepageRates.type_of_rate.data.attributes.rates.data[1].attributes.APY} APY* 12-month CD.`}
+                                </p>
+                                {look.ButtonTitle !== null &&
+                                    <div className='btn-green mg-top-50'><Link to={look.ButtonURL}>{look.ButtonTitle}</Link></div>
+                                }
+                            </div>
+                            <div className='look-image'>
+                                <img src={look.Image.data.attributes.url} alt={look.Image.data.attributes.alternativeText}/>
+                            </div>
                         </div>
-                        <div className='look-image'>
-                            <img src={look.Image.data.attributes.url} alt={look.Image.data.attributes.alternativeText}/>
-                        </div>
-                    </div>
-                ))}
+                    ))}
                 </Carousel>
             </div>
+
             {/* <Lightbox isOpen={isOpen} videoId={videoId} onClose={closeLightbox} /> */}
             <div className='cta-wrapper home'>
                 <div className='cta-box container'>
