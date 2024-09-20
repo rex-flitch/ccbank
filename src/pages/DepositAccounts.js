@@ -197,7 +197,7 @@ export default function DepositAccounts() {
             <div className='container bg-white cbpc'>
                 <table role='presentation'>
                     <caption>CD Accounts<br />
-                        <span>Rates Effective {data.ratepage.data.attributes.RatesEffective}</span>
+                        <span>Rates Effective {currentDate}</span>
                     </caption>
                     <tr>
                         <th className='center'>Account</th>
