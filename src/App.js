@@ -76,6 +76,7 @@ import useExternalLinkInterceptor from './hooks/useExternalLinkInterceptor'
 import ConfirmationModal from './components/ConfirmationModal'
 import TagManager from 'react-gtm-module'
 import PasswordProtected from './components/PasswordProtected'
+import PersonalFinanceTerms from './pages/PersonalFinanceTerms'
 
 const tagManagerArgs = { 
   gtmId: 'GTM-WWQ497TF'
@@ -213,6 +214,7 @@ function App() {
               <Route path="/account-login" element={<AccountLogin />}/>
               <Route path="/shm-opt-out" element={<ShmOptOut />}/>
               <Route path="/mortgage" element={<Mortgage />}/>
+              <Route path="/personalfinanceterms" element={<PersonalFinanceTerms />}/>
               {/* <Route path="/smartloan" element={<PasswordProtected><Lendio /></PasswordProtected>}/> */}
             </Routes>
             <SiteFooter />
