@@ -46,6 +46,7 @@ const BUSINESSCHECKING = gql`
           }
           commercialBankingProductComparisons {
             data {
+              id
               attributes {
                 AccountFeatures
                 BusinessManagerChecking
@@ -123,16 +124,18 @@ export default function BusinessChecking() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.commercialBankingProductComparisons.data.map((cbpc) => (
-                        <tr>
-                            <td className='bold'>{cbpc.attributes.AccountFeatures}</td>
-                            <td className='center'>{cbpc.attributes.BusinessManagerChecking}</td>
-                            <td className='center'>{cbpc.attributes.GiveBackCheckingNP}</td>
-                            <td className='center'>{cbpc.attributes.BusinessSavingsAccount}</td>
-                            <td className='center'>{cbpc.attributes.BusinessMoneyMarketAccount}</td>
-                            <td className='center'>{cbpc.attributes.BusinessCertificateOfDeposits}</td>
-                        </tr>
-                        ))}
+                        {[...data.commercialBankingProductComparisons.data] // Create a new array from the existing one
+                            .sort((a, b) => a.id - b.id) // Sort the new array by id in ascending order
+                            .map((cbpc) => (
+                                <tr key={cbpc.id}>
+                                    <td className='bold'>{cbpc.attributes.AccountFeatures}</td>
+                                    <td className='center'>{cbpc.attributes.BusinessManagerChecking}</td>
+                                    <td className='center'>{cbpc.attributes.GiveBackCheckingNP}</td>
+                                    <td className='center'>{cbpc.attributes.BusinessSavingsAccount}</td>
+                                    <td className='center'>{cbpc.attributes.BusinessMoneyMarketAccount}</td>
+                                    <td className='center'>{cbpc.attributes.BusinessCertificateOfDeposits}</td>
+                                </tr>
+                            ))}
                     </tbody>
                     <tfoot>
                         <tr className='bg-orange'>
