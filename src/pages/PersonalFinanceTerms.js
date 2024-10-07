@@ -51,7 +51,7 @@ export default function PersonalFinanceTerms() {
                       <p>{data.personalFinanceTerm.data.attributes.Hero.Description}</p>
                     }
                     {data.personalFinanceTerm.data.attributes.Hero.ButtonTitle !== null &&
-                      <div className='btn-green'><Link to=''>{data.personalFinanceTerm.data.attributes.Hero.ButtonTitle}</Link></div>
+                      <div className='btn-green'><Link to='{data.personalFinanceTerm.data.attributes.Hero.ButtonURL}'>{data.personalFinanceTerm.data.attributes.Hero.ButtonTitle}</Link></div>
                     }
                 </div>
               </div>
